@@ -5,8 +5,11 @@
 		<name>Economy</name>
 		<uuid>656dacef-005e-41a3-aedc-d19f6fd6e9f6</uuid>
 		<vendor>isee systems, inc.</vendor>
-		<product version="3.8" isee:build_number="3578" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+		<product version="4.1.1" isee:build_number="3772" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
+	<ai_information>
+		<status verified="false"/>
+	</ai_information>
 	<sim_specs isee:sim_duration="0" isee:run_prefix="Run" isee:simulation_delay="0" isee:restore_on_start="false" isee:save_interval="1" method="RK4" time_units="Year" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="false" isee:loop_scores="false" isee:loop_exhaustive_allowed="1000">
 		<start>1980</start>
 		<stop>2100</stop>
@@ -24,7 +27,7 @@
 		</dim>
 		<dim name="Run" size="1"/>
 	</dimensions>
-	<isee:prefs saved_runs="100" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true">
+	<isee:prefs saved_runs="5" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_secure_mode="true" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rifp="true">
 		<isee:ignored_words>
 			<isee:ignored_word>WolrdTrans</isee:ignored_word>
 			<isee:ignored_word>WorldTrans</isee:ignored_word>
@@ -261,8 +264,10 @@
 				<connect2 to="Finance.real_GDP_growth_rate_2" from="GDP.real_GDP_growth_rate"/>
 				<connect to='Demographics."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
 				<connect2 to='Demographics."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
-				<connect to='energy_investments."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
-				<connect2 to='energy_investments."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
+				<connect to="Energy_demand.Converter_1" from='GDP."Real_GDP_in_2021c$"'/>
+				<connect2 to="Energy_demand.Converter_1" from='GDP."Real_GDP_in_2021c$"'/>
+				<connect to='Energy_investments."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
+				<connect2 to='Energy_investments."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
 				<connect to='Finance."Real_GDP_in_2021c$_1"' from='GDP."Real_GDP_in_2021c$"'/>
 				<connect2 to='Finance."Real_GDP_in_2021c$_1"' from='GDP."Real_GDP_in_2021c$"'/>
 				<connect to='Sea_level_rise_adaptation."Real_GDP_in_2021c$"' from='GDP."Real_GDP_in_2021c$"'/>
@@ -292,28 +297,28 @@
 				<format scale_by="auto"/>
 				<connect to="Inflation.bailouts" from="Government.bailouts"/>
 				<connect2 to="Inflation.bailouts" from="Government.bailouts"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_coal_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_coal_energy_conversion"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_coal_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_coal_energy_conversion"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_coal_extraction" from="Government.expenditure_on_subsidies_for_investments_in_coal_extraction"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_coal_extraction" from="Government.expenditure_on_subsidies_for_investments_in_coal_extraction"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_gas_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_gas_energy_conversion"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_gas_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_gas_energy_conversion"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_gas_extraction" from="Government.expenditure_on_subsidies_for_investments_in_gas_extraction"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_gas_extraction" from="Government.expenditure_on_subsidies_for_investments_in_gas_extraction"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_oil_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_oil_energy_conversion"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_oil_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_oil_energy_conversion"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_oil_extraction" from="Government.expenditure_on_subsidies_for_investments_in_oil_extraction"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_oil_extraction" from="Government.expenditure_on_subsidies_for_investments_in_oil_extraction"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_Solar_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_solar_energy_capacity"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_Solar_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_solar_energy_capacity"/>
-				<connect to="energy_investments.expenditure_on_subsidies_for_investments_in_wind_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_wind_energy_capacity"/>
-				<connect2 to="energy_investments.expenditure_on_subsidies_for_investments_in_wind_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_wind_energy_capacity"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_bio_fuel_energy_capacity"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_coal_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_coal_energy_conversion"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_coal_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_coal_energy_conversion"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_coal_extraction" from="Government.expenditure_on_subsidies_for_investments_in_coal_extraction"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_coal_extraction" from="Government.expenditure_on_subsidies_for_investments_in_coal_extraction"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_gas_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_gas_energy_conversion"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_gas_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_gas_energy_conversion"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_gas_extraction" from="Government.expenditure_on_subsidies_for_investments_in_gas_extraction"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_gas_extraction" from="Government.expenditure_on_subsidies_for_investments_in_gas_extraction"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_hydropower_energy_capacity"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_nuclear_energy_capacity"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_oil_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_oil_energy_conversion"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_oil_energy_conversion" from="Government.expenditure_on_subsidies_for_investments_in_oil_energy_conversion"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_oil_extraction" from="Government.expenditure_on_subsidies_for_investments_in_oil_extraction"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_oil_extraction" from="Government.expenditure_on_subsidies_for_investments_in_oil_extraction"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_Solar_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_solar_energy_capacity"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_Solar_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_solar_energy_capacity"/>
+				<connect to="Energy_investments.expenditure_on_subsidies_for_investments_in_wind_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_wind_energy_capacity"/>
+				<connect2 to="Energy_investments.expenditure_on_subsidies_for_investments_in_wind_energy_capacity" from="Government.expenditure_on_subsidies_for_investments_in_wind_energy_capacity"/>
 				<connect to="Circular_Flow.government_consumption" from="Government.government_consumption"/>
 				<connect2 to="Circular_Flow.government_consumption" from="Government.government_consumption"/>
 				<connect to="GDP.Government_Spending_1" from="Government.government_consumption"/>
@@ -346,58 +351,58 @@
 				<connect2 to="Circular_Flow.sum_of_energy_taxes" from="Government.sum_of_energy_taxes_in_nominal_terms"/>
 				<connect to="Circular_Flow.sum_of_subsidies_spent" from="Government.sum_of_subsidies_spent"/>
 				<connect2 to="Circular_Flow.sum_of_subsidies_spent" from="Government.sum_of_subsidies_spent"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_bio_fuel_energy_capacity" from="Government.tax_revenue_on_investments_in_bio_fuel_energy_capacity"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_bio_fuel_energy_capacity" from="Government.tax_revenue_on_investments_in_bio_fuel_energy_capacity"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_coal_extraction" from="Government.tax_revenue_on_investments_in_coal_extraction"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_coal_extraction" from="Government.tax_revenue_on_investments_in_coal_extraction"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_gas_energy_conversion" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_gas_energy_conversion" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_gas_energy_conversion_1" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_gas_energy_conversion_1" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_gas_extraction" from="Government.tax_revenue_on_investments_in_gas_extraction"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_gas_extraction" from="Government.tax_revenue_on_investments_in_gas_extraction"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_hydropower_energy_capacity" from="Government.tax_revenue_on_investments_in_hydropower_energy_capacity"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_hydropower_energy_capacity" from="Government.tax_revenue_on_investments_in_hydropower_energy_capacity"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_nuclear_energy_capacity" from="Government.tax_revenue_on_investments_in_nuclear_energy_capacity"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_nuclear_energy_capacity" from="Government.tax_revenue_on_investments_in_nuclear_energy_capacity"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_oil_energy_conversion" from="Government.tax_revenue_on_investments_in_oil_energy_conversion"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_oil_energy_conversion" from="Government.tax_revenue_on_investments_in_oil_energy_conversion"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_oil_extraction" from="Government.tax_revenue_on_investments_in_oil_extraction"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_oil_extraction" from="Government.tax_revenue_on_investments_in_oil_extraction"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_Solar_energy_capacity" from="Government.tax_revenue_on_investments_in_solar_energy_capacity"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_Solar_energy_capacity" from="Government.tax_revenue_on_investments_in_solar_energy_capacity"/>
-				<connect to="energy_investments.tax_revenue_on_investments_in_wind_energy_capacity" from="Government.tax_revenue_on_investments_in_wind_energy_capacity"/>
-				<connect2 to="energy_investments.tax_revenue_on_investments_in_wind_energy_capacity" from="Government.tax_revenue_on_investments_in_wind_energy_capacity"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_bio_fuel_energy_capacity" from="Government.tax_revenue_on_investments_in_bio_fuel_energy_capacity"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_bio_fuel_energy_capacity" from="Government.tax_revenue_on_investments_in_bio_fuel_energy_capacity"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_coal_extraction" from="Government.tax_revenue_on_investments_in_coal_extraction"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_coal_extraction" from="Government.tax_revenue_on_investments_in_coal_extraction"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_gas_energy_conversion" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_gas_energy_conversion" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_gas_energy_conversion_1" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_gas_energy_conversion_1" from="Government.tax_revenue_on_investments_in_gas_energy_conversion"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_gas_extraction" from="Government.tax_revenue_on_investments_in_gas_extraction"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_gas_extraction" from="Government.tax_revenue_on_investments_in_gas_extraction"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_hydropower_energy_capacity" from="Government.tax_revenue_on_investments_in_hydropower_energy_capacity"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_hydropower_energy_capacity" from="Government.tax_revenue_on_investments_in_hydropower_energy_capacity"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_nuclear_energy_capacity" from="Government.tax_revenue_on_investments_in_nuclear_energy_capacity"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_nuclear_energy_capacity" from="Government.tax_revenue_on_investments_in_nuclear_energy_capacity"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_oil_energy_conversion" from="Government.tax_revenue_on_investments_in_oil_energy_conversion"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_oil_energy_conversion" from="Government.tax_revenue_on_investments_in_oil_energy_conversion"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_oil_extraction" from="Government.tax_revenue_on_investments_in_oil_extraction"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_oil_extraction" from="Government.tax_revenue_on_investments_in_oil_extraction"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_Solar_energy_capacity" from="Government.tax_revenue_on_investments_in_solar_energy_capacity"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_Solar_energy_capacity" from="Government.tax_revenue_on_investments_in_solar_energy_capacity"/>
+				<connect to="Energy_investments.tax_revenue_on_investments_in_wind_energy_capacity" from="Government.tax_revenue_on_investments_in_wind_energy_capacity"/>
+				<connect2 to="Energy_investments.tax_revenue_on_investments_in_wind_energy_capacity" from="Government.tax_revenue_on_investments_in_wind_energy_capacity"/>
 				<connect to="Inflation.total_public_tax_income_1" from="Government.total_public_tax_income"/>
 				<connect2 to="Inflation.total_public_tax_income_1" from="Government.total_public_tax_income"/>
 				<connect to="Government.additional_transfers_policy" from="Government_Regulations.additional_transfers_policy"/>
 				<connect2 to="Government.additional_transfers_policy" from="Government_Regulations.additional_transfers_policy"/>
 				<connect to="Government.child_age_dependents" from="Demographics.child_age_dependents"/>
 				<connect2 to="Government.child_age_dependents" from="Demographics.child_age_dependents"/>
-				<connect to="Government.Coal_Investments_in_Fossil_Energy_Capital" from="energy_investments.Coal_Gross_Investments_in_Fossil_Energy_Capital"/>
-				<connect2 to="Government.Coal_Investments_in_Fossil_Energy_Capital" from="energy_investments.Coal_Gross_Investments_in_Fossil_Energy_Capital"/>
-				<connect to="Government.Coal_Investments_in_Fossil_Fuel_Extraction_Capital" from="energy_investments.Coal_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
-				<connect2 to="Government.Coal_Investments_in_Fossil_Fuel_Extraction_Capital" from="energy_investments.Coal_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
+				<connect to="Government.Coal_Investments_in_Fossil_Energy_Capital" from="Energy_investments.Coal_Gross_Investments_in_Fossil_Energy_Capital"/>
+				<connect2 to="Government.Coal_Investments_in_Fossil_Energy_Capital" from="Energy_investments.Coal_Gross_Investments_in_Fossil_Energy_Capital"/>
+				<connect to="Government.Coal_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Coal_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
+				<connect2 to="Government.Coal_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Coal_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
 				<connect to="Government.computed_government_debt_to_GDP_ratio_target" from="Government_Regulations.computed_government_debt_to_GDP_ratio_target"/>
 				<connect2 to="Government.computed_government_debt_to_GDP_ratio_target" from="Government_Regulations.computed_government_debt_to_GDP_ratio_target"/>
 				<connect to="Government.Employed" from="Employment.Employed"/>
 				<connect2 to="Government.Employed" from="Employment.Employed"/>
-				<connect to="Government.energy_conversion_tax_rate" from="fossil_energy_coal.energy_conversion_effective_tax_rate"/>
-				<connect2 to="Government.energy_conversion_tax_rate" from="fossil_energy_coal.energy_conversion_effective_tax_rate"/>
-				<connect to="Government.energy_conversion_tax_rate_1" from="fossil_energy_oil.energy_conversion_effective_tax_rate"/>
-				<connect2 to="Government.energy_conversion_tax_rate_1" from="fossil_energy_oil.energy_conversion_effective_tax_rate"/>
-				<connect to="Government.energy_conversion_tax_rate_2" from="fossil_energy_gas.energy_conversion_effective_tax_rate"/>
-				<connect2 to="Government.energy_conversion_tax_rate_2" from="fossil_energy_gas.energy_conversion_effective_tax_rate"/>
-				<connect to="Government.fuel_extraction_tax_rate" from="fossil_energy_coal.fuel_extraction_effective_tax_rate"/>
-				<connect2 to="Government.fuel_extraction_tax_rate" from="fossil_energy_coal.fuel_extraction_effective_tax_rate"/>
-				<connect to="Government.fuel_extraction_tax_rate_1" from="fossil_energy_oil.fuel_extraction_effective_tax_rate"/>
-				<connect2 to="Government.fuel_extraction_tax_rate_1" from="fossil_energy_oil.fuel_extraction_effective_tax_rate"/>
-				<connect to="Government.fuel_extraction_tax_rate_2" from="fossil_energy_gas.fuel_extraction_effective_tax_rate"/>
-				<connect2 to="Government.fuel_extraction_tax_rate_2" from="fossil_energy_gas.fuel_extraction_effective_tax_rate"/>
-				<connect to="Government.Gas_Investments_in_Fossil_Energy_Capital" from="energy_investments.Gas_Gross_Investments_in_Fossil_Energy_Capital"/>
-				<connect2 to="Government.Gas_Investments_in_Fossil_Energy_Capital" from="energy_investments.Gas_Gross_Investments_in_Fossil_Energy_Capital"/>
-				<connect to="Government.Gas_Investments_in_Fossil_Fuel_Extraction_Capital" from="energy_investments.Gas_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
-				<connect2 to="Government.Gas_Investments_in_Fossil_Fuel_Extraction_Capital" from="energy_investments.Gas_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
+				<connect to="Government.energy_conversion_tax_rate" from="Fossil_energy_coal.energy_conversion_effective_tax_rate"/>
+				<connect2 to="Government.energy_conversion_tax_rate" from="Fossil_energy_coal.energy_conversion_effective_tax_rate"/>
+				<connect to="Government.energy_conversion_tax_rate_1" from="Fossil_energy_oil.energy_conversion_effective_tax_rate"/>
+				<connect2 to="Government.energy_conversion_tax_rate_1" from="Fossil_energy_oil.energy_conversion_effective_tax_rate"/>
+				<connect to="Government.energy_conversion_tax_rate_2" from="Fossil_energy_gas.energy_conversion_effective_tax_rate"/>
+				<connect2 to="Government.energy_conversion_tax_rate_2" from="Fossil_energy_gas.energy_conversion_effective_tax_rate"/>
+				<connect to="Government.fuel_extraction_tax_rate" from="Fossil_energy_coal.fuel_extraction_effective_tax_rate"/>
+				<connect2 to="Government.fuel_extraction_tax_rate" from="Fossil_energy_coal.fuel_extraction_effective_tax_rate"/>
+				<connect to="Government.fuel_extraction_tax_rate_1" from="Fossil_energy_oil.fuel_extraction_effective_tax_rate"/>
+				<connect2 to="Government.fuel_extraction_tax_rate_1" from="Fossil_energy_oil.fuel_extraction_effective_tax_rate"/>
+				<connect to="Government.fuel_extraction_tax_rate_2" from="Fossil_energy_gas.fuel_extraction_effective_tax_rate"/>
+				<connect2 to="Government.fuel_extraction_tax_rate_2" from="Fossil_energy_gas.fuel_extraction_effective_tax_rate"/>
+				<connect to="Government.Gas_Investments_in_Fossil_Energy_Capital" from="Energy_investments.Gas_Gross_Investments_in_Fossil_Energy_Capital"/>
+				<connect2 to="Government.Gas_Investments_in_Fossil_Energy_Capital" from="Energy_investments.Gas_Gross_Investments_in_Fossil_Energy_Capital"/>
+				<connect to="Government.Gas_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Gas_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
+				<connect2 to="Government.Gas_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Gas_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
 				<connect to="Government.GDP" from="GDP.Nominal_GDP"/>
 				<connect2 to="Government.GDP" from="GDP.Nominal_GDP"/>
 				<connect to="Government.inflation" from="Inflation.Inflation_Rate"/>
@@ -410,22 +415,22 @@
 				<connect2 to='Government."inflation_adjustment_b$_per_bc$_2"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
 				<connect to="Government.inflation_goal_policy" from="Government_Regulations.actual_inflation_goal"/>
 				<connect2 to="Government.inflation_goal_policy" from="Government_Regulations.actual_inflation_goal"/>
-				<connect to="Government.Investments_in_Biofuel_Capacity" from="energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
-				<connect2 to="Government.Investments_in_Biofuel_Capacity" from="energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
-				<connect to="Government.Investments_in_Hydropower_Energy_capacity" from="energy_investments.Gross_Investments_in_Hydropower_Energy_capacity"/>
-				<connect2 to="Government.Investments_in_Hydropower_Energy_capacity" from="energy_investments.Gross_Investments_in_Hydropower_Energy_capacity"/>
-				<connect to="Government.Investments_in_Nuclear_Capacity" from="energy_investments.Investments_in_Nuclear_Capacity"/>
-				<connect2 to="Government.Investments_in_Nuclear_Capacity" from="energy_investments.Investments_in_Nuclear_Capacity"/>
-				<connect to="Government.Investments_in_solar_Energy_Capacity" from="energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
-				<connect2 to="Government.Investments_in_solar_Energy_Capacity" from="energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
-				<connect to="Government.Investments_in_wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
-				<connect2 to="Government.Investments_in_wind_Energy_Capacity" from="energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
+				<connect to="Government.Investments_in_Biofuel_Capacity" from="Energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
+				<connect2 to="Government.Investments_in_Biofuel_Capacity" from="Energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
+				<connect to="Government.Investments_in_Hydropower_Energy_capacity" from="Energy_investments.Gross_Investments_in_Hydropower_Energy_capacity"/>
+				<connect2 to="Government.Investments_in_Hydropower_Energy_capacity" from="Energy_investments.Gross_Investments_in_Hydropower_Energy_capacity"/>
+				<connect to="Government.Investments_in_Nuclear_Capacity" from="Energy_investments.Investments_in_Nuclear_Capacity"/>
+				<connect2 to="Government.Investments_in_Nuclear_Capacity" from="Energy_investments.Investments_in_Nuclear_Capacity"/>
+				<connect to="Government.Investments_in_solar_Energy_Capacity" from="Energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
+				<connect2 to="Government.Investments_in_solar_Energy_Capacity" from="Energy_investments.Gross_Investments_in_Solar_Energy_Capacity"/>
+				<connect to="Government.Investments_in_wind_Energy_Capacity" from="Energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
+				<connect2 to="Government.Investments_in_wind_Energy_Capacity" from="Energy_investments.Gross_Investments_in_wind_Energy_Capacity"/>
 				<connect to="Government.minimum_percentage_of_taxes_spent_by_government" from="Government_Regulations.minimum_percentage_of_taxes_spent_by_government"/>
 				<connect2 to="Government.minimum_percentage_of_taxes_spent_by_government" from="Government_Regulations.minimum_percentage_of_taxes_spent_by_government"/>
-				<connect to="Government.Oil_Investments_in_Fossil_Energy_Capital" from="energy_investments.Oil_Gross_Investments_in_Fossil_Energy_Capital"/>
-				<connect2 to="Government.Oil_Investments_in_Fossil_Energy_Capital" from="energy_investments.Oil_Gross_Investments_in_Fossil_Energy_Capital"/>
-				<connect to="Government.Oil_Investments_in_Fossil_Fuel_Extraction_Capital" from="energy_investments.Oil_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
-				<connect2 to="Government.Oil_Investments_in_Fossil_Fuel_Extraction_Capital" from="energy_investments.Oil_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
+				<connect to="Government.Oil_Investments_in_Fossil_Energy_Capital" from="Energy_investments.Oil_Gross_Investments_in_Fossil_Energy_Capital"/>
+				<connect2 to="Government.Oil_Investments_in_Fossil_Energy_Capital" from="Energy_investments.Oil_Gross_Investments_in_Fossil_Energy_Capital"/>
+				<connect to="Government.Oil_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Oil_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
+				<connect2 to="Government.Oil_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Oil_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
 				<connect to="Government.old_age_dependents" from="Demographics.old_age_dependents"/>
 				<connect2 to="Government.old_age_dependents" from="Demographics.old_age_dependents"/>
 				<connect to="Government.Population" from="Demographics.Population"/>
@@ -444,16 +449,16 @@
 				<connect2 to="Government.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="Government.switch_government_damage" from="Climate.switch_government_damage"/>
 				<connect2 to="Government.switch_government_damage" from="Climate.switch_government_damage"/>
-				<connect to="Government.tax_rate_1" from="hydropower_energy.tax_rate"/>
-				<connect2 to="Government.tax_rate_1" from="hydropower_energy.tax_rate"/>
-				<connect to="Government.tax_rate_2" from="bio_fuel_energy.tax_rate"/>
-				<connect2 to="Government.tax_rate_2" from="bio_fuel_energy.tax_rate"/>
-				<connect to="Government.tax_rate_4" from="nuclear_energy.tax_rate"/>
-				<connect2 to="Government.tax_rate_4" from="nuclear_energy.tax_rate"/>
-				<connect to="Government.tax_rate_5" from="solar_energy.tax_rate"/>
-				<connect2 to="Government.tax_rate_5" from="solar_energy.tax_rate"/>
-				<connect to="Government.tax_rate_6" from="wind_energy.tax_rate"/>
-				<connect2 to="Government.tax_rate_6" from="wind_energy.tax_rate"/>
+				<connect to="Government.tax_rate_1" from="Hydropower_energy.tax_rate"/>
+				<connect2 to="Government.tax_rate_1" from="Hydropower_energy.tax_rate"/>
+				<connect to="Government.tax_rate_2" from="Bio_fuel_energy.tax_rate"/>
+				<connect2 to="Government.tax_rate_2" from="Bio_fuel_energy.tax_rate"/>
+				<connect to="Government.tax_rate_4" from="Nuclear_energy.tax_rate"/>
+				<connect2 to="Government.tax_rate_4" from="Nuclear_energy.tax_rate"/>
+				<connect to="Government.tax_rate_5" from="Solar_energy.tax_rate"/>
+				<connect2 to="Government.tax_rate_5" from="Solar_energy.tax_rate"/>
+				<connect to="Government.tax_rate_6" from="Wind_energy.tax_rate"/>
+				<connect2 to="Government.tax_rate_6" from="Wind_energy.tax_rate"/>
 				<connect to="Government.today" from="Climate.climate_impact_stoptime"/>
 				<connect2 to="Government.today" from="Climate.climate_impact_stoptime"/>
 				<connect to="Government.today_1" from="Climate.climate_impact_stoptime"/>
@@ -475,6 +480,8 @@
 			</module>
 			<module name="Circular Flow" isee:label="">
 				<format scale_by="auto"/>
+				<connect to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
+				<connect2 to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect to="Inflation.bank_profits" from="Circular_Flow.bank_profits"/>
 				<connect2 to="Inflation.bank_profits" from="Circular_Flow.bank_profits"/>
 				<connect to="Finance.Firms_Checking_Accounts" from="Circular_Flow.Firms_Checking_Accounts"/>
@@ -612,6 +619,8 @@
 				<connect2 to="Employment.exploratory_loan_failure" from="Finance.exploratory_loan_failure"/>
 				<connect to="Employment.exploratory_loan_defaults_from_from_interest" from="Finance.exploratory_loan_defaults_from_from_interest"/>
 				<connect2 to="Employment.exploratory_loan_defaults_from_from_interest" from="Finance.exploratory_loan_defaults_from_from_interest"/>
+				<connect to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
+				<connect2 to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
 				<connect to="Circular_Flow.safe_bank_assets" from="Finance.private_safe_bank_assets"/>
 				<connect2 to="Circular_Flow.safe_bank_assets" from="Finance.private_safe_bank_assets"/>
 				<connect to="Employment.private_safe_bank_assets" from="Finance.private_safe_bank_assets"/>
@@ -630,6 +639,8 @@
 				<connect2 to="Employment.safe_loan_defaults_1" from="Finance.safe_loan_defaults"/>
 				<connect to="Employment.safe_loans_financing_innovation" from="Finance.safe_loans_affected_innovation"/>
 				<connect2 to="Employment.safe_loans_financing_innovation" from="Finance.safe_loans_affected_innovation"/>
+				<connect to="Private_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
+				<connect2 to="Private_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
 				<connect to="Employment.total_investment_1" from="Finance.total_investment"/>
 				<connect2 to="Employment.total_investment_1" from="Finance.total_investment"/>
 				<connect to="GDP.Investment_1" from="Finance.total_investment"/>
@@ -638,8 +649,8 @@
 				<connect2 to="Circular_Flow.total_defaults" from="Finance.total_risky_asset_defaults"/>
 				<connect to="Employment.total_non_exploratory_defaults" from="Finance.total_risky_asset_defaults"/>
 				<connect2 to="Employment.total_non_exploratory_defaults" from="Finance.total_risky_asset_defaults"/>
-				<connect to="Finance.All_Energy_Investments" from="energy_investments.All_Gross_Energy_Investments"/>
-				<connect2 to="Finance.All_Energy_Investments" from="energy_investments.All_Gross_Energy_Investments"/>
+				<connect to="Finance.All_Energy_Investments" from="Energy_investments.All_Gross_Energy_Investments"/>
+				<connect2 to="Finance.All_Energy_Investments" from="Energy_investments.All_Gross_Energy_Investments"/>
 				<connect to="Finance.Firms_Checking_Accounts" from="Circular_Flow.Firms_Checking_Accounts"/>
 				<connect2 to="Finance.Firms_Checking_Accounts" from="Circular_Flow.Firms_Checking_Accounts"/>
 				<connect to="Finance.Firms_Innovation_Orientation_2" from="Innovation.Firms_Innovation_Orientation"/>
@@ -660,6 +671,10 @@
 				<connect2 to="Finance.initial_government_debt" from="Government.initial_government_debt"/>
 				<connect to="Finance.initial_nominal_GDP_growth_rate" from="GDP.initial_nominal_GDP_growth_rate"/>
 				<connect2 to="Finance.initial_nominal_GDP_growth_rate" from="GDP.initial_nominal_GDP_growth_rate"/>
+				<connect to="Finance.Insurance_Deposits" from="Private_Insurance.Insurance_Deposits"/>
+				<connect2 to="Finance.Insurance_Deposits" from="Private_Insurance.Insurance_Deposits"/>
+				<connect to="Finance.insurance_payouts" from="Private_Insurance.insurance_payouts"/>
+				<connect2 to="Finance.insurance_payouts" from="Private_Insurance.insurance_payouts"/>
 				<connect to="Finance.Nominal_GDP" from="GDP.Nominal_GDP"/>
 				<connect2 to="Finance.Nominal_GDP" from="GDP.Nominal_GDP"/>
 				<connect to="Finance.nominal_GDP_growth_rate" from="GDP.nominal_GDP_growth_rate"/>
@@ -682,8 +697,8 @@
 				<connect2 to='Finance."Real_GDP_in_2021c$_1"' from='GDP."Real_GDP_in_2021c$"'/>
 				<connect to="Finance.safe_interest" from="Government.safe_interest"/>
 				<connect2 to="Finance.safe_interest" from="Government.safe_interest"/>
-				<connect to="Finance.stranded_capital" from="fossil_energy.stranded_capital"/>
-				<connect2 to="Finance.stranded_capital" from="fossil_energy.stranded_capital"/>
+				<connect to="Finance.stranded_capital" from="Fossil_energy.stranded_capital"/>
+				<connect2 to="Finance.stranded_capital" from="Fossil_energy.stranded_capital"/>
 				<connect to="Finance.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect2 to="Finance.Surface_Temperature_Anomaly" from="Energy_Balance_Model.Surface_Temperature_Anomaly"/>
 				<connect to="Finance.switch_economy_damage" from="Climate.switch_finance_damage"/>
@@ -838,8 +853,8 @@
 				<connect2 to="Inflation.crop_production" from="Crop.crop_production"/>
 				<connect to="Inflation.Cropland" from="Crop.Cropland"/>
 				<connect2 to="Inflation.Cropland" from="Crop.Cropland"/>
-				<connect to="Inflation.demand_for_energy" from="energy_demand.demand_for_energy"/>
-				<connect2 to="Inflation.demand_for_energy" from="energy_demand.demand_for_energy"/>
+				<connect to="Inflation.demand_for_energy" from="Energy_demand.demand_for_energy"/>
+				<connect2 to="Inflation.demand_for_energy" from="Energy_demand.demand_for_energy"/>
 				<connect to="Inflation.Employed" from="Employment.Employed"/>
 				<connect2 to="Inflation.Employed" from="Employment.Employed"/>
 				<connect to="Inflation.fertilizer_used_per_unit_of_crop_production" from="Crop.fertilizer_used_per_unit_of_crop_production"/>
@@ -866,8 +881,8 @@
 				<connect2 to="Inflation.realised_productivity" from="Employment.realised_productivity"/>
 				<connect to="Inflation.rent" from="Circular_Flow.rent"/>
 				<connect2 to="Inflation.rent" from="Circular_Flow.rent"/>
-				<connect to="Inflation.Total_Energy_Output" from="energy_supply.Total_Energy_Output"/>
-				<connect2 to="Inflation.Total_Energy_Output" from="energy_supply.Total_Energy_Output"/>
+				<connect to="Inflation.Total_Energy_Output" from="Energy_supply.Total_Energy_Output"/>
+				<connect2 to="Inflation.Total_Energy_Output" from="Energy_supply.Total_Energy_Output"/>
 				<connect to="Inflation.total_public_tax_income_1" from="Government.total_public_tax_income"/>
 				<connect2 to="Inflation.total_public_tax_income_1" from="Government.total_public_tax_income"/>
 				<connect to="Inflation.wages_1" from="Circular_Flow.wages"/>
@@ -883,7 +898,7 @@
 			<isee:placeholder name="Economy 2 Outputs">
 				<eqn>GDP.Nominal_GDP[1] + GDP.&quot;Real_GDP_in_2021c$&quot;[1] + Circular_Flow.private_consumption[1] + Government.government_consumption[1] + Finance.total_investment[1] + Employment.annual_aggregate_wages[1] + Circular_Flow.Labour_share_of_GDP[1] + Employment.Employed[1] + Employment.Unemployed[1] + Employment.unemployment_rate[1] + Government.debt_to_GDP_ratio[1] + GDP.nominal_gdp_growth_rate_deviation_from_average_in_calibration_period_summed[1] + GDP.real_gdp_growth_rate_deviation_from_average_in_calibration_period_summed[1] + Inflation.gdp_difference[1] + Circular_Flow.bottom_40_share_of_real_income[1]</eqn>
 			</isee:placeholder>
-			<module name="Sea level rise Impacts\nand Adaptation" isee:label="" url="/Users/bschoenberg/code/WorldTrans/clones/me/WorldTransFRIDA/FRIDA_Modules/Sea level rise Impacts and Adaptation.itmx">
+			<module name="Sea level rise Impacts\nand Adaptation" isee:label="" url="/Users/bschoenberg/code/WorldTrans/Frida/FRIDA_Modules/Sea level rise Impacts and Adaptation.itmx">
 				<format scale_by="auto"/>
 				<connect to="Sea_level_rise_Impacts_and_Adaptation.No_SLR_adaptation_strategy" from="Government_Regulations.No_SLR_adaptation_strategy"/>
 				<connect2 to="Sea_level_rise_Impacts_and_Adaptation.No_SLR_adaptation_strategy" from="Government_Regulations.No_SLR_adaptation_strategy"/>
@@ -962,6 +977,23 @@
 				<connect to="Sea_level_rise_costs_and_impacts.switch_sea_level_rise_relocation_damage" from="Climate.switch_sea_level_rise_relocation_cost_damage"/>
 				<connect2 to="Sea_level_rise_costs_and_impacts.switch_sea_level_rise_relocation_damage" from="Climate.switch_sea_level_rise_relocation_cost_damage"/>
 			</module>
+			<module name="Private\nInsurance" isee:label="">
+				<format scale_by="auto"/>
+				<connect to="Finance.Insurance_Deposits" from="Private_Insurance.Insurance_Deposits"/>
+				<connect2 to="Finance.Insurance_Deposits" from="Private_Insurance.Insurance_Deposits"/>
+				<connect to="Finance.insurance_payouts" from="Private_Insurance.insurance_payouts"/>
+				<connect2 to="Finance.insurance_payouts" from="Private_Insurance.insurance_payouts"/>
+				<connect to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
+				<connect2 to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
+				<connect to="Private_Insurance.insurance_policy_start_year" from="Government_Regulations.private_insurance_policy_start_year"/>
+				<connect2 to="Private_Insurance.insurance_policy_start_year" from="Government_Regulations.private_insurance_policy_start_year"/>
+				<connect to="Private_Insurance.insurance_policy_start_year_1" from="Government_Regulations.private_insurance_policy_start_year"/>
+				<connect2 to="Private_Insurance.insurance_policy_start_year_1" from="Government_Regulations.private_insurance_policy_start_year"/>
+				<connect to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
+				<connect2 to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
+				<connect to="Private_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
+				<connect2 to="Private_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
+			</module>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -1011,7 +1043,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="141" isee:scroll_y="109" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1145,12 +1177,12 @@
 					<from>Employment</from>
 					<to>Inflation</to>
 				</connector>
-				<module x="285.833" y="124.723" name="Innovation"/>
-				<connector uid="31" isee:thickness="2" angle="249.867" isee:autocreated="true">
+				<module x="326.419" y="134.645" name="Innovation"/>
+				<connector uid="31" isee:thickness="2" angle="237.708" isee:autocreated="true">
 					<from>Innovation</from>
 					<to>Finance</to>
 				</connector>
-				<connector uid="32" isee:thickness="2" angle="99.5727" isee:autocreated="true">
+				<connector uid="32" isee:thickness="2" angle="94.4515" isee:autocreated="true">
 					<from>Circular_Flow</from>
 					<to>Innovation</to>
 				</connector>
@@ -1223,6 +1255,19 @@
 				<connector uid="57" isee:thickness="2" angle="156.969" isee:autocreated="true">
 					<from>Employment</from>
 					<to>Finance</to>
+				</connector>
+				<module x="159.055" y="179.723" name="Private\nInsurance"/>
+				<connector uid="59" isee:thickness="2" angle="156.501" isee:autocreated="true">
+					<from>Finance</from>
+					<to>Private_Insurance</to>
+				</connector>
+				<connector uid="60" isee:thickness="2" angle="336.501" isee:autocreated="true">
+					<from>Private_Insurance</from>
+					<to>Finance</to>
+				</connector>
+				<connector uid="61" isee:thickness="2" angle="134.324" isee:autocreated="true">
+					<from>Circular_Flow</from>
+					<to>Private_Insurance</to>
 				</connector>
 			</view>
 		</views>
@@ -1506,7 +1551,7 @@ SMTH1((net_worker_income*desired_savings_as_multiple_of_wages), time_to_consider
 				<range min="20000" max="30000"/>
 				<units>b$</units>
 			</aux>
-			<flow name="government spending" access="output" isee:autocreated="true">
+			<flow name="government spending">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -1779,7 +1824,7 @@ net_worker_income*fraction_of_income_to_consumption-annual_worker_savings_to_rea
 				<eqn>0.13</eqn>
 				<units>1/year</units>
 			</stock>
-			<aux name="firms cash net flow" access="output" isee:autocreated="true">
+			<aux name="firms cash net flow">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -2144,7 +2189,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<eqn>100</eqn>
 				<units>%</units>
 			</aux>
-			<aux name="average private debt interest" access="input">
+			<aux name="average private debt interest" access="output" throughput="true" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -2426,7 +2471,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -2449,7 +2494,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="2166.67" isee:scroll_y="1095" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="409" isee:scroll_y="863" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2636,13 +2681,13 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<aux x="740.917" y="1418.83" name="initial owner savings"/>
 				<aux label_side="right" x="1336.17" y="1339.87" name="initial firms\nchecking accounts"/>
 				<aux x="1787.88" y="1451.39" name="initial worker savings"/>
-				<flow label_side="left" label_angle="135" x="1238.5" y="1124.52" name="government spending">
+				<flow label_side="left" label_angle="135" x="1238.5" y="1124.51" name="government spending">
 					<pts>
 						<pt x="1238.5" y="1006.5"/>
 						<pt x="1238.5" y="1242.53"/>
 					</pts>
 				</flow>
-				<flow label_side="right" label_angle="45" x="1274.5" y="1124.52" name="private investment">
+				<flow label_side="right" label_angle="45" x="1274.5" y="1124.51" name="private investment">
 					<pts>
 						<pt x="1274.5" y="1006.5"/>
 						<pt x="1274.5" y="1242.53"/>
@@ -2650,7 +2695,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				</flow>
 				<aux x="425.583" y="868.246" name="private consumption"/>
 				<aux label_side="top" x="1041.06" y="1100.79" name="time to pay out profits"/>
-				<connector uid="20" angle="221.282">
+				<connector uid="20" angle="221.28">
 					<from>time_to_pay_out_profits</from>
 					<to>non_bank_profits</to>
 				</connector>
@@ -2694,7 +2739,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<to>desired_worker_savings</to>
 				</connector>
 				<aux label_side="bottom" x="878.417" y="969.74" name="net owner income"/>
-				<connector uid="33" angle="112.783">
+				<connector uid="33" angle="113.558">
 					<from>non_bank_profits</from>
 					<to>gross_owner_income</to>
 				</connector>
@@ -2743,12 +2788,12 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<to>net_owner_income</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="1169.75" y="987.731" name="government\nconsumption"/>
-				<connector uid="55" angle="295.218">
+				<connector uid="55" angle="296.685">
 					<from>government_consumption</from>
 					<to>government_spending</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="left" label_angle="135" x="1157.25" y="1030.25" name="public\ninvestment 1"/>
-				<connector uid="56" angle="309.214">
+				<aux font_style="italic" font_weight="bold" label_side="left" label_angle="135" x="1159.26" y="1031.29" name="public\ninvestment 1"/>
+				<connector uid="56" angle="310.362">
 					<from>public_investment_1</from>
 					<to>government_spending</to>
 				</connector>
@@ -2759,11 +2804,11 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="left" label_angle="225" x="1183.75" y="1554.35" name="safe bank assets"/>
 				<aux font_style="italic" font_weight="bold" label_side="left" label_angle="225" x="1183.75" y="1596.58" name="risky bank assets"/>
-				<connector uid="59" angle="73.1808">
+				<connector uid="59" angle="73.181">
 					<from>safe_bank_assets</from>
 					<to>firms_paying_interest</to>
 				</connector>
-				<connector uid="60" angle="77.534">
+				<connector uid="60" angle="77.5341">
 					<from>risky_bank_assets</from>
 					<to>firms_paying_interest</to>
 				</connector>
@@ -2889,7 +2934,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<to>ratio_of_profits_to_wages</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="left" x="1183.75" y="1514.25" name="exploratory\nbank assets"/>
-				<connector uid="95" angle="65.0988">
+				<connector uid="95" angle="65.0993">
 					<from>exploratory_bank_assets</from>
 					<to>firms_paying_interest</to>
 				</connector>
@@ -3000,7 +3045,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<to>firms_taxes</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1214.75" y="870.25" name="sum of subsidies spent"/>
-				<connector uid="124" angle="274.368">
+				<connector uid="124" angle="275.336">
 					<from>sum_of_subsidies_spent</from>
 					<to>government_spending</to>
 				</connector>
@@ -5367,7 +5412,7 @@ Interface explosion stopper</doc>
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -5390,7 +5435,7 @@ Interface explosion stopper</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="6" isee:scroll_x="135" isee:scroll_y="1334.17" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="6" isee:scroll_x="183.333" isee:scroll_y="1034.17" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -7047,7 +7092,7 @@ furthermore. The structure that was previously decided on had the productivity g
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>SMTH1(total_risky_asset_defaults, reporting_delay)</eqn>
+				<eqn>SMTH1(total_risky_asset_defaults-insurance_payouts*fraction_of_insurance_payouts_not_influencing_risk_premium, reporting_delay)</eqn>
 				<isee:delay_aux/>
 				<units>b$/year</units>
 			</aux>
@@ -7242,7 +7287,7 @@ furthermore. The structure that was previously decided on had the productivity g
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>Worker_Savings_1+owner_savings_1+Firms_Checking_Accounts</eqn>
+				<eqn>Worker_Savings_1+owner_savings_1+Firms_Checking_Accounts + Insurance_Deposits</eqn>
 				<units>b$</units>
 			</aux>
 			<aux name="net bank\nassets" access="output">
@@ -7405,7 +7450,7 @@ ELSE
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
-			<aux name="normal\ninvestment">
+			<aux name="normal\ninvestment" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -8416,7 +8461,7 @@ To control extreme policy only</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>LOGISTICBOUND(-effect_of_default_rate_on_lending_standards_range/2, effect_of_default_rate_on_lending_standards_range/2, measured_default_rate_of_risky_assets/INIT(measured_default_rate_of_risky_assets), 1,  effect_of_default_rate_on_lending_standards_curvature)</eqn>
+				<eqn>LOGISTICBOUND(-effect_of_default_rate_on_lending_standards_range/2, effect_of_default_rate_on_lending_standards_range/2, measured_default_rate_of_risky_assets_for_lending_standards/INIT(measured_default_rate_of_risky_assets_for_lending_standards), 1,  effect_of_default_rate_on_lending_standards_curvature)</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="effect of default rate\non lending standards range">
@@ -8559,6 +8604,62 @@ To control extreme policy only</doc>
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
+			<stock name="Insurance Deposits" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<non_negative/>
+				<units>b$</units>
+			</stock>
+			<aux name="total climate caused\nrisky defaults" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>defaults*fraction_of_defaults_that_are_caused_by_climate</eqn>
+				<units>b$/year</units>
+			</aux>
+			<aux name="fraction of\ndefaults that are caused\nby climate">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>(climate_adjusted_failure_rate_when_default_originated-normal_failure_rate)/climate_adjusted_failure_rate_when_default_originated</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="climate adjusted failure\nrate when default originated">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>SMTH1(climate_adjusted_failure_rate, loan_maturation_time)</eqn>
+				<isee:delay_aux/>
+				<units>dmnl</units>
+			</aux>
+			<aux name="insurance payouts" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>b$/year</units>
+			</aux>
+			<aux name="perceived\ndefaults of risky assets\nfor lending standards">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>SMTH1(total_risky_asset_defaults - insurance_payouts, reporting_delay)</eqn>
+				<isee:delay_aux/>
+				<units>b$/year</units>
+			</aux>
+			<aux name="measured\ndefault rate of risky assets\nfor lending standards">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>(perceived_defaults_of_risky_assets_for_lending_standards/risky_bank_assets)</eqn>
+				<units>Per Year</units>
+			</aux>
+			<aux name="fraction of insurance payouts\nnot influencing risk premium">
+				<eqn>.5</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -8585,7 +8686,7 @@ To control extreme policy only</doc>
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -8608,7 +8709,7 @@ To control extreme policy only</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1590" isee:scroll_y="1747" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="2817" isee:scroll_y="1643" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8741,13 +8842,13 @@ To control extreme policy only</doc>
 					<from>lending_standards</from>
 					<to>effect_of_lending_standards_on_bank_investment_growth_rate</to>
 				</connector>
-				<aux label_side="left" label_angle="135" x="2123.63" y="2440.12" name="perceived\ndefaults of risky assets"/>
+				<aux label_side="left" label_angle="135" x="2047.3" y="2775.26" name="perceived\ndefaults of risky assets"/>
 				<aux label_side="left" x="2165.02" y="2552" name="reporting\ndelay"/>
-				<connector uid="16" angle="110.302">
+				<connector uid="16" angle="242.198">
 					<from>reporting_delay</from>
 					<to>perceived_defaults_of_risky_assets</to>
 				</connector>
-				<aux label_side="bottom" x="1910.1" y="2522.29" name="measured\ndefault rate of risky assets"/>
+				<aux label_side="bottom" x="1966.79" y="2918.58" name="measured\ndefault rate of risky assets"/>
 				<aux label_side="left" label_angle="135" x="1985.99" y="2005.66" name="failure rate"/>
 				<aux label_side="bottom" x="2357.17" y="2098" name="normal\nfailure rate"/>
 				<connector uid="21" angle="90">
@@ -9027,11 +9128,11 @@ To control extreme policy only</doc>
 					</pts>
 				</flow>
 				<aux label_side="top" x="2640.57" y="1789" name="time for safe loans that will fail to actually fail"/>
-				<connector uid="125" angle="35.3034">
+				<connector uid="125" angle="35.3035">
 					<from>safe_loans_for_financing_innovation</from>
 					<to>actual_safe_investment_failure</to>
 				</connector>
-				<connector uid="126" angle="227.547">
+				<connector uid="126" angle="227.549">
 					<from>time_for_safe_loans_that_will_fail_to_actually_fail</from>
 					<to>actual_safe_investment_failure</to>
 				</connector>
@@ -9228,7 +9329,7 @@ To control extreme policy only</doc>
 					</from>
 					<to>investment_to_GDP_growth_ratio</to>
 				</connector>
-				<connector uid="186" angle="234.25">
+				<connector uid="186" angle="218.689">
 					<from>perceived_defaults_of_risky_assets</from>
 					<to>measured_default_rate_of_risky_assets</to>
 				</connector>
@@ -9460,7 +9561,7 @@ To control extreme policy only</doc>
 						</plot>
 					</graph>
 				</stacked_container>
-				<connector uid="338" angle="236.192">
+				<connector uid="338" angle="233.169">
 					<from>total_risky_asset_defaults</from>
 					<to>perceived_defaults_of_risky_assets</to>
 				</connector>
@@ -9888,10 +9989,6 @@ SDG 10.5.1</text_box>
 					<to>failure_rate</to>
 				</connector>
 				<aux x="1677.29" y="2463" name="effect of risky default rate\non lending standards"/>
-				<connector uid="514" angle="192.593">
-					<from>measured_default_rate_of_risky_assets</from>
-					<to>effect_of_risky_default_rate_on_lending_standards</to>
-				</connector>
 				<aux x="1709.31" y="2385.41" name="effect of default rate\non lending standards range"/>
 				<aux x="1826.79" y="2422.12" name="effect of default rate\non lending standards curvature"/>
 				<connector uid="515" angle="247.572">
@@ -9925,7 +10022,7 @@ SDG 10.5.1</text_box>
 					<from>failure_rate_floor</from>
 					<to>failure_rate</to>
 				</connector>
-				<connector uid="535" angle="248.617">
+				<connector uid="535" angle="354.337">
 					<from>
 						<alias uid="536"/>
 					</from>
@@ -9943,15 +10040,11 @@ SDG 10.5.1</text_box>
 					<to>effect_of_risky_defaults_rate_on_risk_premium</to>
 				</connector>
 				<connector uid="545" angle="270.678">
-					<from>
-						<alias uid="546"/>
-					</from>
+					<from>measured_default_rate_of_risky_assets</from>
 					<to>reference_default_rate</to>
 				</connector>
 				<connector uid="547" angle="0">
-					<from>
-						<alias uid="546"/>
-					</from>
+					<from>measured_default_rate_of_risky_assets</from>
 					<to>effect_of_risky_defaults_rate_on_risk_premium</to>
 				</connector>
 				<connector uid="548" angle="11.0035">
@@ -10030,7 +10123,7 @@ SDG 10.5.1</text_box>
 					<from>normal_rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation</from>
 					<to>rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation</to>
 				</connector>
-				<connector uid="589" angle="275.742">
+				<connector uid="589" angle="275.744">
 					<from>rate_of_converting_safe_loans_to_safe_loans_for_financing_innovation</from>
 					<to>safe_loans_affected_innovation</to>
 				</connector>
@@ -10060,7 +10153,7 @@ SDG 10.5.1</text_box>
 						<pt x="2291" y="1993"/>
 					</pts>
 				</flow>
-				<connector uid="618" angle="340.945">
+				<connector uid="618" angle="340.942">
 					<from>safe_loan_defaults</from>
 					<to>safe_loans_affected_innovation</to>
 				</connector>
@@ -10075,6 +10168,80 @@ SDG 10.5.1</text_box>
 				<connector uid="628" angle="299.307">
 					<from>safe_loan_defaults</from>
 					<to>perceived_defaults_of_safe_assets_not_caused_by_energy_transition</to>
+				</connector>
+				<stock font_style="italic" font_weight="bold" x="3614.52" y="1794.43" name="Insurance Deposits"/>
+				<connector uid="629" angle="212.145">
+					<from>Insurance_Deposits</from>
+					<to>Bank_Liabilities</to>
+				</connector>
+				<aux x="2401.63" y="2362.55" name="total climate caused\nrisky defaults"/>
+				<aux x="2433.52" y="2244.46" name="fraction of\ndefaults that are caused\nby climate"/>
+				<connector uid="630" angle="354.248">
+					<from>defaults</from>
+					<to>total_climate_caused_risky_defaults</to>
+				</connector>
+				<connector uid="632" angle="254.886">
+					<from>fraction_of_defaults_that_are_caused_by_climate</from>
+					<to>total_climate_caused_risky_defaults</to>
+				</connector>
+				<aux x="2445.45" y="2154.07" name="climate adjusted failure\nrate when default originated"/>
+				<connector uid="633" angle="337.95">
+					<from>climate_adjusted_failure_rate</from>
+					<to>climate_adjusted_failure_rate_when_default_originated</to>
+				</connector>
+				<connector uid="634" angle="217.329">
+					<from>
+						<alias uid="635"/>
+					</from>
+					<to>climate_adjusted_failure_rate_when_default_originated</to>
+				</connector>
+				<connector uid="636" angle="294.371">
+					<from>climate_adjusted_failure_rate_when_default_originated</from>
+					<to>fraction_of_defaults_that_are_caused_by_climate</to>
+				</connector>
+				<connector uid="637" angle="180.811">
+					<from>
+						<alias uid="638"/>
+					</from>
+					<to>fraction_of_defaults_that_are_caused_by_climate</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="2209.44" y="2422.12" name="insurance payouts"/>
+				<aux x="2017.64" y="2459.16" name="perceived\ndefaults of risky assets\nfor lending standards"/>
+				<connector uid="639" angle="222.304">
+					<from>total_risky_asset_defaults</from>
+					<to>perceived_defaults_of_risky_assets_for_lending_standards</to>
+				</connector>
+				<connector uid="640" angle="172.792">
+					<from>reporting_delay</from>
+					<to>perceived_defaults_of_risky_assets_for_lending_standards</to>
+				</connector>
+				<connector uid="641" angle="190.93">
+					<from>insurance_payouts</from>
+					<to>perceived_defaults_of_risky_assets_for_lending_standards</to>
+				</connector>
+				<aux label_side="bottom" x="1865.79" y="2509.58" name="measured\ndefault rate of risky assets\nfor lending standards"/>
+				<connector uid="642" angle="222.433">
+					<from>perceived_defaults_of_risky_assets_for_lending_standards</from>
+					<to>measured_default_rate_of_risky_assets_for_lending_standards</to>
+				</connector>
+				<connector uid="643" angle="189.791">
+					<from>measured_default_rate_of_risky_assets_for_lending_standards</from>
+					<to>effect_of_risky_default_rate_on_lending_standards</to>
+				</connector>
+				<connector uid="644" angle="245.417">
+					<from>
+						<alias uid="645"/>
+					</from>
+					<to>measured_default_rate_of_risky_assets_for_lending_standards</to>
+				</connector>
+				<connector uid="646" angle="238.72">
+					<from>insurance_payouts</from>
+					<to>perceived_defaults_of_risky_assets</to>
+				</connector>
+				<aux x="2156" y="2689.3" name="fraction of insurance payouts\nnot influencing risk premium"/>
+				<connector uid="647" angle="218.337">
+					<from>fraction_of_insurance_payouts_not_influencing_risk_premium</from>
+					<to>perceived_defaults_of_risky_assets</to>
 				</connector>
 				<alias label_side="right" uid="27" x="2212.67" y="2150.55" width="18" height="18">
 					<of>loan_maturation_time</of>
@@ -10170,14 +10337,11 @@ SDG 10.5.1</text_box>
 				<alias font_style="italic" uid="523" x="658.5" y="1796" width="18" height="18">
 					<of>required_government_solvency_support_lending</of>
 				</alias>
-				<alias font_style="italic" uid="536" x="1931.36" y="2436" width="18" height="18">
+				<alias font_style="italic" uid="536" x="1888.36" y="2902.7" width="18" height="18">
 					<of>risky_bank_assets</of>
 				</alias>
 				<alias font_style="italic" uid="543" x="1919.93" y="3050.29" width="18" height="18">
 					<of>bank_reference_formation_time</of>
-				</alias>
-				<alias font_style="italic" uid="546" x="1957.79" y="2909.58" width="18" height="18">
-					<of>measured_default_rate_of_risky_assets</of>
 				</alias>
 				<alias font_style="italic" uid="549" x="1300.5" y="1949" width="18" height="18">
 					<of>initial_bank_investment_growth_rate</of>
@@ -10187,6 +10351,15 @@ SDG 10.5.1</text_box>
 				</alias>
 				<alias font_style="italic" uid="258" x="570.389" y="1149.25" width="18" height="18">
 					<of>Investment_growth_rate</of>
+				</alias>
+				<alias font_style="italic" uid="635" x="2488.95" y="2105.03" width="18" height="18">
+					<of>loan_maturation_time</of>
+				</alias>
+				<alias font_style="italic" uid="638" x="2551.12" y="2203.55" width="18" height="18">
+					<of>normal_failure_rate</of>
+				</alias>
+				<alias font_style="italic" uid="645" x="1918.73" y="2403.39" width="18" height="18">
+					<of>risky_bank_assets</of>
 				</alias>
 			</view>
 		</views>
@@ -10546,7 +10719,7 @@ ELSE
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -10569,7 +10742,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="210.833" isee:scroll_y="165.833" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="15" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12330,7 +12503,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -12353,7 +12526,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="715.833" isee:scroll_y="667.5" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1131.67" isee:scroll_y="525" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14306,7 +14479,7 @@ ELSE
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -14329,7 +14502,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="437.5" isee:scroll_y="225" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="198.333" isee:scroll_y="575" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14976,7 +15149,7 @@ ELSE
 				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
 				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
 				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
 				<isee:sim_speed_slider color="black" background="white"/>
@@ -15103,6 +15276,307 @@ ELSE
 					<from>reference_firms_innovation_orientation</from>
 					<to>indicated_firms_innovation_orientation</to>
 				</connector>
+			</view>
+		</views>
+	</model>
+	<model name="Private_Insurance">
+		<variables>
+			<stock name="Insurance Deposits" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>0</eqn>
+				<inflow>insurance_premiums</inflow>
+				<inflow>insurance_earnings</inflow>
+				<outflow>insurance_payouts</outflow>
+				<units>b$</units>
+			</stock>
+			<flow name="insurance premiums">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>IF TIME &gt;= insurance_policy_start_year THEN
+normal_investment*insurance_premium_rate
+ELSE 0</eqn>
+				<non_negative/>
+				<units>b$/year</units>
+			</flow>
+			<aux name="normal\ninvestment" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>b$/year</units>
+			</aux>
+			<aux name="insurance policy start year" access="input">
+				<eqn>2030</eqn>
+				<units>year</units>
+			</aux>
+			<aux name="average private debt interest" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>1/year</units>
+			</aux>
+			<flow name="insurance earnings">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>Insurance_Deposits*average_private_debt_interest</eqn>
+				<non_negative/>
+				<units>b$/year</units>
+			</flow>
+			<flow name="insurance payouts" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>IF TIME &gt;= insurance_policy_start_year 
+THEN
+total_climate_caused_risky_defaults
+ELSE
+0</eqn>
+				<non_negative/>
+				<units>b$/year</units>
+			</flow>
+			<aux name="total climate caused\nrisky defaults" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>b$/year</units>
+			</aux>
+			<aux name="desired years of coverage">
+				<eqn>4</eqn>
+				<units>years</units>
+			</aux>
+			<aux name="insurance premium rate">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>MIN(MAX(minimum_insurance_premium, normal_insurance_premium*effect_of_years_of_coverage_on_premiums), 1)</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="normal insurance premium">
+				<eqn>.005</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="actual years of coverage">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>Insurance_Deposits//insurance_payouts</eqn>
+				<units>year</units>
+			</aux>
+			<aux name="effect of years of coverage\non premiums">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>MAX(1e-6, relative_years_of_coverage)^sensitivity_of_premiums_to_years_of_coverage</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="sensitivity of premiums\nto years of coverage">
+				<eqn>-1</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="relative years\nof coverage">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>actual_years_of_coverage/desired_years_of_coverage</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="minimum insurance premium">
+				<eqn>0.001</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="insurance policy start year 1" access="input">
+				<eqn>2175</eqn>
+				<units>year</units>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#0075FF" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<isee:dropdown_input color="black" background="white" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="11pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="11pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
+						<shape type="rectangle" width="67" height="55"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="11pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="11pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1"/>
+							<isee:series_style color="#008F44" thickness="1"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1"/>
+							<isee:series_style color="#0CA0FF" thickness="1"/>
+							<isee:series_style color="lime" thickness="1"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1"/>
+							<isee:series_style color="#F586FF" thickness="1"/>
+							<isee:series_style color="black" thickness="1"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stock x="415.543" y="336.555" name="Insurance Deposits"/>
+				<flow x="334.746" y="332.766" name="insurance premiums">
+					<pts>
+						<pt x="276.449" y="332.766"/>
+						<pt x="393.043" y="332.766"/>
+					</pts>
+				</flow>
+				<aux font_style="italic" font_weight="bold" x="216.483" y="215.559" name="normal\ninvestment"/>
+				<aux font_style="italic" font_weight="bold" x="395.809" y="425.77" name="insurance policy start year"/>
+				<connector uid="4" angle="123.287">
+					<from>insurance_policy_start_year</from>
+					<to>insurance_premiums</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="322.043" y="136.348" name="average private debt interest"/>
+				<flow x="415.543" y="244.491" name="insurance earnings">
+					<pts>
+						<pt x="415.543" y="169.926"/>
+						<pt x="415.543" y="319.055"/>
+					</pts>
+				</flow>
+				<connector uid="5" angle="53.2641">
+					<from>Insurance_Deposits</from>
+					<to>insurance_earnings</to>
+				</connector>
+				<connector uid="6" angle="310.847">
+					<from>average_private_debt_interest</from>
+					<to>insurance_earnings</to>
+				</connector>
+				<flow x="496.393" y="336.555" name="insurance payouts">
+					<pts>
+						<pt x="438.043" y="336.555"/>
+						<pt x="578.742" y="336.555"/>
+					</pts>
+				</flow>
+				<aux font_style="italic" font_weight="bold" x="550.801" y="215.559" name="total climate caused\nrisky defaults"/>
+				<connector uid="7" angle="245.788">
+					<from>total_climate_caused_risky_defaults</from>
+					<to>insurance_payouts</to>
+				</connector>
+				<connector uid="8" angle="41.5722">
+					<from>insurance_policy_start_year</from>
+					<to>insurance_payouts</to>
+				</connector>
+				<aux x="458.961" y="721.864" name="desired years of coverage"/>
+				<aux x="211" y="425.77" name="insurance premium rate"/>
+				<aux x="89.0234" y="479.422" name="normal insurance premium"/>
+				<connector uid="28" angle="23.7425">
+					<from>normal_insurance_premium</from>
+					<to>insurance_premium_rate</to>
+				</connector>
+				<aux x="522.863" y="461.77" name="actual years of coverage"/>
+				<connector uid="29" angle="323.602">
+					<from>Insurance_Deposits</from>
+					<to>actual_years_of_coverage</to>
+				</connector>
+				<connector uid="30" angle="324.671">
+					<from>insurance_payouts</from>
+					<to>actual_years_of_coverage</to>
+				</connector>
+				<aux x="243.223" y="540.558" name="effect of years of coverage\non premiums"/>
+				<connector uid="31" angle="109.338">
+					<from>desired_years_of_coverage</from>
+					<to>relative_years_of_coverage</to>
+				</connector>
+				<connector uid="32" angle="254.59">
+					<from>actual_years_of_coverage</from>
+					<to>relative_years_of_coverage</to>
+				</connector>
+				<connector uid="33" angle="129.118">
+					<from>effect_of_years_of_coverage_on_premiums</from>
+					<to>insurance_premium_rate</to>
+				</connector>
+				<connector uid="34" angle="73.5955">
+					<from>insurance_premium_rate</from>
+					<to>insurance_premiums</to>
+				</connector>
+				<connector uid="35" angle="315.257">
+					<from>normal_investment</from>
+					<to>insurance_premiums</to>
+				</connector>
+				<aux label_side="bottom" x="177.477" y="640.133" name="sensitivity of premiums\nto years of coverage"/>
+				<connector uid="36" angle="56.5644">
+					<from>sensitivity_of_premiums_to_years_of_coverage</from>
+					<to>effect_of_years_of_coverage_on_premiums</to>
+				</connector>
+				<aux label_side="bottom" x="413.809" y="593.2" name="relative years\nof coverage"/>
+				<connector uid="37" angle="187.744">
+					<from>relative_years_of_coverage</from>
+					<to>effect_of_years_of_coverage_on_premiums</to>
+				</connector>
+				<aux x="132.246" y="354.555" name="minimum insurance premium"/>
+				<connector uid="38" angle="317.878">
+					<from>minimum_insurance_premium</from>
+					<to>insurance_premium_rate</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="514.398" y="70.5742" name="insurance policy start year 1"/>
 			</view>
 		</views>
 	</model>
