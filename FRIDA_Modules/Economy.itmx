@@ -7391,7 +7391,7 @@ furthermore. The structure that was previously decided on had the productivity g
 				<eqn>indicated_bank_investment_growth_rate*effect_of_lending_standards_on_bank_investment_growth_rate</eqn>
 				<units>dmnl/year</units>
 			</aux>
-			<aux name="perceived\ndefaults of risky assets">
+			<aux name="perceived\ndefaults of risky assets for interest rate">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -7413,11 +7413,11 @@ furthermore. The structure that was previously decided on had the productivity g
 				<range min="0.125" max="1.5"/>
 				<units>year</units>
 			</aux>
-			<aux name="measured\ndefault rate of risky assets">
+			<aux name="measured\ndefault rate of risky assets for interest rate">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>(perceived_defaults_of_risky_assets/risky_bank_assets)</eqn>
+				<eqn>(perceived_defaults_of_risky_assets_for_interest_rate/risky_bank_assets)</eqn>
 				<units>Per Year</units>
 			</aux>
 			<aux name="failure rate">
@@ -7488,7 +7488,7 @@ furthermore. The structure that was previously decided on had the productivity g
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>(measured_default_rate_of_risky_assets/reference_default_rate)^elasticity_of_bankruptcy_rate_on_risk_premium</eqn>
+				<eqn>(measured_default_rate_of_risky_assets_for_interest_rate/reference_default_rate)^elasticity_of_bankruptcy_rate_on_risk_premium</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="elasticity of bankruptcy\nrate on risk premium">
@@ -8818,7 +8818,7 @@ To control extreme policy only</doc>
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>SMTH1(measured_default_rate_of_risky_assets, bank_reference_formation_time)</eqn>
+				<eqn>SMTH1(measured_default_rate_of_risky_assets_for_interest_rate, bank_reference_formation_time)</eqn>
 				<isee:delay_aux/>
 				<units>dmnl/year</units>
 			</aux>
@@ -9038,7 +9038,7 @@ To control extreme policy only</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="871" isee:scroll_y="2753" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1644" isee:scroll_y="2102" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -9171,13 +9171,13 @@ To control extreme policy only</doc>
 					<from>lending_standards</from>
 					<to>effect_of_lending_standards_on_bank_investment_growth_rate</to>
 				</connector>
-				<aux label_side="left" label_angle="135" x="2047.3" y="2775.26" name="perceived\ndefaults of risky assets"/>
+				<aux label_side="left" label_angle="135" x="2039.01" y="2802.68" name="perceived\ndefaults of risky assets for interest rate"/>
 				<aux label_side="left" x="2165.02" y="2552" name="reporting\ndelay"/>
-				<connector uid="16" angle="242.198">
+				<connector uid="16" angle="243.313">
 					<from>reporting_delay</from>
-					<to>perceived_defaults_of_risky_assets</to>
+					<to>perceived_defaults_of_risky_assets_for_interest_rate</to>
 				</connector>
-				<aux label_side="bottom" x="1966.79" y="2918.58" name="measured\ndefault rate of risky assets"/>
+				<aux label_side="bottom" x="1966.79" y="2918.58" name="measured\ndefault rate of risky assets for interest rate"/>
 				<aux label_side="left" label_angle="135" x="1985.99" y="2005.66" name="failure rate"/>
 				<aux label_side="bottom" x="2357.17" y="2098" name="normal\nfailure rate"/>
 				<connector uid="21" angle="90">
@@ -9658,9 +9658,9 @@ To control extreme policy only</doc>
 					</from>
 					<to>investment_to_GDP_growth_ratio</to>
 				</connector>
-				<connector uid="186" angle="218.689">
-					<from>perceived_defaults_of_risky_assets</from>
-					<to>measured_default_rate_of_risky_assets</to>
+				<connector uid="186" angle="216.085">
+					<from>perceived_defaults_of_risky_assets_for_interest_rate</from>
+					<to>measured_default_rate_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<aux x="1158.5" y="2526" name="initial bank investment growth rate"/>
 				<aux x="1047.38" y="2343.13" name="reference bank investment\ngrowth rate"/>
@@ -9890,9 +9890,9 @@ To control extreme policy only</doc>
 						</plot>
 					</graph>
 				</stacked_container>
-				<connector uid="338" angle="233.169">
+				<connector uid="338" angle="233.253">
 					<from>total_risky_asset_defaults</from>
-					<to>perceived_defaults_of_risky_assets</to>
+					<to>perceived_defaults_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="2491.63" y="3566.67" name="nominal GDP\ngrowth rate 1"/>
 				<stacked_container uid="362" x="2599.38" y="3710.63" width="460.625" height="358.75">
@@ -10355,7 +10355,7 @@ SDG 10.5.1</text_box>
 					<from>
 						<alias uid="536"/>
 					</from>
-					<to>measured_default_rate_of_risky_assets</to>
+					<to>measured_default_rate_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<aux x="1999.64" y="3011.13" name="reference default rate"/>
 				<connector uid="542" angle="30.2564">
@@ -10369,11 +10369,11 @@ SDG 10.5.1</text_box>
 					<to>effect_of_risky_defaults_rate_on_risk_premium</to>
 				</connector>
 				<connector uid="545" angle="270.678">
-					<from>measured_default_rate_of_risky_assets</from>
+					<from>measured_default_rate_of_risky_assets_for_interest_rate</from>
 					<to>reference_default_rate</to>
 				</connector>
 				<connector uid="547" angle="0">
-					<from>measured_default_rate_of_risky_assets</from>
+					<from>measured_default_rate_of_risky_assets_for_interest_rate</from>
 					<to>effect_of_risky_defaults_rate_on_risk_premium</to>
 				</connector>
 				<connector uid="548" angle="11.0035">
@@ -10563,23 +10563,23 @@ SDG 10.5.1</text_box>
 					</from>
 					<to>measured_default_rate_of_risky_assets_for_lending_standards</to>
 				</connector>
-				<connector uid="646" angle="238.72">
+				<connector uid="646" angle="245.876">
 					<from>insurance_payouts</from>
-					<to>perceived_defaults_of_risky_assets</to>
+					<to>perceived_defaults_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<aux x="2156" y="2689.3" name="fraction of insurance payouts\nnot influencing risk premium"/>
-				<connector uid="647" angle="218.337">
+				<connector uid="647" angle="224.103">
 					<from>fraction_of_insurance_payouts_not_influencing_risk_premium</from>
-					<to>perceived_defaults_of_risky_assets</to>
+					<to>perceived_defaults_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1992.89" y="2573.39" name="climate induced\nbankruptcies"/>
 				<connector uid="648" angle="81.8699">
 					<from>climate_induced_bankruptcies</from>
 					<to>perceived_defaults_of_risky_assets_for_lending_standards</to>
 				</connector>
-				<connector uid="649" angle="278.757">
+				<connector uid="649" angle="281.374">
 					<from>climate_induced_bankruptcies</from>
-					<to>perceived_defaults_of_risky_assets</to>
+					<to>perceived_defaults_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<stock font_style="italic" font_weight="bold" x="3127.89" y="2124.36" name="Central Bank Deposits"/>
 				<connector uid="650" angle="25.1051">
@@ -10591,9 +10591,9 @@ SDG 10.5.1</text_box>
 					<from>government_insurance_payout</from>
 					<to>perceived_defaults_of_risky_assets_for_lending_standards</to>
 				</connector>
-				<connector uid="652" angle="333.732">
+				<connector uid="652" angle="328.815">
 					<from>government_insurance_payout</from>
-					<to>perceived_defaults_of_risky_assets</to>
+					<to>perceived_defaults_of_risky_assets_for_interest_rate</to>
 				</connector>
 				<alias label_side="right" uid="27" x="2212.67" y="2150.55" width="18" height="18">
 					<of>loan_maturation_time</of>
