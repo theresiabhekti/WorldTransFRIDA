@@ -335,6 +335,8 @@
 				<connect2 to="Circular_Flow.government_transfers_1" from="Government.government_transfers"/>
 				<connect to="GDP.government_transfers_1" from="Government.government_transfers"/>
 				<connect2 to="GDP.government_transfers_1" from="Government.government_transfers"/>
+				<connect to="Finance.government_insurance_payout" from="Government.government_insurance_payout"/>
+				<connect2 to="Finance.government_insurance_payout" from="Government.government_insurance_payout"/>
 				<connect to="Finance.initial_government_debt" from="Government.initial_government_debt"/>
 				<connect2 to="Finance.initial_government_debt" from="Government.initial_government_debt"/>
 				<connect to="Inflation.public_expenditure" from="Government.public_expenditure"/>
@@ -405,6 +407,8 @@
 				<connect2 to="Government.Gas_Investments_in_Fossil_Fuel_Extraction_Capital" from="Energy_investments.Gas_Gross_Investments_in_Fossil_Fuel_Extraction_Capital"/>
 				<connect to="Government.GDP" from="GDP.Nominal_GDP"/>
 				<connect2 to="Government.GDP" from="GDP.Nominal_GDP"/>
+				<connect to="Government.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
+				<connect2 to="Government.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
 				<connect to="Government.inflation" from="Inflation.Inflation_Rate"/>
 				<connect2 to="Government.inflation" from="Inflation.Inflation_Rate"/>
 				<connect to='Government."inflation_adjustment_b$_per_bc$"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
@@ -415,6 +419,8 @@
 				<connect2 to='Government."inflation_adjustment_b$_per_bc$_2"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
 				<connect to="Government.inflation_goal_policy" from="Government_Regulations.actual_inflation_goal"/>
 				<connect2 to="Government.inflation_goal_policy" from="Government_Regulations.actual_inflation_goal"/>
+				<connect to="Government.insurance_taxation" from="Circular_Flow.insurance_taxation"/>
+				<connect2 to="Government.insurance_taxation" from="Circular_Flow.insurance_taxation"/>
 				<connect to="Government.Investments_in_Biofuel_Capacity" from="Energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
 				<connect2 to="Government.Investments_in_Biofuel_Capacity" from="Energy_investments.Gross_Investments_in_Biofuel_Capacity"/>
 				<connect to="Government.Investments_in_Hydropower_Energy_capacity" from="Energy_investments.Gross_Investments_in_Hydropower_Energy_capacity"/>
@@ -463,6 +469,8 @@
 				<connect2 to="Government.today" from="Climate.climate_impact_stoptime"/>
 				<connect to="Government.today_1" from="Climate.climate_impact_stoptime"/>
 				<connect2 to="Government.today_1" from="Climate.climate_impact_stoptime"/>
+				<connect to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
+				<connect2 to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
 				<connect to="Government.Total_nominal_SLR_protection_cost" from="Sea_level_rise_costs_and_impacts.Total_nominal_SLR_protection_cost"/>
 				<connect2 to="Government.Total_nominal_SLR_protection_cost" from="Sea_level_rise_costs_and_impacts.Total_nominal_SLR_protection_cost"/>
 				<connect to="Government.Unemployed" from="Employment.Unemployed"/>
@@ -492,6 +500,8 @@
 				<connect2 to="Innovation.Firms_Checking_Accounts_1" from="Circular_Flow.Firms_Checking_Accounts"/>
 				<connect to="Finance.firms_paying_interest" from="Circular_Flow.firms_paying_interest"/>
 				<connect2 to="Finance.firms_paying_interest" from="Circular_Flow.firms_paying_interest"/>
+				<connect to="Government.insurance_taxation" from="Circular_Flow.insurance_taxation"/>
+				<connect2 to="Government.insurance_taxation" from="Circular_Flow.insurance_taxation"/>
 				<connect to="Employment.non_bank_profits_1" from="Circular_Flow.non_bank_profits"/>
 				<connect2 to="Employment.non_bank_profits_1" from="Circular_Flow.non_bank_profits"/>
 				<connect to="Inflation.non_bank_profits" from="Circular_Flow.non_bank_profits"/>
@@ -540,6 +550,8 @@
 				<connect2 to="Circular_Flow.government_consumption" from="Government.government_consumption"/>
 				<connect to="Circular_Flow.government_transfers_1" from="Government.government_transfers"/>
 				<connect2 to="Circular_Flow.government_transfers_1" from="Government.government_transfers"/>
+				<connect to="Circular_Flow.government_insurance_taxation_rate" from="Government_Regulations.government_insurance_taxation_rate"/>
+				<connect2 to="Circular_Flow.government_insurance_taxation_rate" from="Government_Regulations.government_insurance_taxation_rate"/>
 				<connect to='Circular_Flow."inflation_adjustment_b$_per_bc$"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
 				<connect2 to='Circular_Flow."inflation_adjustment_b$_per_bc$"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
 				<connect to='Circular_Flow."inflation_adjustment_b$_per_bc$_1"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
@@ -671,6 +683,8 @@
 				<connect2 to="Finance.Government_Debt_1" from="Government.Government_Debt"/>
 				<connect to="Finance.government_interest_payments" from="Government.government_interest_payments"/>
 				<connect2 to="Finance.government_interest_payments" from="Government.government_interest_payments"/>
+				<connect to="Finance.government_insurance_payout" from="Government.government_insurance_payout"/>
+				<connect2 to="Finance.government_insurance_payout" from="Government.government_insurance_payout"/>
 				<connect to='Finance."inflation_adjustment_b$_per_bc$_2"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
 				<connect2 to='Finance."inflation_adjustment_b$_per_bc$_2"' from='Inflation."inflation_adjustment_b$_per_bc$"'/>
 				<connect to="Finance.Inflation_Rate_1" from="Inflation.Inflation_Rate"/>
@@ -1008,6 +1022,8 @@
 				<connect2 to="Finance.Central_Bank_Deposits" from="Central_Bank_Insurance.Central_Bank_Deposits"/>
 				<connect to="Finance.climate_induced_bankruptcies" from="Central_Bank_Insurance.climate_induced_bankruptcies"/>
 				<connect2 to="Finance.climate_induced_bankruptcies" from="Central_Bank_Insurance.climate_induced_bankruptcies"/>
+				<connect to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
+				<connect2 to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
 				<connect to="Central_Bank_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect2 to="Central_Bank_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect to="Central_Bank_Insurance.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
@@ -1111,7 +1127,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="7" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="48" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1350,6 +1366,10 @@
 					<from>Central_Bank_Insurance</from>
 					<to>Finance</to>
 				</connector>
+				<connector uid="65" isee:thickness="2" angle="28.645" isee:autocreated="true">
+					<from>Central_Bank_Insurance</from>
+					<to>Government</to>
+				</connector>
 			</view>
 		</views>
 	</model>
@@ -1389,7 +1409,7 @@ ELSE 0</eqn>
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
-			<aux name="total climate caused\nrisky defaults" access="input">
+			<aux name="total climate caused\nrisky defaults" access="output" throughput="true" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
@@ -1581,6 +1601,7 @@ ELSE 0</eqn>
 				<outflow>profit_tax</outflow>
 				<outflow>rent_tax</outflow>
 				<outflow>wealth_tax</outflow>
+				<outflow>insurance_taxation</outflow>
 				<units>b$</units>
 			</stock>
 			<aux name="desired savings\nas multiple of\nprofits">
@@ -2700,6 +2721,18 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<eqn>2025</eqn>
 				<units>Year</units>
 			</aux>
+			<flow name="insurance taxation" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>government_insurance_taxation_rate*owner_savings</eqn>
+				<non_negative/>
+				<units>b$/year</units>
+			</flow>
+			<aux name="government insurance taxation rate" access="input">
+				<eqn>0</eqn>
+				<units>1/year</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -2749,7 +2782,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="409" isee:scroll_y="863" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="4" isee:page_rows="4" isee:scroll_x="695" isee:scroll_y="986" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -2791,7 +2824,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<stock label_side="right" x="1197.67" y="1242.53" width="115" height="77.5" name="Firms\nChecking\nAccounts"/>
 				<flow label_side="right" label_angle="45" x="1003.18" y="1456.5" name="owner consumption">
 					<pts>
-						<pt x="802.416" y="1374.92"/>
+						<pt x="802.416" y="1404.48"/>
 						<pt x="802.416" y="1456.5"/>
 						<pt x="1203.95" y="1456.5"/>
 						<pt x="1203.95" y="1320.03"/>
@@ -2809,10 +2842,10 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<from>Firms_Checking_Accounts</from>
 					<to>non_bank_profits</to>
 				</connector>
-				<stock label_side="bottom" x="746.167" y="1191.42" width="102.5" height="183.5" name="owner\nsavings"/>
+				<stock label_side="bottom" x="746.167" y="1191.42" width="105.594" height="213.059" name="owner\nsavings"/>
 				<aux label_side="top" x="672.417" y="930.04" name="desired savings\nas multiple of\nprofits"/>
 				<aux label_side="left" x="542.501" y="1137.14" name="owner savings\ngoal shortfall"/>
-				<connector uid="2" angle="112.454">
+				<connector uid="2" angle="110.172">
 					<from>owner_savings</from>
 					<to>owner_savings_goal_shortfall</to>
 				</connector>
@@ -2894,20 +2927,20 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 						<pt x="1666.75" y="1242"/>
 					</pts>
 				</flow>
-				<flow label_side="top" x="906.333" y="1344" name="owner savings interest">
+				<flow label_side="top" x="907.88" y="1344" name="owner savings interest">
 					<pts>
 						<pt x="976" y="1344"/>
-						<pt x="848.667" y="1344"/>
+						<pt x="851.761" y="1344"/>
 					</pts>
 				</flow>
-				<connector uid="14" angle="304.692">
+				<connector uid="14" angle="310.957">
 					<from>owner_savings</from>
 					<to>owner_savings_interest</to>
 				</connector>
-				<flow label_side="bottom" x="912.333" y="1241.5" name="bank profits">
+				<flow label_side="bottom" x="913.88" y="1241.5" name="bank profits">
 					<pts>
 						<pt x="976" y="1241.5"/>
-						<pt x="848.667" y="1241.5"/>
+						<pt x="851.761" y="1241.5"/>
 					</pts>
 				</flow>
 				<flow x="1821.88" y="1289" name="wage tax">
@@ -2933,7 +2966,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 						<pt x="599.75" y="1220.25"/>
 					</pts>
 				</flow>
-				<aux x="740.917" y="1418.83" name="initial owner savings"/>
+				<aux x="866" y="1155.14" name="initial owner savings"/>
 				<aux label_side="right" x="1336.17" y="1339.87" name="initial firms\nchecking accounts"/>
 				<aux x="1787.88" y="1451.39" name="initial worker savings"/>
 				<flow label_side="left" label_angle="135" x="1238.5" y="1124.51" name="government spending">
@@ -2954,10 +2987,10 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<from>time_to_pay_out_profits</from>
 					<to>non_bank_profits</to>
 				</connector>
-				<flow label_side="top" x="1029.17" y="1289.41" name="rent">
+				<flow label_side="top" x="1030.72" y="1289.41" name="rent">
 					<pts>
 						<pt x="1197.67" y="1289.41"/>
-						<pt x="848.667" y="1289.41"/>
+						<pt x="851.761" y="1289.41"/>
 					</pts>
 				</flow>
 				<flow label_side="left" label_angle="135" x="684.959" y="1327.75" name="rent tax">
@@ -3006,13 +3039,13 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<from>desired_savings_as_multiple_of_profits</from>
 					<to>desired_owner_savings</to>
 				</connector>
-				<connector uid="42" angle="306.807">
+				<connector uid="42" angle="306.806">
 					<from>
 						<alias uid="43"/>
 					</from>
 					<to>profit_tax</to>
 				</connector>
-				<connector uid="44" angle="50.6456">
+				<connector uid="44" angle="33.4036">
 					<from>
 						<alias uid="45"/>
 					</from>
@@ -3076,7 +3109,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<aux label_side="right" x="984.31" y="1638.99" name="fraction of\nowner income\nto consumption"/>
 				<aux label_side="left" label_angle="225" x="853.18" y="1592.11" name="consumption habits\nadjustment time"/>
 				<aux font_style="italic" font_weight="bold" x="1076.75" y="1326" name="rent 3"/>
-				<connector uid="67" angle="142.44">
+				<connector uid="67" angle="141.521">
 					<from>rent_3</from>
 					<to>rent</to>
 				</connector>
@@ -3199,7 +3232,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<to>firms_paying_interest</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="right" x="1002.31" y="1201.25" name="bank profit\npayment 1"/>
-				<connector uid="97" angle="204.101">
+				<connector uid="97" angle="204.473">
 					<from>bank_profit_payment_1</from>
 					<to>bank_profits</to>
 				</connector>
@@ -3352,7 +3385,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<from>profit_tax_rate_policy</from>
 					<to>actual_profit_tax_rate</to>
 				</connector>
-				<connector uid="137" angle="25.8664">
+				<connector uid="137" angle="22.5807">
 					<from>actual_profit_tax_rate</from>
 					<to>profit_tax</to>
 				</connector>
@@ -3392,7 +3425,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 						<pt x="592.75" y="1277.25"/>
 					</pts>
 				</flow>
-				<connector uid="150" angle="153.383">
+				<connector uid="150" angle="146.315">
 					<from>owner_savings</from>
 					<to>wealth_tax</to>
 				</connector>
@@ -3766,7 +3799,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					</from>
 					<to>worker_savings_interest</to>
 				</connector>
-				<connector uid="252" angle="135.881">
+				<connector uid="252" angle="134.784">
 					<from>
 						<alias uid="253"/>
 					</from>
@@ -3971,6 +4004,21 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 					<from>wealth_tax_policy_start_year</from>
 					<to>actual_wealth_tax_rate</to>
 				</connector>
+				<flow x="681.488" y="1388.77" name="insurance taxation">
+					<pts>
+						<pt x="746.167" y="1388.77"/>
+						<pt x="592.809" y="1388.77"/>
+					</pts>
+				</flow>
+				<aux font_style="italic" font_weight="bold" x="660.5" y="1459.64" name="government insurance taxation rate"/>
+				<connector uid="407" angle="80.7035">
+					<from>government_insurance_taxation_rate</from>
+					<to>insurance_taxation</to>
+				</connector>
+				<connector uid="408" angle="260.459">
+					<from>owner_savings</from>
+					<to>insurance_taxation</to>
+				</connector>
 				<alias label_side="top" uid="8" x="2047.5" y="1330.87" width="18" height="18">
 					<of>time_to_reach_savings_goal</of>
 				</alias>
@@ -4009,7 +4057,7 @@ Assuming no one is migrating in 1980 b/c of SLR</doc>
 				<alias font_style="italic" label_side="left" uid="43" x="673.834" y="1161.5" width="18" height="18">
 					<of>non_bank_profits</of>
 				</alias>
-				<alias font_style="italic" uid="45" x="675.959" y="1364.87" width="18" height="18">
+				<alias font_style="italic" uid="45" x="633.5" y="1346.75" width="18" height="18">
 					<of>rent</of>
 				</alias>
 				<alias font_style="italic" label_side="left" uid="47" x="673.834" y="1126.14" width="18" height="18">
@@ -7348,7 +7396,7 @@ furthermore. The structure that was previously decided on had the productivity g
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>SMTH1(total_risky_asset_defaults-
-(insurance_payouts + climate_induced_bankruptcies)
+(insurance_payouts + climate_induced_bankruptcies + government_insurance_payout)
 *fraction_of_insurance_payouts_not_influencing_risk_premium, reporting_delay)</eqn>
 				<isee:delay_aux/>
 				<units>b$/year</units>
@@ -8904,7 +8952,7 @@ To control extreme policy only</doc>
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>SMTH1(total_risky_asset_defaults -
-(insurance_payouts +climate_induced_bankruptcies),
+(insurance_payouts +climate_induced_bankruptcies + government_insurance_payout),
  reporting_delay)</eqn>
 				<isee:delay_aux/>
 				<units>b$/year</units>
@@ -8934,6 +8982,13 @@ To control extreme policy only</doc>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>b$</units>
 			</stock>
+			<aux name="government insurance payout" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>b$/year</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -8983,7 +9038,7 @@ To control extreme policy only</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1964" isee:scroll_y="2344" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="871" isee:scroll_y="2753" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -10531,6 +10586,15 @@ SDG 10.5.1</text_box>
 					<from>Central_Bank_Deposits</from>
 					<to>Bank_Assets</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="1808.79" y="2591.39" name="government insurance payout"/>
+				<connector uid="651" angle="26.0655">
+					<from>government_insurance_payout</from>
+					<to>perceived_defaults_of_risky_assets_for_lending_standards</to>
+				</connector>
+				<connector uid="652" angle="333.732">
+					<from>government_insurance_payout</from>
+					<to>perceived_defaults_of_risky_assets</to>
+				</connector>
 				<alias label_side="right" uid="27" x="2212.67" y="2150.55" width="18" height="18">
 					<of>loan_maturation_time</of>
 				</alias>
@@ -11453,6 +11517,8 @@ ELSE
 				<eqn>initial_government_debt</eqn>
 				<inflow>government_taking_up_debt</inflow>
 				<inflow>bailouts</inflow>
+				<inflow>government_insurance_payout</inflow>
+				<outflow>insurance_tax_redemption</outflow>
 				<units>B$</units>
 			</stock>
 			<aux name="government\ninterest payments" access="output" isee:autocreated="true">
@@ -12765,6 +12831,42 @@ In massive inflation spikes prevents the government from not doing any consumpti
 				<eqn>.8</eqn>
 				<units>dmnl</units>
 			</aux>
+			<flow name="government insurance payout" access="output" isee:autocreated="true">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>IF TIME &gt;=government_insurance_policy_start_year
+THEN total_climate_caused_risky_defaults
+ELSE 0</eqn>
+				<non_negative/>
+				<units>b$/year</units>
+			</flow>
+			<aux name="total climate caused\nrisky defaults" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>b$/year</units>
+			</aux>
+			<aux name="government insurance\npolicy start year" access="input">
+				<eqn>2175</eqn>
+				<units>year</units>
+			</aux>
+			<flow name="insurance tax redemption">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>insurance_taxation</eqn>
+				<non_negative/>
+				<units>b$/year</units>
+			</flow>
+			<aux name="insurance taxation" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>b$/year</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -12814,7 +12916,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1131.67" isee:scroll_y="525" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1138.33" isee:scroll_y="394.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12854,30 +12956,30 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
 				<aux x="1700.96" y="735.192" name="smoothed total\npublic tax income"/>
-				<aux label_side="bottom" x="1546.69" y="930.717" name="proportion of taxes\nto public spending"/>
-				<flow label_side="right" x="1821.97" y="717.192" name="government\ntaking up debt">
+				<aux label_side="bottom" x="1560.32" y="993.988" name="proportion of taxes\nto public spending"/>
+				<flow label_side="right" x="1834.3" y="717.192" name="government\ntaking up debt">
 					<pts>
-						<pt x="1821.97" y="656.797"/>
-						<pt x="1821.97" y="768.587"/>
+						<pt x="1834.3" y="656.797"/>
+						<pt x="1834.3" y="768.587"/>
 					</pts>
 				</flow>
-				<stock label_side="bottom" x="1821.97" y="786.087" name="Government\nDebt"/>
-				<aux label_side="left" label_angle="225" x="1558.22" y="1029" name="government\ninterest payments"/>
-				<connector uid="1" angle="293.133">
+				<stock label_side="center" x="1799.47" y="768.587" width="61.9857" height="52.6335" name="Government\nDebt"/>
+				<aux label_side="left" label_angle="225" x="1571.85" y="1092.27" name="government\ninterest payments"/>
+				<connector uid="1" angle="299.475">
 					<from>Government_Debt</from>
 					<to>government_interest_payments</to>
 				</connector>
-				<aux x="1782.21" y="917.117" name="debt to\nGDP ratio"/>
-				<connector uid="2" angle="284.45">
+				<aux x="1804.1" y="981.957" name="debt to\nGDP ratio"/>
+				<connector uid="2" angle="293.308">
 					<from>Government_Debt</from>
 					<to>debt_to_GDP_ratio</to>
 				</connector>
-				<aux label_side="right" x="1937.26" y="684.334" name="initial government debt"/>
+				<aux label_side="right" x="1897.46" y="622.834" name="initial government debt"/>
 				<aux label_side="left" x="1520.56" y="1516.93" name="safe\ninterest"/>
 				<aux label_side="bottom" x="916.881" y="1152.15" name="government\nconsumption"/>
-				<aux label_side="right" x="1748.8" y="865.587" name="measured GDP"/>
-				<aux label_side="bottom" x="1592.6" y="865.587" name="initial\nmeasured GDP"/>
-				<aux label_side="left" x="1656.12" y="835.587" name="GDP\nmeasuring time"/>
+				<aux label_side="right" x="1762.43" y="928.858" name="measured GDP"/>
+				<aux label_side="bottom" x="1606.23" y="928.858" name="initial\nmeasured GDP"/>
+				<aux label_side="left" x="1669.75" y="898.858" name="GDP\nmeasuring time"/>
 				<connector uid="14" angle="342.064">
 					<from>GDP_measuring_time</from>
 					<to>measured_GDP</to>
@@ -12886,12 +12988,12 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>initial_measured_GDP</from>
 					<to>measured_GDP</to>
 				</connector>
-				<connector uid="16" angle="327.47">
+				<connector uid="16" angle="332.636">
 					<from>measured_GDP</from>
 					<to>debt_to_GDP_ratio</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="top" x="1714.46" y="812.587" name="GDP"/>
-				<connector uid="17" angle="302.94">
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1624.23" y="849.384" name="GDP"/>
+				<connector uid="17" angle="330.098">
 					<from>GDP</from>
 					<to>measured_GDP</to>
 				</connector>
@@ -12922,7 +13024,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>averaging_time_to_adjust_tax_based_on_income</from>
 					<to>smoothed_total_public_tax_income</to>
 				</connector>
-				<connector uid="28" angle="1.9311">
+				<connector uid="28" angle="2.93649">
 					<from>total_public_tax_income</from>
 					<to>government_taking_up_debt</to>
 				</connector>
@@ -13022,14 +13124,14 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					</from>
 					<to>interest_rate_policy_discrepancy</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1945.5" y="883.587" name="required last\nresort lending"/>
-				<flow label_side="top" x="1912.15" y="789.408" name="bailouts">
+				<aux font_style="italic" font_weight="bold" label_side="bottom" x="1951.68" y="946.858" name="required last\nresort lending"/>
+				<flow label_side="bottom" x="1947.49" y="817.587" name="bailouts">
 					<pts>
-						<pt x="1979.83" y="789.408"/>
-						<pt x="1844.47" y="789.408"/>
+						<pt x="2033.52" y="817.587"/>
+						<pt x="1861.46" y="817.587"/>
 					</pts>
 				</flow>
-				<aux x="2028.81" y="823.087" name="solvency support adjustment time"/>
+				<aux x="2042.44" y="886.358" name="solvency support adjustment time"/>
 				<aux font_style="italic" font_weight="bold" x="1175.03" y="2134.67" name="unemployment goal policy"/>
 				<aux font_style="italic" font_weight="bold" x="1145.36" y="1653.5" name="inflation goal policy"/>
 				<connector uid="76" angle="273.748">
@@ -13244,7 +13346,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>smoothed_total_public_tax_income</from>
 					<to>public_expenditure_before_subsidies_and_interest_payments</to>
 				</connector>
-				<connector uid="162" angle="132.242">
+				<connector uid="162" angle="127.842">
 					<from>proportion_of_taxes_to_public_spending</from>
 					<to>public_expenditure_before_subsidies_and_interest_payments</to>
 				</connector>
@@ -13348,16 +13450,16 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<to>sum_of_energy_subsidies_in_nominal_terms</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="1294.05" y="651.275" name="Total nominal SLR\nprotection cost"/>
-				<stacked_container uid="200" x="2100.21" y="1448.5">
+				<stacked_container uid="200" x="2113.84" y="1511.77">
 					<graph width="350" height="250" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
 							<entity name="debt_to_GDP_ratio[1]"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux x="1642.74" y="968.283" name="effect of debt to GDP\nratio on government\nspending"/>
-				<aux x="1933.83" y="1011" name="maximum effect of debt to GDP\nratio on government spending"/>
-				<aux x="1711.13" y="1119.88" name="minimum effect of debt to GDP\nratio on government spending"/>
+				<aux x="1656.37" y="1031.55" name="effect of debt to GDP\nratio on government\nspending"/>
+				<aux x="1947.46" y="1074.27" name="maximum effect of debt to GDP\nratio on government spending"/>
+				<aux x="1724.76" y="1183.15" name="minimum effect of debt to GDP\nratio on government spending"/>
 				<connector uid="201" angle="171.652">
 					<from>maximum_effect_of_debt_to_GDP_ratio_on_government_spending</from>
 					<to>effect_of_debt_to_GDP_ratio_on_government_spending</to>
@@ -13366,12 +13468,12 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>minimum_effect_of_debt_to_GDP_ratio_on_government_spending</from>
 					<to>effect_of_debt_to_GDP_ratio_on_government_spending</to>
 				</connector>
-				<aux x="1790.47" y="1056.17" name="curvature effect of debt to GDP\nratio on government\nspending"/>
+				<aux x="1804.1" y="1119.44" name="curvature effect of debt to GDP\nratio on government\nspending"/>
 				<connector uid="203" angle="149.252">
 					<from>curvature_effect_of_debt_to_GDP_ratio_on_government_spending</from>
 					<to>effect_of_debt_to_GDP_ratio_on_government_spending</to>
 				</connector>
-				<connector uid="204" angle="221.249">
+				<connector uid="204" angle="219.661">
 					<from>debt_to_GDP_ratio</from>
 					<to>effect_of_debt_to_GDP_ratio_on_government_spending</to>
 				</connector>
@@ -13379,13 +13481,13 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>effect_of_debt_to_GDP_ratio_on_government_spending</from>
 					<to>proportion_of_taxes_to_public_spending</to>
 				</connector>
-				<aux x="1642.74" y="1213.5" name="one to one effect of debt to GDP ratio on government spending"/>
+				<aux x="1656.37" y="1276.77" name="one to one effect of debt to GDP ratio on government spending"/>
 				<connector uid="207" angle="90">
 					<from>one_to_one_effect_of_debt_to_GDP_ratio_on_government_spending</from>
 					<to>effect_of_debt_to_GDP_ratio_on_government_spending</to>
 				</connector>
-				<aux x="1956.05" y="948.717" name="effect start effect of debt to GDP\nratio on government spending"/>
-				<aux x="1963.5" y="1082.88" name="effect end effect of debt to GDP\nratio on government spending"/>
+				<aux x="1969.68" y="1011.99" name="effect start effect of debt to GDP\nratio on government spending"/>
+				<aux x="1977.13" y="1146.15" name="effect end effect of debt to GDP\nratio on government spending"/>
 				<connector uid="208" angle="183.574">
 					<from>effect_start_effect_of_debt_to_GDP_ratio_on_government_spending</from>
 					<to>effect_of_debt_to_GDP_ratio_on_government_spending</to>
@@ -13399,13 +13501,13 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>wealth_tax</from>
 					<to>total_public_tax_income</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1790.47" y="1239.14" name="minimum percentage of taxes spent by government"/>
+				<aux font_style="italic" font_weight="bold" x="1804.1" y="1302.41" name="minimum percentage of taxes spent by government"/>
 				<connector uid="212" angle="123.634">
 					<from>minimum_percentage_of_taxes_spent_by_government</from>
 					<to>minimum_effect_of_debt_to_GDP_ratio_on_government_spending</to>
 				</connector>
-				<aux x="1933.83" y="830.587" name="bank bailouts"/>
-				<connector uid="216" angle="102.414">
+				<aux x="1947.46" y="893.858" name="bank bailouts"/>
+				<connector uid="216" angle="94.5524">
 					<from>required_last_resort_lending</from>
 					<to>bank_bailouts</to>
 				</connector>
@@ -13413,7 +13515,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>solvency_support_adjustment_time</from>
 					<to>bank_bailouts</to>
 				</connector>
-				<connector uid="218" angle="117.766">
+				<connector uid="218" angle="89.9816">
 					<from>bank_bailouts</from>
 					<to>bailouts</to>
 				</connector>
@@ -13428,12 +13530,12 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>public_expenditure_before_subsidies_and_interest_payments</from>
 					<to>public_expenditure</to>
 				</connector>
-				<connector uid="10" angle="46.0059">
+				<connector uid="10" angle="45.9585">
 					<from>public_expenditure</from>
 					<to>government_taking_up_debt</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="998.774" y="739.02" name="additional transfers policy"/>
-				<aux font_style="italic" font_weight="bold" x="1642.74" y="1325.94" name="computed government debt to GDP ratio target"/>
+				<aux font_style="italic" font_weight="bold" x="1656.37" y="1389.21" name="computed government debt to GDP ratio target"/>
 				<connector uid="228" angle="90">
 					<from>computed_government_debt_to_GDP_ratio_target</from>
 					<to>one_to_one_effect_of_debt_to_GDP_ratio_on_government_spending</to>
@@ -13443,7 +13545,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>safe_interest</from>
 					<to>current_government_debt_interest_rate</to>
 				</connector>
-				<connector uid="230" angle="69.2673">
+				<connector uid="230" angle="52.0745">
 					<from>average_government_debt_interest_rate</from>
 					<to>government_interest_payments</to>
 				</connector>
@@ -13591,7 +13693,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>government_risk_premium</from>
 					<to>current_government_debt_interest_rate</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1865.83" y="1124.17" name="start year"/>
+				<aux font_style="italic" font_weight="bold" x="1879.46" y="1187.44" name="start year"/>
 				<connector uid="281" angle="181.146">
 					<from>start_year</from>
 					<to>minimum_effect_of_debt_to_GDP_ratio_on_government_spending</to>
@@ -13604,7 +13706,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					</graph>
 				</stacked_container>
 				<aux label_side="right" x="1574.6" y="1623.93" name="initial safe interest"/>
-				<connector uid="287" angle="140.214">
+				<connector uid="287" angle="141.178">
 					<from>government_interest_payments</from>
 					<to>public_expenditure</to>
 				</connector>
@@ -13703,7 +13805,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>non_climate_driven_government_consumption</from>
 					<to>government_consumption</to>
 				</connector>
-				<connector uid="340" angle="307.862">
+				<connector uid="340" angle="319.307">
 					<from>
 						<alias uid="341"/>
 					</from>
@@ -13797,7 +13899,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<to>public_expenditure_available_for_investment_and_consumption</to>
 				</connector>
 				<aux x="1451.25" y="986.283" name="time for government spending\nto change"/>
-				<connector uid="373" angle="34.434">
+				<connector uid="373" angle="355.959">
 					<from>time_for_government_spending_to_change</from>
 					<to>proportion_of_taxes_to_public_spending</to>
 				</connector>
@@ -13899,7 +14001,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<from>risky_interest</from>
 					<to>maximum_risk_premium</to>
 				</connector>
-				<aux x="1919.26" y="1204.06" name="historical minimum effect of deb to GDP ratio on government spending"/>
+				<aux x="1932.89" y="1267.33" name="historical minimum effect of deb to GDP ratio on government spending"/>
 				<connector uid="397" angle="151.435">
 					<from>historical_minimum_effect_of_deb_to_GDP_ratio_on_government_spending</from>
 					<to>minimum_effect_of_debt_to_GDP_ratio_on_government_spending</to>
@@ -13931,6 +14033,33 @@ In massive inflation spikes prevents the government from not doing any consumpti
 				<connector uid="407" angle="197.542">
 					<from>maximum_percentage_of_government_budget_to_transfer_payments</from>
 					<to>government_transfers</to>
+				</connector>
+				<flow label_side="top" x="1948.28" y="781.761" name="government insurance payout">
+					<pts>
+						<pt x="2035.1" y="781.761"/>
+						<pt x="1861.46" y="781.761"/>
+					</pts>
+				</flow>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="2069.71" y="735.192" name="total climate caused\nrisky defaults"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="1962.98" y="675.423" name="government insurance\npolicy start year"/>
+				<connector uid="408" angle="262.131">
+					<from>government_insurance_policy_start_year</from>
+					<to>government_insurance_payout</to>
+				</connector>
+				<connector uid="409" angle="200.982">
+					<from>total_climate_caused_risky_defaults</from>
+					<to>government_insurance_payout</to>
+				</connector>
+				<flow x="1830.46" y="854.593" name="insurance tax redemption">
+					<pts>
+						<pt x="1830.46" y="821.22"/>
+						<pt x="1830.46" y="908.965"/>
+					</pts>
+				</flow>
+				<aux font_style="italic" font_weight="bold" label_side="top" x="1758.6" y="858.197" name="insurance taxation"/>
+				<connector uid="411" angle="2.87115">
+					<from>insurance_taxation</from>
+					<to>insurance_tax_redemption</to>
 				</connector>
 				<alias font_style="italic" label_side="right" label_angle="315" uid="73" x="1345.42" y="1937.17" width="18" height="18">
 					<of>baseline_interest</of>
@@ -13977,7 +14106,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 				<alias font_style="italic" uid="319" x="2263.5" y="2331" width="18" height="18">
 					<of>effect_of_STA_on_public_consumption</of>
 				</alias>
-				<alias color="blue" background="white" font_style="italic" uid="341" x="1435.62" y="613.834" width="18" height="18">
+				<alias color="blue" background="white" font_style="italic" uid="341" x="1382.16" y="601.214" width="18" height="18">
 					<shape type="circle" radius="18"/>
 					<of>STA_driven_government_consumption</of>
 				</alias>
