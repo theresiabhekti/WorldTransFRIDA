@@ -397,6 +397,8 @@
 				<connect2 to="Government.energy_conversion_tax_rate_1" from="Fossil_energy_oil.energy_conversion_effective_tax_rate"/>
 				<connect to="Government.energy_conversion_tax_rate_2" from="Fossil_energy_gas.energy_conversion_effective_tax_rate"/>
 				<connect2 to="Government.energy_conversion_tax_rate_2" from="Fossil_energy_gas.energy_conversion_effective_tax_rate"/>
+				<connect to="Government.fraction_of_default_covered_by_government_insurance" from="Government_Regulations.fraction_of_default_covered_by_government_insurance"/>
+				<connect2 to="Government.fraction_of_default_covered_by_government_insurance" from="Government_Regulations.fraction_of_default_covered_by_government_insurance"/>
 				<connect to="Government.fuel_extraction_tax_rate" from="Fossil_energy_coal.fuel_extraction_effective_tax_rate"/>
 				<connect2 to="Government.fuel_extraction_tax_rate" from="Fossil_energy_coal.fuel_extraction_effective_tax_rate"/>
 				<connect to="Government.fuel_extraction_tax_rate_1" from="Fossil_energy_oil.fuel_extraction_effective_tax_rate"/>
@@ -1007,6 +1009,8 @@
 				<connect2 to="Finance.insurance_payouts" from="Private_Insurance.insurance_payouts"/>
 				<connect to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect2 to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
+				<connect to="Private_Insurance.fraction_of_default_covered_private_insurance" from="Government_Regulations.fraction_of_default_covered_by_private_insurance"/>
+				<connect2 to="Private_Insurance.fraction_of_default_covered_private_insurance" from="Government_Regulations.fraction_of_default_covered_by_private_insurance"/>
 				<connect to="Private_Insurance.insurance_policy_start_year" from="Government_Regulations.private_insurance_policy_start_year"/>
 				<connect2 to="Private_Insurance.insurance_policy_start_year" from="Government_Regulations.private_insurance_policy_start_year"/>
 				<connect to="Private_Insurance.insurance_policy_start_year_1" from="Government_Regulations.private_insurance_policy_start_year"/>
@@ -1016,7 +1020,7 @@
 				<connect to="Private_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
 				<connect2 to="Private_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
 			</module>
-			<module name="Central Bank Insurance" isee:label="">
+			<module name="Central Bank\nInsurance" isee:label="">
 				<format scale_by="auto"/>
 				<connect to="Finance.Central_Bank_Deposits" from="Central_Bank_Insurance.Central_Bank_Deposits"/>
 				<connect2 to="Finance.Central_Bank_Deposits" from="Central_Bank_Insurance.Central_Bank_Deposits"/>
@@ -1026,6 +1030,8 @@
 				<connect2 to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
 				<connect to="Central_Bank_Insurance.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
 				<connect2 to="Central_Bank_Insurance.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
+				<connect to="Central_Bank_Insurance.fraction_of_default_covered_central_bank_insurance" from="Government_Regulations.fraction_of_default_covered_by_central_bank_insurance"/>
+				<connect2 to="Central_Bank_Insurance.fraction_of_default_covered_central_bank_insurance" from="Government_Regulations.fraction_of_default_covered_by_central_bank_insurance"/>
 				<connect to="Central_Bank_Insurance.safe_interest" from="Government.safe_interest"/>
 				<connect2 to="Central_Bank_Insurance.safe_interest" from="Government.safe_interest"/>
 				<connect to="Central_Bank_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
@@ -1080,7 +1086,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="48" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="2" isee:scroll_y="204" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1306,7 +1312,7 @@
 					<from>Circular_Flow</from>
 					<to>Private_Insurance</to>
 				</connector>
-				<module x="92.055" y="360.09" name="Central Bank Insurance"/>
+				<module x="92.055" y="360.09" name="Central Bank\nInsurance"/>
 				<connector uid="63" isee:thickness="2" angle="215.832" isee:autocreated="true">
 					<from>Finance</from>
 					<to>Central_Bank_Insurance</to>
@@ -1342,7 +1348,7 @@
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>IF TIME &gt;= central_bank_insurance_policy_start_year THEN
-total_climate_caused_risky_defaults
+total_climate_caused_risky_defaults * fraction_of_default_covered_central_bank_insurance
 ELSE 0</eqn>
 				<non_negative/>
 				<units>b$/year</units>
@@ -1376,6 +1382,10 @@ ELSE 0</eqn>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>1/year</units>
+			</aux>
+			<aux name="fraction of default covered central bank insurance" access="input">
+				<eqn>0.4</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -1487,8 +1497,8 @@ ELSE 0</eqn>
 					<from>total_climate_caused_risky_defaults</from>
 					<to>climate_induced_bankruptcies</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="286.23" y="463.297" name="central bank insurance\npolicy start year"/>
-				<connector uid="18" angle="88.4093">
+				<aux font_style="italic" font_weight="bold" x="284.492" y="479.29" name="central bank insurance\npolicy start year"/>
+				<connector uid="18" angle="87.8883">
 					<from>central_bank_insurance_policy_start_year</from>
 					<to>climate_induced_bankruptcies</to>
 				</connector>
@@ -1496,6 +1506,11 @@ ELSE 0</eqn>
 				<connector uid="19" angle="180">
 					<from>safe_interest</from>
 					<to>deposit_earnings</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="155.902" y="424.039" name="fraction of default covered central bank insurance"/>
+				<connector uid="20" angle="33.0031">
+					<from>fraction_of_default_covered_central_bank_insurance</from>
+					<to>climate_induced_bankruptcies</to>
 				</connector>
 			</view>
 		</views>
@@ -8991,7 +9006,7 @@ To control extreme policy only</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1644" isee:scroll_y="2102" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1537" isee:scroll_y="1913" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12789,7 +12804,7 @@ In massive inflation spikes prevents the government from not doing any consumpti
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>IF TIME &gt;=government_insurance_policy_start_year
-THEN total_climate_caused_risky_defaults
+THEN total_climate_caused_risky_defaults * fraction_of_default_covered_by_government_insurance
 ELSE 0</eqn>
 				<non_negative/>
 				<units>b$/year</units>
@@ -12819,6 +12834,10 @@ ELSE 0</eqn>
 				</dimensions>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>b$/year</units>
+			</aux>
+			<aux name="fraction of default covered\nby government insurance" access="input">
+				<eqn>0.4</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -12869,7 +12888,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1045" isee:scroll_y="1248.33" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1291.67" isee:scroll_y="374.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14013,6 +14032,11 @@ ELSE 0</eqn>
 				<connector uid="411" angle="2.87115">
 					<from>insurance_taxation</from>
 					<to>insurance_tax_redemption</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="2172.12" y="803.239" name="fraction of default covered\nby government insurance"/>
+				<connector uid="412" angle="180.432">
+					<from>fraction_of_default_covered_by_government_insurance</from>
+					<to>government_insurance_payout</to>
 				</connector>
 				<alias font_style="italic" label_side="right" label_angle="315" uid="73" x="1345.42" y="1937.17" width="18" height="18">
 					<of>baseline_interest</of>
@@ -15703,7 +15727,7 @@ ELSE 0</eqn>
 				</dimensions>
 				<eqn>IF TIME &gt;= insurance_policy_start_year 
 THEN
-total_climate_caused_risky_defaults
+total_climate_caused_risky_defaults *fraction_of_default_covered_private_insurance
 ELSE
 0</eqn>
 				<non_negative/>
@@ -15764,6 +15788,10 @@ ELSE
 				<eqn>2175</eqn>
 				<units>year</units>
 			</aux>
+			<aux name="fraction of default covered private insurance" access="input">
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -15813,7 +15841,7 @@ ELSE
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -15879,18 +15907,18 @@ ELSE
 					<from>average_private_debt_interest</from>
 					<to>insurance_earnings</to>
 				</connector>
-				<flow x="496.393" y="336.555" name="insurance payouts">
+				<flow x="534.107" y="339.758" name="insurance payouts">
 					<pts>
-						<pt x="438.043" y="336.555"/>
-						<pt x="578.742" y="336.555"/>
+						<pt x="438.043" y="339.758"/>
+						<pt x="654.172" y="339.758"/>
 					</pts>
 				</flow>
-				<aux font_style="italic" font_weight="bold" x="550.801" y="215.559" name="total climate caused\nrisky defaults"/>
-				<connector uid="7" angle="245.788">
+				<aux font_style="italic" font_weight="bold" label_side="top" x="537.168" y="215.559" name="total climate caused\nrisky defaults"/>
+				<connector uid="7" angle="268.589">
 					<from>total_climate_caused_risky_defaults</from>
 					<to>insurance_payouts</to>
 				</connector>
-				<connector uid="8" angle="41.5722">
+				<connector uid="8" angle="31.8788">
 					<from>insurance_policy_start_year</from>
 					<to>insurance_payouts</to>
 				</connector>
@@ -15901,21 +15929,21 @@ ELSE
 					<from>normal_insurance_premium</from>
 					<to>insurance_premium_rate</to>
 				</connector>
-				<aux x="522.863" y="461.77" name="actual years of coverage"/>
-				<connector uid="29" angle="323.602">
+				<aux x="552.107" y="501.375" name="actual years of coverage"/>
+				<connector uid="29" angle="322.647">
 					<from>Insurance_Deposits</from>
 					<to>actual_years_of_coverage</to>
 				</connector>
-				<connector uid="30" angle="324.671">
+				<connector uid="30" angle="319.09">
 					<from>insurance_payouts</from>
 					<to>actual_years_of_coverage</to>
 				</connector>
 				<aux x="243.223" y="540.558" name="effect of years of coverage\non premiums"/>
-				<connector uid="31" angle="109.338">
+				<connector uid="31" angle="113.526">
 					<from>desired_years_of_coverage</from>
 					<to>relative_years_of_coverage</to>
 				</connector>
-				<connector uid="32" angle="254.59">
+				<connector uid="32" angle="245.759">
 					<from>actual_years_of_coverage</from>
 					<to>relative_years_of_coverage</to>
 				</connector>
@@ -15936,8 +15964,8 @@ ELSE
 					<from>sensitivity_of_premiums_to_years_of_coverage</from>
 					<to>effect_of_years_of_coverage_on_premiums</to>
 				</connector>
-				<aux label_side="bottom" x="413.809" y="593.2" name="relative years\nof coverage"/>
-				<connector uid="37" angle="187.744">
+				<aux label_side="bottom" x="415.543" y="622.133" name="relative years\nof coverage"/>
+				<connector uid="37" angle="179.561">
 					<from>relative_years_of_coverage</from>
 					<to>effect_of_years_of_coverage_on_premiums</to>
 				</connector>
@@ -15947,6 +15975,11 @@ ELSE
 					<to>insurance_premium_rate</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="514.398" y="70.5742" name="insurance policy start year 1"/>
+				<aux font_style="italic" font_weight="bold" label_side="right" x="642.043" y="249.464" name="fraction of default covered private insurance"/>
+				<connector uid="39" angle="210.831">
+					<from>fraction_of_default_covered_private_insurance</from>
+					<to>insurance_payouts</to>
+				</connector>
 			</view>
 		</views>
 	</model>
