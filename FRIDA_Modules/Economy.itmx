@@ -347,6 +347,8 @@
 				<connect2 to="Finance.public_investment" from="Government.public_investment"/>
 				<connect to="GDP.public_investment" from="Government.public_investment"/>
 				<connect2 to="GDP.public_investment" from="Government.public_investment"/>
+				<connect to="Central_Bank_Insurance.safe_interest" from="Government.safe_interest"/>
+				<connect2 to="Central_Bank_Insurance.safe_interest" from="Government.safe_interest"/>
 				<connect to="Finance.safe_interest" from="Government.safe_interest"/>
 				<connect2 to="Finance.safe_interest" from="Government.safe_interest"/>
 				<connect to="Circular_Flow.sum_of_energy_taxes" from="Government.sum_of_energy_taxes_in_nominal_terms"/>
@@ -488,8 +490,6 @@
 			</module>
 			<module name="Circular Flow" isee:label="">
 				<format scale_by="auto"/>
-				<connect to="Central_Bank_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
-				<connect2 to="Central_Bank_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect2 to="Private_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect to="Inflation.bank_profits" from="Circular_Flow.bank_profits"/>
@@ -1024,10 +1024,10 @@
 				<connect2 to="Finance.climate_induced_bankruptcies" from="Central_Bank_Insurance.climate_induced_bankruptcies"/>
 				<connect to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
 				<connect2 to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Insurance.total_climate_caused_risky_defaults"/>
-				<connect to="Central_Bank_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
-				<connect2 to="Central_Bank_Insurance.average_private_debt_interest" from="Circular_Flow.average_private_debt_interest"/>
 				<connect to="Central_Bank_Insurance.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
 				<connect2 to="Central_Bank_Insurance.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
+				<connect to="Central_Bank_Insurance.safe_interest" from="Government.safe_interest"/>
+				<connect2 to="Central_Bank_Insurance.safe_interest" from="Government.safe_interest"/>
 				<connect to="Central_Bank_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
 				<connect2 to="Central_Bank_Insurance.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
 			</module>
@@ -1080,54 +1080,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
-				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
-				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
-				<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
-				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
-					<isee:series_styles>
-						<isee:series_style color="blue" thickness="1"/>
-						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
-						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
-						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
-						<isee:series_style color="#FF7F00" thickness="1"/>
-						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
-						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
-						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
-						<isee:series_style color="#FF007F" thickness="1"/>
-						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
-						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
-						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
-						<isee:series_style color="#C8C8C8" thickness="1"/>
-					</isee:series_styles>
-				</graph>
-				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
-				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
-				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
-				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
-				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
-				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
-				<isee:sim_speed_slider color="black" background="white"/>
-				<isee:time_slider color="#E95F74" background="silver"/>
-				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
-				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
-				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
-				<isee:dropdown_input color="black" background="white" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
-				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
-				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
-				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
-				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
-				<lamp color="black" background="white" font_size="9pt"/>
-				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
-				<isee:spatial_map color="black" background="white" font_size="12pt"/>
-				<isee:animation_object color="black" background="white" font_size="12pt"/>
-				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
-				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
-				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
-				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
-				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
-			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="48" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="48" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1354,10 +1307,6 @@
 					<to>Private_Insurance</to>
 				</connector>
 				<module x="92.055" y="360.09" name="Central Bank Insurance"/>
-				<connector uid="62" isee:thickness="2" angle="210.452" isee:autocreated="true">
-					<from>Circular_Flow</from>
-					<to>Central_Bank_Insurance</to>
-				</connector>
 				<connector uid="63" isee:thickness="2" angle="215.832" isee:autocreated="true">
 					<from>Finance</from>
 					<to>Central_Bank_Insurance</to>
@@ -1370,18 +1319,22 @@
 					<from>Central_Bank_Insurance</from>
 					<to>Government</to>
 				</connector>
+				<connector uid="66" isee:thickness="2" angle="208.645" isee:autocreated="true">
+					<from>Government</from>
+					<to>Central_Bank_Insurance</to>
+				</connector>
 			</view>
 		</views>
 	</model>
 	<model name="Central_Bank_Insurance">
 		<variables>
-			<stock name="Central Bank Deposits" access="output" isee:autocreated="true">
+			<stock name="Central Bank\nDeposits" access="output" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
 				<eqn>initial_Central_Bank_Deposit</eqn>
 				<inflow>climate_induced_bankruptcies</inflow>
-				<inflow>insurance_earnings</inflow>
+				<inflow>deposit_earnings</inflow>
 				<units>b$</units>
 			</stock>
 			<flow name="climate induced\nbankruptcies" access="output" isee:autocreated="true">
@@ -1394,18 +1347,11 @@ ELSE 0</eqn>
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
-			<aux name="average private debt interest" access="input">
+			<flow name="deposit earnings">
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>1/year</units>
-			</aux>
-			<flow name="insurance earnings">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>Central_Bank_Deposits*average_private_debt_interest</eqn>
+				<eqn>Central_Bank_Deposits*safe_interest</eqn>
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
@@ -1423,6 +1369,13 @@ ELSE 0</eqn>
 			<aux name="central bank insurance\npolicy start year" access="input">
 				<eqn>2175</eqn>
 				<units>year</units>
+			</aux>
+			<aux name="safe\ninterest" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>1/year</units>
 			</aux>
 		</variables>
 		<views>
@@ -1473,7 +1426,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1511,38 +1464,38 @@ ELSE 0</eqn>
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stock x="415.543" y="336.555" name="Central Bank Deposits"/>
-				<flow x="334.746" y="332.766" name="climate induced\nbankruptcies">
+				<stock label_side="center" x="363.563" y="314.852" width="78.8867" height="43.4063" name="Central Bank\nDeposits"/>
+				<flow x="289.734" y="337.117" name="climate induced\nbankruptcies">
 					<pts>
-						<pt x="276.449" y="332.766"/>
-						<pt x="393.043" y="332.766"/>
+						<pt x="215.906" y="337.117"/>
+						<pt x="363.563" y="337.117"/>
 					</pts>
 				</flow>
-				<aux font_style="italic" font_weight="bold" x="605.141" y="239.481" name="average private debt interest"/>
-				<flow x="415.543" y="244.491" name="insurance earnings">
+				<flow x="417.172" y="216.092" name="deposit earnings">
 					<pts>
-						<pt x="415.543" y="169.926"/>
-						<pt x="415.543" y="319.055"/>
+						<pt x="417.172" y="117.332"/>
+						<pt x="417.172" y="314.852"/>
 					</pts>
 				</flow>
-				<connector uid="2" angle="53.2641">
+				<connector uid="2" angle="30.9424">
 					<from>Central_Bank_Deposits</from>
-					<to>insurance_earnings</to>
+					<to>deposit_earnings</to>
 				</connector>
-				<connector uid="3" angle="181.514">
-					<from>average_private_debt_interest</from>
-					<to>insurance_earnings</to>
-				</connector>
-				<aux font_style="italic" font_weight="bold" x="225.223" y="262.491" name="total climate caused\nrisky defaults"/>
-				<aux x="578.602" y="336.555" name="initial Central Bank Deposit"/>
-				<connector uid="17" angle="319.17">
+				<aux font_style="italic" font_weight="bold" label_side="top" x="256.911" y="262.612" name="total climate caused\nrisky defaults"/>
+				<aux x="544.676" y="329.918" name="initial Central Bank Deposit"/>
+				<connector uid="17" angle="293.776">
 					<from>total_climate_caused_risky_defaults</from>
 					<to>climate_induced_bankruptcies</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="334.746" y="458.02" name="central bank insurance\npolicy start year"/>
-				<connector uid="18" angle="92.412">
+				<aux font_style="italic" font_weight="bold" x="286.23" y="463.297" name="central bank insurance\npolicy start year"/>
+				<connector uid="18" angle="88.4093">
 					<from>central_bank_insurance_policy_start_year</from>
 					<to>climate_induced_bankruptcies</to>
+				</connector>
+				<aux font_style="italic" font_weight="bold" x="562.676" y="216.092" name="safe\ninterest"/>
+				<connector uid="19" angle="180">
+					<from>safe_interest</from>
+					<to>deposit_earnings</to>
 				</connector>
 			</view>
 		</views>
@@ -9038,7 +8991,7 @@ To control extreme policy only</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1644" isee:scroll_y="2102" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="6" isee:page_rows="9" isee:scroll_x="1644" isee:scroll_y="2102" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12916,7 +12869,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1138.33" isee:scroll_y="394.167" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1045" isee:scroll_y="1248.33" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
