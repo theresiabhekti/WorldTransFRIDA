@@ -2879,6 +2879,8 @@
 				<connect2 to="Central_Bank_Insurance.fraction_of_default_covered_central_bank_insurance" from="Government_Regulations.fraction_of_default_covered_by_central_bank_insurance"/>
 				<connect to="Government.fraction_of_default_covered_by_government_insurance" from="Government_Regulations.fraction_of_default_covered_by_government_insurance"/>
 				<connect2 to="Government.fraction_of_default_covered_by_government_insurance" from="Government_Regulations.fraction_of_default_covered_by_government_insurance"/>
+				<connect to="Circular_Flow.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
+				<connect2 to="Circular_Flow.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
 				<connect to="Government.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
 				<connect2 to="Government.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
 				<connect to="Circular_Flow.government_insurance_taxation_rate" from="Government_Regulations.government_insurance_taxation_rate"/>
@@ -3154,6 +3156,8 @@
 				<connect2 to="Central_Bank_Insurance.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
 				<connect to="Central_Bank_Insurance.fraction_of_default_covered_central_bank_insurance" from="Government_Regulations.fraction_of_default_covered_by_central_bank_insurance"/>
 				<connect2 to="Central_Bank_Insurance.fraction_of_default_covered_central_bank_insurance" from="Government_Regulations.fraction_of_default_covered_by_central_bank_insurance"/>
+				<connect to="Circular_Flow.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
+				<connect2 to="Circular_Flow.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
 				<connect to="Circular_Flow.government_insurance_taxation_rate" from="Government_Regulations.government_insurance_taxation_rate"/>
 				<connect2 to="Circular_Flow.government_insurance_taxation_rate" from="Government_Regulations.government_insurance_taxation_rate"/>
 				<connect to="Circular_Flow.Population_1" from="Demographics.Population"/>
@@ -3500,7 +3504,7 @@ This is what determines when the model stops calculating</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="8" isee:scroll_y="435" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="8" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -3540,7 +3544,7 @@ This is what determines when the model stops calculating</doc>
 				</style>
 				<module label_side="center" x="570.25" y="377" width="67" height="52.5" name="Energy"/>
 				<stacked_container uid="58" x="67.5833" y="543.833" width="751" height="735">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="751" height="735" comparative="true" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="6" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="751" height="735" comparative="true" isee:comparative_override_thickness="2" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="6" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Calibrated_Variables"/>
 						</plot>
@@ -3548,7 +3552,7 @@ This is what determines when the model stops calculating</doc>
 				</stacked_container>
 				<isee:placeholder x="904.75" y="652.833" name="Calibrated Variables"/>
 				<isee:selector x="835.027" y="555.633" width="328" height="30" select_placeholder="true" placeholder="Calibrated_Variables"/>
-				<stacked_container uid="80" x="28.5" y="1680.5" width="568" height="300">
+				<stacked_container uid="80" x="64.4766" y="1891.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="6" num_x_labels="5" num_y_labels="6" title="a) Surface Temperature Anomaly (°C)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<isee:time_points>
 							<isee:time_point>2030</isee:time_point>
@@ -3562,7 +3566,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="81" x="598.5" y="1680.5" width="568" height="300">
+				<stacked_container uid="81" x="634.477" y="1891.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="6" num_x_labels="5" num_y_labels="6" title="b) Atm. radiative forcing (W/m2)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<isee:time_points>
 							<isee:time_point>2030</isee:time_point>
@@ -3576,7 +3580,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="82" x="1168.5" y="1680.5" width="568" height="300">
+				<stacked_container uid="82" x="1204.48" y="1891.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="c) Total CO2 emissions (MtCO2/Yr)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<isee:time_points>
 							<isee:time_point>2030</isee:time_point>
@@ -3590,7 +3594,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="83" x="28.5" y="1980.5" width="568" height="300">
+				<stacked_container uid="83" x="64.4766" y="2191.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="d) Energy Production (TWh/Yr)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
 							<format scale_by="1" delimit_000s="true"/>
@@ -3608,7 +3612,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="84" x="598.5" y="1980.5" width="568" height="300">
+				<stacked_container uid="84" x="634.477" y="2191.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="e) Population (Million People)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Demographics.Population[*]"/>
@@ -3625,7 +3629,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="85" x="1168.5" y="1980.5" width="568" height="300">
+				<stacked_container uid="85" x="1204.48" y="2191.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="e) GDP per Capita (c$/Person/Yr)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Demographics.real_GDP_per_capita[*]"/>
@@ -3642,7 +3646,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="86" x="28.5" y="2280.5" width="568" height="300">
+				<stacked_container uid="86" x="64.4766" y="2491.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="g) Energy Demand (TWh/Yr)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
 							<format scale_by="1" delimit_000s="true"/>
@@ -3660,7 +3664,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="87" x="598.5" y="2280.5" width="568" height="300">
+				<stacked_container uid="87" x="634.477" y="2491.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="h) Animal Products Production (PCal/Year)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Animal_Products.animal_products_production[*]"/>
@@ -3677,7 +3681,7 @@ This is what determines when the model stops calculating</doc>
 						</isee:time_points>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="88" x="1168.5" y="2280.5" width="568" height="300">
+				<stacked_container uid="88" x="1204.48" y="2491.5" width="568" height="300">
 					<graph font_size="24pt" legend_position="none" isee:hide_border="true" axis_title_font_size="18pt" axis_label_font_size="14pt" width="568" height="300" comparative="true" type="box" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="9" num_y_grid_lines="5" num_x_labels="5" num_y_labels="5" title="i) Crop Production (PCal/Year)" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Crop.crop_production[*]"/>
@@ -4224,7 +4228,7 @@ This is what determines when the model stops calculating</doc>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="158" x="1743.67" y="1183.02" width="567" height="457">
+				<stacked_container uid="158" x="1761.04" y="1180.44" width="567" height="457">
 					<graph width="567" height="457" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="13" num_y_grid_lines="5" num_x_labels="13" num_y_labels="5" title="Energy Investments by Type" isee:fill_intensity="0.5" isee:stacked_area_max="2000000000000" to="2100" isee:allow_zero_axis="true" left_axis_title="$(Constant 2021)/Year" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="black" pen_style="dashed" title="Coal Extraction" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<format display_as="currency"/>
@@ -4265,8 +4269,8 @@ This is what determines when the model stops calculating</doc>
 					</graph>
 				</stacked_container>
 				<text_box uid="159" x="1873" y="1649" width="260" height="58">We want to separate the oil conversion to energy capital from the biofuel conversion to energy capital so there is a second green section</text_box>
-				<stacked_container uid="160" x="2163.96" y="-140.512" width="567" height="473.666">
-					<graph width="567" height="473.666" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Share of Gross Income" isee:fill_intensity="1" isee:stacked_area_max="1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+				<stacked_container uid="160" x="2819.31" y="372.769" width="567" height="494.675">
+					<graph width="567" height="494.675" type="area" isee:sum_stacked_legend="true" isee:stacked_show_hover_values="true" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Share of Gross Income" isee:fill_intensity="1" isee:stacked_area_max="1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" title="Non-Bank Profits" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Circular_Flow.share_of_gross_income_from_non_bank_profits[1]"/>
 						</plot>
@@ -4380,10 +4384,6 @@ Lorem ipsum dolor sit amet</text_box>
 			<isee:stories/>
 		</views>
 	</model>
-	<isee:controls>
-		<isee:control priority="interactive" name="Government_Regulations.central_bank_insurance_policy_start_year" value="2030"/>
-		<isee:control priority="interactive" name="Government_Regulations.government_insurance_policy_start_year" value="2030"/>
-	</isee:controls>
 	<isee:user_controlled>
 		<ent name="Simulation End" preserve="true" lock="false"/>
 		<ent name="Government Regulations.tax on CO2e emissions" preserve="true" lock="false"/>
@@ -4410,6 +4410,7 @@ Lorem ipsum dolor sit amet</text_box>
 		<ent name="Government Regulations.government insurance policy start year" preserve="true" lock="false"/>
 		<ent name="Government Regulations.fraction of default covered by central bank insurance" preserve="true" lock="false"/>
 		<ent name="Government Regulations.fraction of default covered by government insurance" preserve="true" lock="false"/>
+		<ent name="Government Regulations.government insurance taxation rate" preserve="true" lock="false"/>
 	</isee:user_controlled>
 	<macro name="INFLATION_IMPACT_GROWTH_RATE">
 		<eqn>trend in input</eqn>
