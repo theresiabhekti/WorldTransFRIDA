@@ -919,8 +919,8 @@ This parameter specifies when the government insurance policy begins.</doc>
 			</aux>
 			<aux name="fraction of default covered\nby government insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
-This parameter determines the share of climate-caused risky defaults that the government agrees to absorb. It</doc>
-				<eqn>decision_fraction_of_default_covered_by_government_insurance * insurance_scaling_factor</eqn>
+This parameter determines the share of climate-caused risky defaults that the government agrees to absorb.</doc>
+				<eqn>decision_fraction_of_default_covered_by_government_insurance//total_insurance_coverage*fraction_of_loan_insured</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
 				<units>dmnl</units>
@@ -928,7 +928,7 @@ This parameter determines the share of climate-caused risky defaults that the go
 			<aux name="fraction of default covered\nby central bank insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
 This parameter specifies the share of climate-caused risky defaults that the central bank agrees to cover through its insurance intervention.</doc>
-				<eqn>decision_fraction_of_default_covered_by_central_bank_insurance * insurance_scaling_factor</eqn>
+				<eqn>decision_fraction_of_default_covered_by_central_bank_insurance//total_insurance_coverage*fraction_of_loan_insured</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
 				<units>dmnl</units>
@@ -936,7 +936,7 @@ This parameter specifies the share of climate-caused risky defaults that the cen
 			<aux name="fraction of default\ncovered by private insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much of climate-caused risky defaults private insurance absorbs.</doc>
-				<eqn>decision_fraction_of_default_covered_by_private_insurance * insurance_scaling_factor</eqn>
+				<eqn>decision_fraction_of_default_covered_by_private_insurance//total_insurance_coverage*fraction_of_loan_insured</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
 				<units>dmnl</units>
@@ -956,16 +956,19 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 			</aux>
 			<group name="Climate-driven default\ninsurance policy" run="false">
 				<format scale_by="auto"/>
-				<entity name="central_bank_insurance_policy_start_year"/>
 				<entity name="decision_fraction_of_default_covered_by_central_bank_insurance"/>
 				<entity name="decision_fraction_of_default_covered_by_government_insurance"/>
 				<entity name="decision_fraction_of_default_covered_by_private_insurance"/>
 				<entity name="fraction_of_default_covered_by_central_bank_insurance"/>
 				<entity name="fraction_of_default_covered_by_government_insurance"/>
 				<entity name="fraction_of_default_covered_by_private_insurance"/>
-				<entity name="government_insurance_policy_start_year"/>
-				<entity name="insurance_scaling_factor"/>
-				<entity name="private_insurance_policy_start_year"/>
+				<entity name="fraction_of_loan_insured"/>
+				<entity name="insurance_coverage_first_level"/>
+				<entity name="insurance_coverage_second_level"/>
+				<entity name="insurance_coverage_start_year_first_level"/>
+				<entity name="insurance_coverage_time_to_implement_first_level"/>
+				<entity name="insurance_coverage_time_to_implement_second_level"/>
+				<entity name="insurance_coverage_time_to_start_second_level"/>
 				<entity name="total_insurance_coverage"/>
 			</group>
 			<group name="Climate-driven default\npublic investment policy" run="false">
@@ -1053,18 +1056,14 @@ This is the desired annual real GDP growth rate the policy tries to support.</do
 				<units>1/year</units>
 			</aux>
 			<aux name="total insurance coverage">
+				<doc>This variable is the total of funding-share decisions.
+</doc>
 				<eqn>decision_fraction_of_default_covered_by_private_insurance + decision_fraction_of_default_covered_by_central_bank_insurance + decision_fraction_of_default_covered_by_government_insurance</eqn>
-				<units>dmnl</units>
-			</aux>
-			<aux name="insurance scaling factor">
-				<eqn>IF total_insurance_coverage &lt;= 1
-THEN 1
-ELSE 1/ total_insurance_coverage</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="decision fraction of default\ncovered by private insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
-A policy parameter sets how much of climate-caused risky defaults private insurance absorbs.</doc>
+A policy parameter sets how much of climate-caused risky defaults absorbed or funded by private insurance.</doc>
 				<eqn>0</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
@@ -1072,7 +1071,7 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 			</aux>
 			<aux name="decision fraction of default\ncovered by central\nbank insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
-A policy parameter sets how much of climate-caused risky defaults private insurance absorbs.</doc>
+A policy parameter sets how much of climate-caused risky defaults  absorbed or funded by central bank insurance.</doc>
 				<eqn>0</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
@@ -1080,10 +1079,67 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 			</aux>
 			<aux name="decision fraction of default\ncovered by government insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
-A policy parameter sets how much of climate-caused risky defaults private insurance absorbs.</doc>
+A policy parameter sets how much of climate-caused risky defaults  absorbed or funded by government  insurance absorbs.</doc>
 				<eqn>0</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
+				<units>dmnl</units>
+			</aux>
+			<aux name="insurance coverage\nfirst level" access="output" isee:autocreated="true">
+				<doc>${Policy}
+A policy parameter sets how much the first target coverage level, in percent</doc>
+				<eqn>75</eqn>
+				<format precision="0.1"/>
+				<range min="0" max="100"/>
+				<units>dmnl</units>
+			</aux>
+			<aux name="insurance coverage\nstart year first level" access="output" isee:autocreated="true">
+				<doc>${Policy}
+A policy parameter sets the year the insurance policy starts.</doc>
+				<eqn>2175</eqn>
+				<format precision="0.01"/>
+				<range min="2030" max="2100"/>
+				<units>Year</units>
+			</aux>
+			<aux name="insurance coverage time\nto implement first level" access="output" isee:autocreated="true">
+				<doc>${Policy}
+A policy parameter sets how long (duration) it takes to ramp from 0 to first-level coverage</doc>
+				<eqn>0.125</eqn>
+				<format precision="0.01"/>
+				<range min="0.125" max="10"/>
+				<units>Year</units>
+			</aux>
+			<aux name="insurance coverage\nsecond level" access="output" isee:autocreated="true">
+				<doc>${Policy}
+A policy parameter sets how much the second target coverage level, in percent</doc>
+				<eqn>75</eqn>
+				<format precision="0.01"/>
+				<range min="0" max="100"/>
+				<units>dmnl</units>
+			</aux>
+			<aux name="insurance coverage\ntime to start second level" access="output" isee:autocreated="true">
+				<doc>${Policy}
+A policy parameter sets the years after first start before second-stage change begins</doc>
+				<eqn>146</eqn>
+				<format precision="0.01"/>
+				<range min="0" max="146"/>
+				<units>Year</units>
+			</aux>
+			<aux name="insurance coverage time\nto implement second level" access="output" isee:autocreated="true">
+				<doc>${Policy}
+A policy parameter sets how long it takes to move from first level to second level</doc>
+				<eqn>0.125</eqn>
+				<format precision="0.01"/>
+				<range min="0.125" max="10"/>
+				<units>Year</units>
+			</aux>
+			<aux name="fraction of loan insured" access="output" isee:autocreated="true">
+				<eqn>SIXPARM(insurance_coverage_first_level, 
+insurance_coverage_start_year_first_level, 
+insurance_coverage_time_to_implement_first_level, 
+insurance_coverage_second_level,
+insurance_coverage_time_to_start_second_level,
+insurance_coverage_time_to_implement_second_level)/100</eqn>
 				<units>dmnl</units>
 			</aux>
 		</variables>
@@ -1417,7 +1473,54 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="3" isee:scroll_x="765" isee:scroll_y="200" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<isee:dropdown_input color="black" background="white" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="3" isee:scroll_x="1162.86" isee:scroll_y="177.857" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1503,8 +1606,8 @@ Negative taxes are subsidies</text_box>
 				<aux x="1063.67" y="518.31" name="share of biofuel\nemissions stored"/>
 				<aux x="452.791" y="329.167" name="biofuels CO2e emissions tax reduction share"/>
 				<aux x="452.791" y="404" name="biofuels SO2 emissions\ntax reduction share"/>
-				<aux x="1230" y="826.834" name="inflation goal policy"/>
-				<aux x="1212" y="1182.26" name="unemployment goal policy"/>
+				<aux x="1160.82" y="991.753" name="inflation goal policy"/>
+				<aux x="1142.82" y="1347.18" name="unemployment goal policy"/>
 				<isee:placeholder x="171.111" y="806.667" name="fossil extraction\ncapacity placeholder"/>
 				<isee:placeholder x="316.667" y="806.667" name="fossil production\ncapacity placeholder"/>
 				<isee:placeholder x="550" y="858.334" name="renewable capacity placeholder"/>
@@ -1521,10 +1624,10 @@ Negative taxes are subsidies</text_box>
 				<aux x="172.917" y="1469.35" name="government debt to\nGDP ratio target"/>
 				<aux x="308.25" y="1717.91" name="minimum percentage of\ntaxes spent by government"/>
 				<isee:placeholder x="414.834" y="133.143" name="concrete policy"/>
-				<aux x="945.834" y="942.5" name="No SLR adaptation strategy"/>
-				<text_box uid="11" x="875.417" y="895.001" width="140.833" height="19.6667">Sea level rise adaptation</text_box>
-				<aux x="945.834" y="1005" name="Protection as SLR\nadaptation strategy"/>
-				<aux x="945.834" y="1075.83" name="Retreat as SLR adaptation strategy"/>
+				<aux x="876.654" y="1107.42" name="No SLR adaptation strategy"/>
+				<text_box uid="11" x="806.237" y="1059.92" width="140.833" height="19.6667">Sea level rise adaptation</text_box>
+				<aux x="876.654" y="1169.92" name="Protection as SLR\nadaptation strategy"/>
+				<aux x="876.654" y="1240.75" name="Retreat as SLR adaptation strategy"/>
 				<aux x="329.5" y="1201.75" name="additional transfers policy"/>
 				<aux x="172.917" y="1533.75" name="time for government to change\nthe debt to GDP ratio target"/>
 				<aux x="326.25" y="1523.75" name="computed government debt to GDP ratio target"/>
@@ -1541,20 +1644,20 @@ Negative taxes are subsidies</text_box>
 					<from>government_debt_to_GDP_ratio_target</from>
 					<to>computed_government_debt_to_GDP_ratio_target</to>
 				</connector>
-				<aux x="1335" y="1045.61" name="time to start\ncentral bank inflation\npolicy"/>
-				<aux x="1207.5" y="1023" name="max change per year in inflation"/>
-				<aux x="1212" y="1277.5" name="max change per year\nin unemployment"/>
-				<aux x="1327.5" y="925" name="actual inflation goal"/>
+				<aux x="1265.82" y="1210.53" name="time to start\ncentral bank inflation\npolicy"/>
+				<aux x="1138.32" y="1187.92" name="max change per year in inflation"/>
+				<aux x="1142.82" y="1442.42" name="max change per year\nin unemployment"/>
+				<aux x="1258.32" y="1089.92" name="actual inflation goal"/>
 				<connector uid="24" angle="93.5583">
 					<from>time_to_start_central_bank_inflation_policy</from>
 					<to>actual_inflation_goal</to>
 				</connector>
-				<aux x="1212" y="919.5" name="historical inflation goal"/>
+				<aux x="1142.82" y="1084.42" name="historical inflation goal"/>
 				<connector uid="29" angle="357.274">
 					<from>historical_inflation_goal</from>
 					<to>actual_inflation_goal</to>
 				</connector>
-				<aux x="1295" y="1225" name="actual unemployment goal"/>
+				<aux x="1225.82" y="1389.92" name="actual unemployment goal"/>
 				<connector uid="33" angle="332.756">
 					<from>unemployment_goal_policy</from>
 					<to>actual_unemployment_goal</to>
@@ -1571,15 +1674,15 @@ Negative taxes are subsidies</text_box>
 					<from>max_change_per_year_in_unemployment</from>
 					<to>actual_unemployment_goal</to>
 				</connector>
-				<aux x="1254.17" y="1345" name="historical unemployment goal"/>
+				<aux x="1184.99" y="1509.92" name="historical unemployment goal"/>
 				<connector uid="42" angle="84.1261">
 					<from>historical_unemployment_goal</from>
 					<to>actual_unemployment_goal</to>
 				</connector>
 				<aux x="742.5" y="652.651" name="tax rate on newly installed\nsolar\nenergy capacity"/>
 				<aux x="742.5" y="735.508" name="tax rate on newly installed\nwind\nenergy capacity"/>
-				<aux x="945.834" y="1155.83" name="SLR adaptation start year"/>
-				<aux x="1362.5" y="1137.83" name="time to start\ncentral bank unemployment\npolicy"/>
+				<aux x="876.654" y="1320.75" name="SLR adaptation start year"/>
+				<aux x="1293.32" y="1302.75" name="time to start\ncentral bank unemployment\npolicy"/>
 				<connector uid="44" angle="243.194">
 					<from>time_to_start_central_bank_unemployment_policy</from>
 					<to>actual_unemployment_goal</to>
@@ -1594,23 +1697,23 @@ Negative taxes are subsidies</text_box>
 				<aux x="278.444" y="1047.92" name="profit tax policy start year"/>
 				<aux x="175.5" y="1171.14" name="time to implement\nwealth tax policy"/>
 				<aux x="78.1107" y="1219.75" name="wealth tax policy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="1451.19" y="297.087" name="private insurance\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="1644.52" y="293.161" name="central bank insurance\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="1828.14" y="297.087" name="government insurance\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1816.1" y="654.229" name="fraction of default covered\nby government insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1646.45" y="654.229" name="fraction of default covered\nby central bank insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1459.46" y="654.229" name="fraction of default\ncovered by private insurance"/>
+				<aux color="black" background="#00F900" font_color="black" x="1503.9" y="926.333" name="private insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" x="1621.06" y="926.333" name="central bank insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" x="1753.65" y="926.333" name="government insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1819.5" y="487.786" name="fraction of default covered\nby government insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1649.85" y="487.786" name="fraction of default covered\nby central bank insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1462.86" y="487.786" name="fraction of default\ncovered by private insurance"/>
 				<aux color="black" background="#00F900" font_color="black" x="2014.03" y="359.333" name="constant central\nbank led public investment"/>
 				<aux color="black" background="#00F900" font_color="black" x="2017.33" y="433.427" name="central bank led investment\npolicy start year"/>
-				<group locked="true" color="black" font_color="black" x="1352.26" y="266.723" width="568.002" height="490.441" name="Climate-driven default\ninsurance policy"/>
-				<group locked="true" color="black" font_color="black" x="1936.12" y="266.855" width="1028.88" height="489.086" name="Climate-driven default\npublic investment policy"/>
-				<aux color="black" background="#00F900" font_color="black" x="2203.99" y="441.515" name="government run investment\npolicy start year"/>
-				<aux color="black" background="#FFD479" font_color="black" x="2207.08" y="501.747" name="fraction of public investments\nfinanced by taxation"/>
-				<aux color="black" background="#FFD479" font_color="black" x="2369.41" y="508.703" name="share of public investments\nfinanced by wage taxation"/>
-				<aux color="black" background="#FFD479" font_color="black" x="2532.95" y="508.703" name="share of public investments\nfinanced by profit taxation"/>
-				<aux color="black" background="#FFD479" font_color="black" x="2679.53" y="508.703" name="share of public investments\nfinanced by rent taxation"/>
-				<aux color="black" background="#FFD479" font_color="black" x="2838.54" y="512.468" name="share of public investments\nfinanced by wealth taxation"/>
-				<aux color="black" background="#FFD479" font_color="black" x="2608.4" y="604.141" name="sum of public\ninvestment tax share"/>
+				<group locked="true" color="black" font_color="black" x="1352.26" y="266.723" width="568.002" height="491.607" name="Climate-driven default\ninsurance policy"/>
+				<group locked="true" color="black" font_color="black" x="1936.12" y="266.855" width="799.873" height="489.086" name="Climate-driven default\npublic investment policy"/>
+				<aux color="black" background="#00F900" font_color="black" x="2185.09" y="363.189" name="government run investment\npolicy start year"/>
+				<aux color="black" background="#FFD479" font_color="black" x="2188.18" y="423.421" name="fraction of public investments\nfinanced by taxation"/>
+				<aux color="black" background="#FFD479" font_color="black" x="2175.02" y="585.564" name="share of public investments\nfinanced by wage taxation"/>
+				<aux color="black" background="#FFD479" font_color="black" x="2338.56" y="585.564" name="share of public investments\nfinanced by profit taxation"/>
+				<aux color="black" background="#FFD479" font_color="black" x="2485.14" y="585.564" name="share of public investments\nfinanced by rent taxation"/>
+				<aux color="black" background="#FFD479" font_color="black" x="2644.15" y="589.329" name="share of public investments\nfinanced by wealth taxation"/>
+				<aux color="black" background="#FFD479" font_color="black" x="2414.01" y="681.002" name="sum of public\ninvestment tax share"/>
 				<connector uid="47" angle="338.232">
 					<from>share_of_public_investments_financed_by_wage_taxation</from>
 					<to>sum_of_public_investment_tax_share</to>
@@ -1627,52 +1730,91 @@ Negative taxes are subsidies</text_box>
 					<from>share_of_public_investments_financed_by_rent_taxation</from>
 					<to>sum_of_public_investment_tax_share</to>
 				</connector>
-				<aux color="black" background="#FFD479" font_color="black" x="2196.15" y="691.176" name="growth rate target for\ngovernment public investments"/>
-				<aux x="1591.52" y="501.747" name="total insurance coverage"/>
-				<aux x="1582.61" y="562.745" name="insurance scaling factor"/>
-				<connector uid="54" angle="247.57">
+				<aux color="black" background="#FFD479" font_color="black" x="2188.18" y="501.667" name="growth rate target for\ngovernment public investments"/>
+				<aux color="black" background="#00F900" font_color="black" x="1647.58" y="422.425" name="total insurance coverage"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1460.93" y="356.144" name="decision fraction of default\ncovered by private insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1647.99" y="356.144" name="decision fraction of default\ncovered by central\nbank insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1819.5" y="341.333" name="decision fraction of default\ncovered by government insurance"/>
+				<connector uid="61" angle="339.238">
+					<from>decision_fraction_of_default_covered_by_private_insurance</from>
+					<to>total_insurance_coverage</to>
+				</connector>
+				<connector uid="62" angle="269.65">
+					<from>decision_fraction_of_default_covered_by_central_bank_insurance</from>
+					<to>total_insurance_coverage</to>
+				</connector>
+				<connector uid="63" angle="205.253">
+					<from>decision_fraction_of_default_covered_by_government_insurance</from>
+					<to>total_insurance_coverage</to>
+				</connector>
+				<connector uid="67" angle="271.275">
+					<from>decision_fraction_of_default_covered_by_private_insurance</from>
+					<to>fraction_of_default_covered_by_private_insurance</to>
+				</connector>
+				<connector uid="68" angle="270">
+					<from>decision_fraction_of_default_covered_by_government_insurance</from>
+					<to>fraction_of_default_covered_by_government_insurance</to>
+				</connector>
+				<connector uid="69" angle="234.155">
+					<from>decision_fraction_of_default_covered_by_central_bank_insurance</from>
+					<to>fraction_of_default_covered_by_central_bank_insurance</to>
+				</connector>
+				<connector uid="70" angle="199.485">
 					<from>total_insurance_coverage</from>
-					<to>insurance_scaling_factor</to>
-				</connector>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1459.46" y="437.391" name="decision fraction of default\ncovered by private insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1646.45" y="441.515" name="decision fraction of default\ncovered by central\nbank insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1816.1" y="429.701" name="decision fraction of default\ncovered by government insurance"/>
-				<connector uid="61" angle="336.171">
-					<from>decision_fraction_of_default_covered_by_private_insurance</from>
-					<to>total_insurance_coverage</to>
-				</connector>
-				<connector uid="62" angle="218.937">
-					<from>decision_fraction_of_default_covered_by_central_bank_insurance</from>
-					<to>total_insurance_coverage</to>
-				</connector>
-				<connector uid="63" angle="194.045">
-					<from>decision_fraction_of_default_covered_by_government_insurance</from>
-					<to>total_insurance_coverage</to>
-				</connector>
-				<connector uid="64" angle="195.421">
-					<from>insurance_scaling_factor</from>
 					<to>fraction_of_default_covered_by_private_insurance</to>
 				</connector>
-				<connector uid="65" angle="323.625">
-					<from>insurance_scaling_factor</from>
+				<connector uid="71" angle="271.983">
+					<from>total_insurance_coverage</from>
 					<to>fraction_of_default_covered_by_central_bank_insurance</to>
 				</connector>
-				<connector uid="66" angle="17.641">
-					<from>insurance_scaling_factor</from>
+				<connector uid="72" angle="339.183">
+					<from>total_insurance_coverage</from>
 					<to>fraction_of_default_covered_by_government_insurance</to>
 				</connector>
-				<connector uid="67" angle="261.057">
-					<from>decision_fraction_of_default_covered_by_private_insurance</from>
+				<aux color="black" background="#00F900" font_color="black" label_side="left" x="1553.1" y="617.94" name="insurance coverage\nfirst level"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="left" x="1553.1" y="658.057" name="insurance coverage\nstart year first level"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="left" x="1553.1" y="698.264" name="insurance coverage time\nto implement first level"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="right" x="1735.65" y="617.94" name="insurance coverage\nsecond level"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="right" x="1735.65" y="661.891" name="insurance coverage\ntime to start second level"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="right" x="1735.65" y="702.215" name="insurance coverage time\nto implement second level"/>
+				<aux color="black" font_color="black" x="1649.85" y="647.134" name="fraction of loan insured"/>
+				<connector uid="82" angle="335.89">
+					<from>insurance_coverage_first_level</from>
+					<to>fraction_of_loan_insured</to>
+				</connector>
+				<connector uid="83" angle="10.2861">
+					<from>insurance_coverage_start_year_first_level</from>
+					<to>fraction_of_loan_insured</to>
+				</connector>
+				<connector uid="84" angle="34.4504">
+					<from>insurance_coverage_time_to_implement_first_level</from>
+					<to>fraction_of_loan_insured</to>
+				</connector>
+				<connector uid="85" angle="206.514">
+					<from>insurance_coverage_second_level</from>
+					<to>fraction_of_loan_insured</to>
+				</connector>
+				<connector uid="86" angle="168.46">
+					<from>insurance_coverage_time_to_start_second_level</from>
+					<to>fraction_of_loan_insured</to>
+				</connector>
+				<connector uid="87" angle="154.045">
+					<from>insurance_coverage_time_to_implement_second_level</from>
+					<to>fraction_of_loan_insured</to>
+				</connector>
+				<connector uid="88" angle="131.768">
+					<from>fraction_of_loan_insured</from>
 					<to>fraction_of_default_covered_by_private_insurance</to>
 				</connector>
-				<connector uid="68" angle="275.941">
-					<from>decision_fraction_of_default_covered_by_government_insurance</from>
-					<to>fraction_of_default_covered_by_government_insurance</to>
-				</connector>
-				<connector uid="69" angle="270">
-					<from>decision_fraction_of_default_covered_by_central_bank_insurance</from>
+				<connector uid="89" angle="96.8907">
+					<from>fraction_of_loan_insured</from>
 					<to>fraction_of_default_covered_by_central_bank_insurance</to>
 				</connector>
+				<connector uid="90" angle="44.2886">
+					<from>fraction_of_loan_insured</from>
+					<to>fraction_of_default_covered_by_government_insurance</to>
+				</connector>
+				<text_box uid="91" x="1463.31" y="844.06" width="334.874" height="58">note: for not these parameters are kept as legacy variables but no longer used in optimization policy structure and they are disconnected from active equation</text_box>
 			</view>
 		</views>
 	</model>
@@ -1734,6 +1876,138 @@ ELSE 1</eqn>
 			<connector uid="1" angle="259.046">
 				<from>input</from>
 				<to>output</to>
+			</connector>
+		</view>
+	</macro>
+	<macro name="SIXPARM">
+		<eqn>Output</eqn>
+		<parm>first level</parm>
+		<parm>start year first level</parm>
+		<parm>time to implement first level</parm>
+		<parm>second level</parm>
+		<parm>time to start second level</parm>
+		<parm>time to implement second level</parm>
+		<variables>
+			<aux name="Output" access="output">
+				<doc>${Policy}
+</doc>
+				<eqn>RAMP(first_level/time_to_implement_first_level, start_year_first_level, start_year_first_level+time_to_implement_first_level)
++
+RAMP((second_level -first_level)/time_to_implement_second_level, start_year_first_level  + time_to_start_second_level, start_year_first_level + time_to_start_second_level + time_to_implement_second_level)</eqn>
+				<units>first_level</units>
+			</aux>
+			<aux name="start\nyear first level" access="input">
+				<eqn>2025</eqn>
+				<format precision="1"/>
+				<range min="2025" max="2100"/>
+				<units>year</units>
+			</aux>
+			<aux name="time to implement first level" access="input">
+				<eqn>10</eqn>
+				<format precision="1"/>
+				<range min="5" max="50"/>
+				<units>Year</units>
+			</aux>
+			<aux name="first level" access="input">
+				<eqn>100
+
+
+
+{c$/(tCO2e/year)}</eqn>
+				<format precision="1"/>
+				<range min="0" max="300"/>
+				<units>widget</units>
+			</aux>
+			<aux name="time to\nstart second level" access="input">
+				<eqn>50</eqn>
+				<format precision="1"/>
+				<range min="5" max="100"/>
+				<units>year</units>
+			</aux>
+			<aux name="time to implement second level" access="input">
+				<eqn>10</eqn>
+				<format precision="1"/>
+				<range min="5" max="50"/>
+				<units>Year</units>
+			</aux>
+			<aux name="second level" access="input">
+				<eqn>50
+
+{c$/(tCO2e/year)}</eqn>
+				<format precision="1"/>
+				<range min="0" max="300"/>
+				<units>widget</units>
+			</aux>
+		</variables>
+		<view isee:show_pages="false" background="white" page_width="768" page_height="576" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
+					<shape type="rectangle" width="45" height="35"/>
+				</stock>
+				<flow color="blue" background="white" font_color="blue" font_size="11pt" label_side="bottom">
+					<shape type="circle" radius="18"/>
+				</flow>
+				<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="11pt" label_side="bottom"/>
+				<module color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
+					<shape type="rectangle" width="67" height="55"/>
+				</module>
+				<aux color="blue" background="white" font_color="blue" font_size="11pt" label_side="bottom">
+					<shape type="circle" radius="18"/>
+				</aux>
+				<group color="red" background="white" font_color="red" font_size="11pt"/>
+				<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1"/>
+						<isee:series_style color="fuchsia" thickness="1"/>
+						<isee:series_style color="#008F44" thickness="1"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1"/>
+						<isee:series_style color="#0CA0FF" thickness="1"/>
+						<isee:series_style color="lime" thickness="1"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1"/>
+						<isee:series_style color="#F586FF" thickness="1"/>
+						<isee:series_style color="black" thickness="1"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<aux x="485.651" y="284.67" name="Output"/>
+			<aux font_weight="bold" x="298.833" y="212.5" name="start\nyear first level"/>
+			<aux font_weight="bold" x="298.833" y="311.5" name="time to implement first level"/>
+			<aux font_weight="bold" x="298.833" y="396.5" name="first level"/>
+			<aux font_weight="bold" x="670.83" y="214.5" name="time to\nstart second level"/>
+			<aux font_weight="bold" x="670.83" y="313.5" name="time to implement second level"/>
+			<aux font_weight="bold" x="670.83" y="398.5" name="second level"/>
+			<connector uid="1" angle="353.82">
+				<from>start_year_first_level</from>
+				<to>Output</to>
+			</connector>
+			<connector uid="2" angle="15.4463">
+				<from>time_to_implement_first_level</from>
+				<to>Output</to>
+			</connector>
+			<connector uid="3" angle="33.0707">
+				<from>first_level</from>
+				<to>Output</to>
+			</connector>
+			<connector uid="4" angle="191.004">
+				<from>time_to_start_second_level</from>
+				<to>Output</to>
+			</connector>
+			<connector uid="5" angle="169.719">
+				<from>time_to_implement_second_level</from>
+				<to>Output</to>
+			</connector>
+			<connector uid="6" angle="147.94">
+				<from>second_level</from>
+				<to>Output</to>
 			</connector>
 		</view>
 	</macro>
