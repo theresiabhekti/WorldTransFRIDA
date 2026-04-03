@@ -1242,7 +1242,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="37" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="31" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -4794,7 +4794,7 @@ ELSE 0</eqn>
 						<pt x="1289.05" y="1741.76"/>
 					</pts>
 				</flow>
-				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="1397.2" y="1664.82" name="government insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="1277.99" y="1958.91" name="government insurance\npolicy start year"/>
 				<connector uid="411" angle="287.947">
 					<from>owner_savings</from>
 					<to>insurance_taxation</to>
@@ -5081,8 +5081,8 @@ ELSE 0</eqn>
 					<to>additional_wage_tax_percentage_target_for_public_investments_policy</to>
 				</connector>
 				<group locked="true" color="black" font_color="black" font_size="12pt" x="2916.32" y="1171.36" width="451.354" height="388.818" name="Government Public Investment\nTaxation from Wage"/>
-				<aux font_style="italic" font_weight="bold" x="1360.79" y="1792.63" name="fraction of default covered\nby government insurance"/>
-				<connector uid="523" angle="116.626">
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1404.41" y="1675.42" name="fraction of default covered\nby government insurance"/>
+				<connector uid="523" angle="146.578">
 					<from>fraction_of_default_covered_by_government_insurance</from>
 					<to>insurance_taxation</to>
 				</connector>
@@ -16424,7 +16424,7 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1823" isee:scroll_y="493" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1649" isee:scroll_y="545" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17531,7 +17531,7 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 					</pts>
 				</flow>
 				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="right" x="2563.13" y="933.942" name="total climate caused\nrisky defaults"/>
-				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="3236.18" y="849.352" name="government insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="3650.02" y="1077.62" name="government insurance\npolicy start year"/>
 				<connector uid="409" angle="136.19">
 					<from>total_climate_caused_risky_defaults</from>
 					<to>government_insurance_payout</to>
@@ -17642,8 +17642,7 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 					<from>bounded_indicated_government_insurance_taxation_rate</from>
 					<to>change_in_government_insurance_taxation_rate</to>
 				</connector>
-				<group locked="true" color="black" font_weight="bold" font_color="black" font_size="14pt" x="2572.13" y="1097.35" width="848.291" height="523.937" name="Government Insurance\nTaxation - Policy Structure">
-					<item uid="449"/>
+				<group locked="true" color="black" font_weight="bold" font_color="black" font_size="14pt" x="2572.13" y="1097.35" width="848.291" height="552.007" name="Government Insurance\nTaxation - Policy Structure">
 					<item uid="540"/>
 				</group>
 				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="right" x="1164.03" y="1700.06" name="government run investment\npolicy start year"/>
@@ -17843,9 +17842,6 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 				</alias>
 				<alias font_style="italic" uid="405" x="275.895" y="1177.89" width="18" height="18">
 					<of>Paid_Total_Nominal_SLR_protection_cost</of>
-				</alias>
-				<alias color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" uid="449" x="2987.74" y="1537.84" width="18" height="18">
-					<of>government_insurance_policy_start_year</of>
 				</alias>
 				<alias color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" uid="540" x="3117.3" y="1570" width="18" height="18">
 					<of>fraction_of_default_covered_by_government_insurance</of>
