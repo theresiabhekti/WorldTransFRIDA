@@ -1240,7 +1240,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_x="1.42857" isee:scroll_y="38.5714" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="37" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1531,9 +1531,7 @@
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>IF TIME &gt;= central_bank_insurance_policy_start_year THEN
-total_climate_caused_risky_defaults * fraction_of_default_covered_central_bank_insurance
-ELSE 0</eqn>
+				<eqn>total_climate_caused_risky_defaults * fraction_of_default_covered_central_bank_insurance</eqn>
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
@@ -1763,7 +1761,6 @@ Controls how quickly CB investment decreases when GDP is below target. It turns 
 			<group name="Central Bank Insurance" run="false">
 				<format scale_by="auto"/>
 				<entity name="Central_Bank_insurance_payout"/>
-				<entity name="central_bank_insurance_policy_start_year"/>
 				<entity name="deposit_earnings"/>
 				<entity name="fraction_of_default_covered_central_bank_insurance"/>
 				<entity name="initial_Bank_owned_Central_Bank_Deposit"/>
@@ -1840,7 +1837,7 @@ ELSE 0)</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="453" isee:scroll_y="179" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="19" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1897,7 +1894,7 @@ ELSE 0)</eqn>
 				</connector>
 				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="left" x="278.115" y="421.429" name="total climate caused\nrisky defaults"/>
 				<aux color="black" background="black" font_color="black" label_side="top" x="533.128" y="185.535" name="initial Bank owned Central Bank\nDeposit"/>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="320.628" y="452.152" name="central bank insurance\npolicy start year"/>
+				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="278.115" y="607.011" name="central bank insurance\npolicy start year"/>
 				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="367.29" y="185.535" name="safe\ninterest"/>
 				<connector uid="19" angle="270">
 					<from>safe_interest</from>
@@ -1917,10 +1914,6 @@ ELSE 0)</eqn>
 				</connector>
 				<connector uid="25" angle="53.4134">
 					<from>total_climate_caused_risky_defaults</from>
-					<to>Central_Bank_insurance_payout</to>
-				</connector>
-				<connector uid="26" angle="65.5342">
-					<from>central_bank_insurance_policy_start_year</from>
 					<to>Central_Bank_insurance_payout</to>
 				</connector>
 				<connector uid="27" angle="117.504">
@@ -10444,7 +10437,7 @@ Only 50% of insurance payouts reduce the risk-premium-relevant perception of def
 				<dimensions>
 					<dim name="Run"/>
 				</dimensions>
-				<eqn>&quot;0.5&quot;</eqn>
+				<eqn>fraction_of_loan_insured</eqn>
 				<range min="0.25" max="0.75"/>
 				<units>dmnl</units>
 			</aux>
@@ -10804,8 +10797,9 @@ average_private_debt_safe_interest</eqn>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="0.5">
+			<aux name="fixed fraction of insurance\npayouts not influencing\nrisk premium">
 				<eqn>0.5</eqn>
+				<units>dmnl</units>
 			</aux>
 		</variables>
 		<views>
@@ -12737,9 +12731,9 @@ SDG 10.5.1</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="2339.77" y="3381.67" name="fraction of loan insured"/>
-				<aux x="2227.31" y="3441.97" name="0.5"/>
-				<connector uid="761" angle="218.68">
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="2426.31" y="3374.21" name="fraction of loan insured"/>
+				<aux x="2265.56" y="3433.23" name="fixed fraction of insurance\npayouts not influencing\nrisk premium"/>
+				<connector uid="763" angle="188.336">
 					<from>fraction_of_loan_insured</from>
 					<to>fraction_of_insurance_payouts_not_influencing_risk_premium</to>
 				</connector>
