@@ -1118,7 +1118,7 @@ A policy parameter sets how much the second target coverage level, in percent</d
 			<aux name="insurance coverage\ntime to start second level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets the years after first start before second-stage change begins</doc>
-				<eqn>50</eqn>
+				<eqn>70</eqn>
 				<format precision="0.1"/>
 				<units>Year</units>
 			</aux>
@@ -1187,7 +1187,7 @@ insurance_coverage_time_to_implement_second_level)/100</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="3" isee:scroll_x="1243.57" isee:scroll_y="270" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="3" isee:scroll_x="1314" isee:scroll_y="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1401,7 +1401,7 @@ Negative taxes are subsidies</text_box>
 				<aux color="black" background="#00F900" font_color="black" x="1647.58" y="422.425" name="total insurance coverage"/>
 				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1460.93" y="356.144" name="decision fraction of default\ncovered by private insurance"/>
 				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1647.99" y="356.144" name="decision fraction of default\ncovered by central\nbank insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1819.5" y="341.333" name="decision fraction of default\ncovered by government insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1829.72" y="341.333" name="decision fraction of default\ncovered by government insurance"/>
 				<connector uid="61" angle="339.238">
 					<from>decision_fraction_of_default_covered_by_private_insurance</from>
 					<to>total_insurance_coverage</to>
@@ -1410,7 +1410,7 @@ Negative taxes are subsidies</text_box>
 					<from>decision_fraction_of_default_covered_by_central_bank_insurance</from>
 					<to>total_insurance_coverage</to>
 				</connector>
-				<connector uid="63" angle="205.253">
+				<connector uid="63" angle="203.999">
 					<from>decision_fraction_of_default_covered_by_government_insurance</from>
 					<to>total_insurance_coverage</to>
 				</connector>
@@ -1418,7 +1418,7 @@ Negative taxes are subsidies</text_box>
 					<from>decision_fraction_of_default_covered_by_private_insurance</from>
 					<to>fraction_of_default_covered_by_private_insurance</to>
 				</connector>
-				<connector uid="68" angle="270">
+				<connector uid="68" angle="266.007">
 					<from>decision_fraction_of_default_covered_by_government_insurance</from>
 					<to>fraction_of_default_covered_by_government_insurance</to>
 				</connector>
