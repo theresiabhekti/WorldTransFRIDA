@@ -1103,7 +1103,7 @@ A policy parameter sets the year the insurance policy starts.</doc>
 			<aux name="insurance coverage time\nto implement first level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how long (duration) it takes to ramp from 0 to first-level coverage</doc>
-				<eqn>0.125</eqn>
+				<eqn>5</eqn>
 				<format precision="0.01"/>
 				<units>Year</units>
 			</aux>
@@ -1125,7 +1125,7 @@ A policy parameter sets the years after first start before second-stage change b
 			<aux name="insurance coverage time\nto implement second level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how long it takes to move from first level to second level</doc>
-				<eqn>0.125</eqn>
+				<eqn>5</eqn>
 				<format precision="0.01"/>
 				<units>Year</units>
 			</aux>

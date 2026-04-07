@@ -108,7 +108,7 @@
 		<isee:sensi_specs name="Climate Sensitivity" method="grid">
 			<isee:variable starting_value="1" ending_value="100" type="incremental" min="1" max="100" seed="12345" name="Climate_Units.selected_climate_case[1]" num_samples="100"/>
 		</isee:sensi_specs>
-		<isee:sensi_specs name="Sensitivity 11 Uncertainty Runs" method="external" path="/Users/theresiabhektiputranti/Library/CloudStorage/OneDrive-UniversityofBergen/09 Thesis/01 FRIDA THESIS/03 Thesis Modeling/Data Optimization/uncertainty_parameters.csv">
+		<isee:sensi_specs name="Sensitivity 11 Uncertainty Runs" method="external" path="r../Data/uncertainty_parameters.csv">
 			<isee:variable type="adhoc" name="Animal_Products_Demand.average_daily_demand_per_capita_in_1980[1]"/>
 			<isee:variable type="adhoc" name="Animal_Products_Demand.elasticity_of_demand_to_GDP[1]"/>
 			<isee:variable type="adhoc" name="Animal_Products_Demand.growth_rate_of_socioeconomic_effect[1]"/>
@@ -1277,29 +1277,29 @@
 			<isee:parameter name="Circular_Flow.time_for_bottom_40_to_be_affected[1]"/>
 			<isee:payoff name="SDG 10.1.1" action="min"/>
 		</isee:optimizer_specs>
-		<isee:optimizer_specs name="Optimization Insurance to Welfare Real GDP" method="Powell" use_additional_starts_file="false" additional_starts="0" report_interval="1" confidence_range="0" init_step="0.01">
-			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_private_insurance" min="0" max="1" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_central_bank_insurance" min="0" max="1" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_government_insurance" min="0" max="1" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_first_level" min="0" max="100" scaling="0.1"/>
+		<isee:optimizer_specs name="Optimization Insurance to Welfare Real GDP" method="Powell" use_additional_starts_file="false" additional_starts="0" report_interval="1" confidence_range="0" maxiter="0">
+			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_private_insurance" min="0" max="1" scaling="100"/>
+			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_central_bank_insurance" min="0" max="1" scaling="100"/>
+			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_government_insurance" min="0" max="1" scaling="100"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_first_level" min="0" max="100"/>
 			<isee:parameter name="Government_Regulations.insurance_coverage_start_year_first_level" min="2030" max="2100"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_first_level" min="0.125" max="20" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_second_level" min="0" max="100" scaling="0.1"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_first_level" min="1" max="20"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_second_level" min="0" max="100"/>
 			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_start_second_level" min="0" max="70" scaling="0.1"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_second_level" min="0.125" max="20" scaling="0.01"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_second_level" min="1" max="20"/>
 			<isee:payoff name="Payoff Welfare of Real GDP" action="max"/>
 			<isee:payoff name="Payoff NPV of Real GDP" action="max" inactive="true"/>
 		</isee:optimizer_specs>
-		<isee:optimizer_specs name="Optimization Insurance to NPV Real GDP" method="Powell" use_additional_starts_file="false" additional_starts="0" report_interval="1" confidence_range="0" init_step="0.01">
-			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_private_insurance" min="0" max="1" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_central_bank_insurance" min="0" max="1" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_government_insurance" min="0" max="1" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_first_level" min="0" max="100" scaling="0.1"/>
+		<isee:optimizer_specs name="Optimization Insurance to NPV Real GDP" method="Powell" use_additional_starts_file="false" additional_starts="0" report_interval="1" confidence_range="0" maxiter="0">
+			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_private_insurance" min="0" max="1" scaling="100"/>
+			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_central_bank_insurance" min="0" max="1" scaling="100"/>
+			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_government_insurance" min="0" max="1" scaling="100"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_first_level" min="0" max="100"/>
 			<isee:parameter name="Government_Regulations.insurance_coverage_start_year_first_level" min="2030" max="2100"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_first_level" min="0.125" max="20" scaling="0.01"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_second_level" min="0" max="100" scaling="0.1"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_start_second_level" min="0" max="70" scaling="0.1"/>
-			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_second_level" min="0.125" max="20" scaling="0.01"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_first_level" min="1" max="20"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_second_level" min="0" max="100"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_start_second_level" min="0" max="70"/>
+			<isee:parameter name="Government_Regulations.insurance_coverage_time_to_implement_second_level" min="1" max="20"/>
 			<isee:payoff name="Payoff NPV of Real GDP" action="max"/>
 			<isee:payoff name="Payoff Welfare of Real GDP" action="max" inactive="true"/>
 		</isee:optimizer_specs>
@@ -4082,7 +4082,7 @@ Corresponding author: Axel Eriksson, ax3635er-s@student.lu.se or j.axel.e.erikss
 			<aux name="Simulation End">
 				<doc>${No Sensi}
 This is what determines when the model stops calculating</doc>
-				<eqn>2150</eqn>
+				<eqn>2100</eqn>
 				<format precision="1"/>
 				<range min="2023" max="2200"/>
 				<units>years</units>
@@ -4142,7 +4142,7 @@ This is what determines when the model stops calculating</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="8" isee:scroll_y="11" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="8" isee:scroll_y="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
