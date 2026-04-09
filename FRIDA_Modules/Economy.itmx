@@ -1242,7 +1242,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="50" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -3590,7 +3590,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="6" isee:page_rows="8" isee:scroll_x="1312" isee:scroll_y="830" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="6" isee:page_rows="8" isee:scroll_x="1824" isee:scroll_y="1738" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -5089,7 +5089,7 @@ ELSE 0</eqn>
 				<stacked_container uid="524" x="2575.76" y="2756.31" width="527.922" height="477.149">
 					<graph font_size="18pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="527.922" height="477.149" comparative="true" isee:comparative_override_thickness="3" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Labour_share_of_GDP[1]"/>
+							<entity name="Inflation.Inflation_Rate[1]"/>
 						</plot>
 					</graph>
 				</stacked_container>
@@ -6902,7 +6902,7 @@ Interface explosion stopper</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="6" isee:scroll_y="812.5" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="6" isee:scroll_x="3288.75" isee:scroll_y="1073.75" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -8332,6 +8332,13 @@ Interface explosion stopper</doc>
 				</connector>
 				<group locked="true" color="black" font_color="black" font_size="12pt" x="1674.58" y="1387.48" width="263.213" height="356.49" name="Impact of Public Investment\nPolicy to Hiring"/>
 				<group locked="true" color="black" font_color="black" x="247.994" y="1380.26" width="238.223" height="157.877" name="CB Policy impacts to firing"/>
+				<stacked_container uid="323" x="4654.87" y="1865.41" width="535.357" height="453.963">
+					<graph font_size="18pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="535.357" height="453.963" comparative="true" isee:comparative_override_thickness="3" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="unemployment_rate[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
 				<alias color="blue" background="white" font_style="italic" label_side="left" uid="12" x="533.258" y="1042.09" width="18" height="18">
 					<shape type="circle" radius="18"/>
 					<of>wage_rate_in_billions_per_million_people</of>
@@ -10864,7 +10871,7 @@ average_private_debt_safe_interest</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="2377" isee:scroll_y="1254" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="2946" isee:scroll_y="3975" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -12732,9 +12739,9 @@ SDG 10.5.1</text_box>
 				<group locked="true" color="black" font_color="black" x="1252.36" y="2018.64" width="321.592" height="172.831" name="Public Investment impact\nto investment growth"/>
 				<group locked="true" color="black" font_color="black" x="1873.59" y="2972.53" width="348.55" height="231.5" name="Impact of Insurance Policy\nto the perceived risky assets defaults"/>
 				<stacked_container uid="753" x="4030.34" y="4283.45" width="530.038" height="449.672">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="530.038" height="449.672" comparative="true" isee:comparative_override_thickness="3" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="530.038" height="449.672" comparative="true" isee:comparative_override_thickness="3" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Employment.unemployment_rate[1]"/>
+							<entity name="Bank_Investment[1]"/>
 						</plot>
 					</graph>
 				</stacked_container>
@@ -13673,7 +13680,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="838" isee:scroll_y="829" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="1305" isee:scroll_y="1165" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -16431,7 +16438,7 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1187" isee:scroll_y="1754" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1902" isee:scroll_y="1445" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
