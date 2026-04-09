@@ -1064,7 +1064,7 @@ This is the desired annual real GDP growth rate the policy tries to support.</do
 			<aux name="decision fraction of default\ncovered by private insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much of climate-caused risky defaults absorbed or funded by private insurance.</doc>
-				<eqn>0.38084755</eqn>
+				<eqn>0.25</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
 				<units>dmnl</units>
@@ -1072,7 +1072,7 @@ A policy parameter sets how much of climate-caused risky defaults absorbed or fu
 			<aux name="decision fraction of default\ncovered by central\nbank insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much of climate-caused risky defaults  absorbed or funded by central bank insurance.</doc>
-				<eqn>0.22834271</eqn>
+				<eqn>0.25</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
 				<units>dmnl</units>
@@ -1080,7 +1080,7 @@ A policy parameter sets how much of climate-caused risky defaults  absorbed or f
 			<aux name="decision fraction of default\ncovered by government insurance" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much of climate-caused risky defaults  absorbed or funded by government  insurance absorbs.</doc>
-				<eqn>0.226326065</eqn>
+				<eqn>0.25</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="1"/>
 				<units>dmnl</units>
@@ -1088,7 +1088,7 @@ A policy parameter sets how much of climate-caused risky defaults  absorbed or f
 			<aux name="insurance coverage\nfirst level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much the first target coverage level, in percent</doc>
-				<eqn>100</eqn>
+				<eqn>70</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="100"/>
 				<units>dmnl</units>
@@ -1096,21 +1096,21 @@ A policy parameter sets how much the first target coverage level, in percent</do
 			<aux name="insurance coverage\nstart year first level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets the year the insurance policy starts.</doc>
-				<eqn>2033.57</eqn>
+				<eqn>2030</eqn>
 				<format precision="1"/>
 				<units>Year</units>
 			</aux>
 			<aux name="insurance coverage time\nto implement first level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how long (duration) it takes to ramp from 0 to first-level coverage</doc>
-				<eqn>3.652190067</eqn>
+				<eqn>5</eqn>
 				<format precision="0.01"/>
 				<units>Year</units>
 			</aux>
 			<aux name="insurance coverage\nsecond level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much the second target coverage level, in percent</doc>
-				<eqn>75.04719663</eqn>
+				<eqn>70</eqn>
 				<format precision="0.01"/>
 				<range min="0" max="100"/>
 				<units>dmnl</units>
@@ -1118,14 +1118,14 @@ A policy parameter sets how much the second target coverage level, in percent</d
 			<aux name="insurance coverage\ntime to start second level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets the years after first start before second-stage change begins</doc>
-				<eqn>58.78567052</eqn>
+				<eqn>70</eqn>
 				<format precision="0.1"/>
 				<units>Year</units>
 			</aux>
 			<aux name="insurance coverage time\nto implement second level" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how long it takes to move from first level to second level</doc>
-				<eqn>16.92749991</eqn>
+				<eqn>5</eqn>
 				<format precision="0.01"/>
 				<units>Year</units>
 			</aux>
@@ -1187,7 +1187,7 @@ insurance_coverage_time_to_implement_second_level)/100</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="3" isee:scroll_x="1055" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1457,7 +1457,7 @@ Negative taxes are subsidies</text_box>
 					<from>insurance_coverage_time_to_implement_first_level</from>
 					<to>fraction_of_loan_insured</to>
 				</connector>
-				<connector uid="85" angle="206.514">
+				<connector uid="85" angle="200.142">
 					<from>insurance_coverage_second_level</from>
 					<to>fraction_of_loan_insured</to>
 				</connector>
