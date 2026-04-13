@@ -1303,7 +1303,7 @@
 			<isee:payoff name="Payoff NPV of Real GDP" action="max"/>
 			<isee:payoff name="Payoff Welfare of Real GDP" action="max" inactive="true"/>
 		</isee:optimizer_specs>
-		<isee:optimizer_specs name="Optimization Insurance to Welfare Real GDP only 1st level" method="Powell" use_additional_starts_file="false" additional_starts="0" report_interval="1" confidence_range="0" maxiter="0">
+		<isee:optimizer_specs name="Optimization Insurance to Welfare Real GDP - one level" method="Powell" use_additional_starts_file="false" additional_starts="0" report_interval="1" confidence_range="0" maxiter="0">
 			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_private_insurance" min="0" max="1" scaling="100"/>
 			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_central_bank_insurance" min="0" max="1" scaling="100"/>
 			<isee:parameter name="Government_Regulations.decision_fraction_of_default_covered_by_government_insurance" min="0" max="1" scaling="100"/>
@@ -2542,6 +2542,8 @@
 				<connect2 to="Total_Food_Demand.Population_1" from="Demographics.Population"/>
 				<connect to="Coastal_population.population_growth_rate" from="Demographics.population_growth_rate"/>
 				<connect2 to="Coastal_population.population_growth_rate" from="Demographics.population_growth_rate"/>
+				<connect to='Government_Regulations."Real_GDP_in_2021c$"' from='Demographics."Real_GDP_in_2021c$"'/>
+				<connect2 to='Government_Regulations."Real_GDP_in_2021c$"' from='Demographics."Real_GDP_in_2021c$"'/>
 				<connect to='Inflation."Real_GDP_in_2021c$"' from='Demographics."Real_GDP_in_2021c$"'/>
 				<connect2 to='Inflation."Real_GDP_in_2021c$"' from='Demographics."Real_GDP_in_2021c$"'/>
 				<connect to="Animal_Products_Demand.real_GDP_per_person_1" from="Demographics.real_GDP_per_person"/>
@@ -3636,6 +3638,12 @@
 				<connect2 to="Circular_Flow.wealth_taxation_rate" from="Government_Regulations.wealth_tax_policy"/>
 				<connect to="Circular_Flow.wealth_tax_policy_start_year" from="Government_Regulations.wealth_tax_policy_start_year"/>
 				<connect2 to="Circular_Flow.wealth_tax_policy_start_year" from="Government_Regulations.wealth_tax_policy_start_year"/>
+				<connect to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
+				<connect2 to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
+				<connect to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
+				<connect2 to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
+				<connect to='Government_Regulations."Real_GDP_in_2021c$"' from='Demographics."Real_GDP_in_2021c$"'/>
+				<connect2 to='Government_Regulations."Real_GDP_in_2021c$"' from='Demographics."Real_GDP_in_2021c$"'/>
 			</module>
 			<module name="Behavioral\nChange" isee:label="" url="r../FRIDA_Modules/Behavioral Change.itmx">
 				<format scale_by="auto"/>
@@ -3817,6 +3825,10 @@
 				<connect2 to="Employment.today" from="Climate.climate_impact_stoptime"/>
 				<connect to="Employment.working_age_population_2" from="Demographics.working_age_population"/>
 				<connect2 to="Employment.working_age_population_2" from="Demographics.working_age_population"/>
+				<connect to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
+				<connect2 to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
+				<connect to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
+				<connect2 to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
 				<connect to="Finance.All_Energy_Investments" from="energy_investments.All_Gross_Energy_Investments"/>
 				<connect2 to="Finance.All_Energy_Investments" from="energy_investments.All_Gross_Energy_Investments"/>
 				<connect to="Finance.fraction_of_loan_insured" from="Government_Regulations.fraction_of_loan_insured"/>
@@ -4152,7 +4164,7 @@ This is what determines when the model stops calculating</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="8" isee:scroll_x="6" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="8" isee:scroll_x="5" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -4520,36 +4532,36 @@ This is what determines when the model stops calculating</doc>
 					<from>Government_Regulations</from>
 					<to>Climate</to>
 				</connector>
-				<module label_side="center" x="383" y="369.5" name="Economy"/>
-				<connector uid="137" isee:thickness="2" angle="224.25" isee:autocreated="true">
+				<module label_side="center" x="385.031" y="369.906" name="Economy"/>
+				<connector uid="137" isee:thickness="2" angle="224.813" isee:autocreated="true">
 					<from>Demographics</from>
 					<to>Economy</to>
 				</connector>
-				<connector uid="138" isee:thickness="2" angle="233.216" isee:autocreated="true">
+				<connector uid="138" isee:thickness="2" angle="233.871" isee:autocreated="true">
 					<from>Climate</from>
 					<to>Economy</to>
 				</connector>
-				<connector uid="139" isee:thickness="2" angle="206.093" isee:autocreated="true">
+				<connector uid="139" isee:thickness="2" angle="206.117" isee:autocreated="true">
 					<from>Energy</from>
 					<to>Economy</to>
 				</connector>
-				<connector uid="140" isee:thickness="2" angle="230.81" isee:autocreated="true">
+				<connector uid="140" isee:thickness="2" angle="231.186" isee:autocreated="true">
 					<from>Land_Use_and_Agriculture</from>
 					<to>Economy</to>
 				</connector>
-				<connector uid="145" isee:thickness="2" angle="52.1843" isee:autocreated="true">
+				<connector uid="145" isee:thickness="2" angle="52.7474" isee:autocreated="true">
 					<from>Economy</from>
 					<to>Demographics</to>
 				</connector>
-				<connector uid="147" isee:thickness="2" angle="180.158" isee:autocreated="true">
+				<connector uid="147" isee:thickness="2" angle="180.359" isee:autocreated="true">
 					<from>Economy</from>
 					<to>Behavioral_Change</to>
 				</connector>
-				<connector uid="148" isee:thickness="2" angle="20.8728" isee:autocreated="true">
+				<connector uid="148" isee:thickness="2" angle="20.8973" isee:autocreated="true">
 					<from>Economy</from>
 					<to>Energy</to>
 				</connector>
-				<connector uid="149" color="#717171" font_color="#717171" isee:thickness="2" angle="206.796" isee:autocreated="true">
+				<connector uid="149" color="#717171" font_color="#717171" isee:thickness="2" angle="206.962" isee:autocreated="true">
 					<from>Government_Regulations</from>
 					<to>Economy</to>
 				</connector>
@@ -4580,7 +4592,7 @@ This is what determines when the model stops calculating</doc>
 					<from>Resources</from>
 					<to>Energy</to>
 				</connector>
-				<connector uid="155" isee:thickness="2" angle="60.2738" isee:autocreated="true">
+				<connector uid="155" isee:thickness="2" angle="60.5681" isee:autocreated="true">
 					<from>Economy</from>
 					<to>Resources</to>
 				</connector>
@@ -5011,6 +5023,14 @@ This is what determines when the model stops calculating</doc>
 				</connector>
 				<aux x="1006.5" y="48.1667" name="Simulation End"/>
 				<isee:placeholder x="904.75" y="767.563" name="Dashboard Right Placeholder"/>
+				<connector uid="166" isee:thickness="2" angle="48.8449" isee:autocreated="true">
+					<from>Demographics</from>
+					<to>Government_Regulations</to>
+				</connector>
+				<connector uid="167" isee:thickness="2" angle="51.9618" isee:autocreated="true">
+					<from>Economy</from>
+					<to>Government_Regulations</to>
+				</connector>
 			</view>
 			<view isee:template_view="template:1" isee:name="Landing Page without image" isee:original_design="Deluxe Prev-Next Blue Green Pastel" background="white" page_width="1066" page_height="600" home_view="true" type="interface">
 				<style>

@@ -719,6 +719,8 @@
 				<connect2 to="Employment.average_private_debt_safe_interest" from="Finance.average_private_debt_safe_interest"/>
 				<connect to="Coastal_Assets.Bank_Assets_1" from="Finance.Bank_Assets"/>
 				<connect2 to="Coastal_Assets.Bank_Assets_1" from="Finance.Bank_Assets"/>
+				<connect to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
+				<connect2 to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
 				<connect to="Employment.CB_actual_safe_investment_failure" from="Finance.CB_actual_safe_investment_failure"/>
 				<connect2 to="Employment.CB_actual_safe_investment_failure" from="Finance.CB_actual_safe_investment_failure"/>
 				<connect to="Employment.CB_safe_loan_defaults" from="Finance.CB_safe_loan_defaults"/>
@@ -739,6 +741,8 @@
 				<connect2 to="Employment.exploratory_loan_defaults_from_from_interest" from="Finance.exploratory_loan_defaults_from_from_interest"/>
 				<connect to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
 				<connect2 to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
+				<connect to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
+				<connect2 to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
 				<connect to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
 				<connect2 to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
 				<connect to="Circular_Flow.safe_bank_assets" from="Finance.private_safe_bank_assets"/>
@@ -8590,7 +8594,7 @@ Bank lending and investment affects non-energy parts of the economy (firms, capi
 				<inflow>change_in_non_energy_bank_investment</inflow>
 				<units>b$/year</units>
 			</stock>
-			<stock name="lending standards">
+			<stock name="lending standards" access="output" isee:autocreated="true">
 				<doc>Lending standards is the actual stock variable representing how tight or loose bank credit conditions are at a given moment. This stock increases from change in lending standard, with an initial value of 1, so the model starts from a normalized baseline credit stance. This variable matters because it is the implemented constraint on lending behavior, not just a desired signal, and it feeds into the wider macro-financial system. When lending standards rise, banks become more restrictive, which reduces bank investment growth and can also increase firm failures through refinancing pressure. So this is one of the main transmission variables through which climate-driven financial stress spreads into investment, output, and employment.</doc>
 				<dimensions>
 					<dim name="Run"/>
@@ -9803,7 +9807,7 @@ This avoids numerical and behavioral discontinuities.</doc>
 				<eqn>1000000000</eqn>
 				<units>c$/bc$</units>
 			</aux>
-			<aux name="Bank Investment">
+			<aux name="Bank Investment" access="output" isee:autocreated="true">
 				<doc>This is a backward-looking historical measure of how the stock of investment itself has been growing over time.
 It looks at how Bank Investment has changed in the past.
 
@@ -13680,7 +13684,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="1305" isee:scroll_y="1165" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="799" isee:scroll_y="1292" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
