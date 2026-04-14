@@ -642,8 +642,6 @@
 				<connect2 to="Circular_Flow.government_insurance_taxation_rate_1" from="Government.government_insurance_taxation_rate"/>
 				<connect to="Circular_Flow.government_transfers_1" from="Government.government_transfers"/>
 				<connect2 to="Circular_Flow.government_transfers_1" from="Government.government_transfers"/>
-				<connect to="Circular_Flow.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
-				<connect2 to="Circular_Flow.government_insurance_policy_start_year" from="Government_Regulations.government_insurance_policy_start_year"/>
 				<connect to="Circular_Flow.government_run_investment_policy_start_year" from="Government_Regulations.government_run_investment_policy_start_year"/>
 				<connect2 to="Circular_Flow.government_run_investment_policy_start_year" from="Government_Regulations.government_run_investment_policy_start_year"/>
 				<connect to="Circular_Flow.government_run_investment_policy_start_year_2" from="Government_Regulations.government_run_investment_policy_start_year"/>
@@ -719,8 +717,6 @@
 				<connect2 to="Employment.average_private_debt_safe_interest" from="Finance.average_private_debt_safe_interest"/>
 				<connect to="Coastal_Assets.Bank_Assets_1" from="Finance.Bank_Assets"/>
 				<connect2 to="Coastal_Assets.Bank_Assets_1" from="Finance.Bank_Assets"/>
-				<connect to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
-				<connect2 to="Government_Regulations.Bank_Investment" from="Finance.Bank_Investment"/>
 				<connect to="Employment.CB_actual_safe_investment_failure" from="Finance.CB_actual_safe_investment_failure"/>
 				<connect2 to="Employment.CB_actual_safe_investment_failure" from="Finance.CB_actual_safe_investment_failure"/>
 				<connect to="Employment.CB_safe_loan_defaults" from="Finance.CB_safe_loan_defaults"/>
@@ -741,8 +737,6 @@
 				<connect2 to="Employment.exploratory_loan_defaults_from_from_interest" from="Finance.exploratory_loan_defaults_from_from_interest"/>
 				<connect to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
 				<connect2 to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
-				<connect to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
-				<connect2 to="Government_Regulations.lending_standards" from="Finance.lending_standards"/>
 				<connect to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
 				<connect2 to="Private_Insurance.normal_investment" from="Finance.normal_investment"/>
 				<connect to="Circular_Flow.safe_bank_assets" from="Finance.private_safe_bank_assets"/>
@@ -1178,8 +1172,6 @@
 				<connect2 to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Policies.total_climate_caused_risky_defaults"/>
 				<connect to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
 				<connect2 to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
-				<connect to="Central_Bank_Policies.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
-				<connect2 to="Central_Bank_Policies.central_bank_insurance_policy_start_year" from="Government_Regulations.central_bank_insurance_policy_start_year"/>
 				<connect to="Central_Bank_Policies.central_bank_investment_policy_start_year" from="Government_Regulations.central_bank_led_investment_policy_start_year"/>
 				<connect2 to="Central_Bank_Policies.central_bank_investment_policy_start_year" from="Government_Regulations.central_bank_led_investment_policy_start_year"/>
 				<connect to="Central_Bank_Policies.central_bank_investment_1" from="Circular_Flow.Central_Bank_public_investment"/>
@@ -1563,10 +1555,6 @@ It is the initial value of the insurance-related central bank deposit stock at t
 				<eqn>0</eqn>
 				<units>b$</units>
 			</aux>
-			<aux name="central bank insurance\npolicy start year" access="input">
-				<eqn>2175</eqn>
-				<units>year</units>
-			</aux>
 			<aux name="safe\ninterest" access="output" throughput="true" isee:autocreated="true">
 				<dimensions>
 					<dim name="Run"/>
@@ -1843,7 +1831,7 @@ ELSE 0)</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="3" isee:page_rows="3" isee:scroll_y="19" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="3" isee:page_rows="3" zoom="40" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1882,13 +1870,13 @@ ELSE 0)</eqn>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
 				<stock color="black" background="white" font_color="black" label_side="center" x="472.872" y="205.086" width="109.21" height="177.253" name="Insurance related\nCentral Bank\nDeposits"/>
-				<flow color="black" background="white" font_color="black" label_side="top" x="361.62" y="362.061" name="Central Bank\ninsurance payout">
+				<flow color="black" background="#00F900" font_color="black" label_side="top" x="361.62" y="362.061" name="Central Bank\ninsurance payout">
 					<pts>
 						<pt x="250.368" y="362.061"/>
 						<pt x="472.872" y="362.061"/>
 					</pts>
 				</flow>
-				<flow color="black" background="white" font_color="black" x="367.29" y="249.402" name="deposit earnings">
+				<flow color="black" background="#00F900" font_color="black" x="367.29" y="249.402" name="deposit earnings">
 					<pts>
 						<pt x="261.708" y="249.402"/>
 						<pt x="472.872" y="249.402"/>
@@ -1898,23 +1886,22 @@ ELSE 0)</eqn>
 					<from>Insurance_related_Central_Bank_Deposits</from>
 					<to>deposit_earnings</to>
 				</connector>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="left" x="278.115" y="421.429" name="total climate caused\nrisky defaults"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="left" x="278.115" y="421.429" name="total climate caused\nrisky defaults"/>
 				<aux color="black" background="black" font_color="black" label_side="top" x="533.128" y="185.535" name="initial Bank owned Central Bank\nDeposit"/>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="278.115" y="607.011" name="central bank insurance\npolicy start year"/>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="367.29" y="185.535" name="safe\ninterest"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="367.29" y="185.535" name="safe\ninterest"/>
 				<connector uid="19" angle="270">
 					<from>safe_interest</from>
 					<to>deposit_earnings</to>
 				</connector>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="right" x="399.155" y="434.152" name="fraction of default covered central bank insurance"/>
-				<flow color="black" background="white" font_color="black" x="1254.09" y="243.902" name="Central Bank investment financing">
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="right" x="399.155" y="434.152" name="fraction of default covered central bank insurance"/>
+				<flow color="black" background="#00F900" font_color="black" x="1254.09" y="243.902" name="Central Bank investment financing">
 					<pts>
 						<pt x="1341.2" y="243.902"/>
 						<pt x="1166.97" y="243.902"/>
 					</pts>
 				</flow>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="1286.53" y="160.664" name="central bank investment 1"/>
-				<connector uid="23" angle="280.285">
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="1286.53" y="160.664" name="central bank investment 1"/>
+				<connector uid="23" angle="280.283">
 					<from>central_bank_investment_1</from>
 					<to>Central_Bank_investment_financing</to>
 				</connector>
@@ -1926,70 +1913,36 @@ ELSE 0)</eqn>
 					<from>fraction_of_default_covered_central_bank_insurance</from>
 					<to>Central_Bank_insurance_payout</to>
 				</connector>
-				<flow color="black" background="white" font_color="black" x="1257.51" y="323.891" name="Central Bank\ninterest payment">
+				<flow color="black" background="#00F900" font_color="black" x="1257.51" y="323.891" name="Central Bank\ninterest payment">
 					<pts>
 						<pt x="1166.97" y="323.891"/>
 						<pt x="1372.05" y="323.891"/>
 					</pts>
 				</flow>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" x="1340.44" y="378.382" name="CB firm interest payment"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1340.44" y="378.382" name="CB firm interest payment"/>
 				<connector uid="29" angle="184.196">
 					<from>CB_firm_interest_payment</from>
 					<to>Central_Bank_interest_payment</to>
 				</connector>
 				<stock color="black" background="white" font_color="black" label_side="center" x="1042.63" y="216.642" width="124.342" height="132.937" name="Investment related\nCentral Bank\nDeposits"/>
 				<aux color="black" background="black" font_color="black" label_side="top" x="1110.41" y="188.313" name="initial Firm-owned Central Bank\nDeposit"/>
-				<stacked_container uid="33" x="210.745" y="1226.74" width="484.26" height="359.578">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="484.26" height="359.578" comparative="true" isee:comparative_override_thickness="2" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Investment_related_Central_Bank_Deposits[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="38" x="706.925" y="1226.74" width="484.26" height="359.578">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="484.26" height="359.578" comparative="true" isee:comparative_override_thickness="2" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Central_Bank_Public_Investments_fraction[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="39" x="1206.18" y="1226.74" width="484.26" height="359.578">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="484.26" height="359.578" comparative="true" isee:comparative_override_thickness="2" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Circular_Flow.Central_Bank_public_investment[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="43" x="1717.03" y="1221.39" width="591.135" height="370.283">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="591.135" height="370.283" isee:comparative_override_thickness="2" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="6" num_x_labels="11" num_y_labels="6" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="2" index="0" show_y_axis="true">
-							<entity name="CB_investments_policy_stance[1]"/>
-						</plot>
-						<plot color="red" isee:keep_zero_visible="true" pen_width="2" index="1" show_y_axis="true">
-							<entity name="increase_in_CB_public_investment_fraction[1]"/>
-						</plot>
-						<plot color="#008F44" isee:keep_zero_visible="true" pen_width="2" index="2" show_y_axis="true">
-							<entity name="decrease_in_CB_public_investment_fraction[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<flow color="black" background="white" font_color="black" x="1130.36" y="702.747" name="increase in CB public\ninvestment fraction">
+				<flow color="black" background="#00F900" font_color="black" x="1130.36" y="702.747" name="increase in CB public\ninvestment fraction">
 					<pts>
 						<pt x="1130.36" y="591.786"/>
 						<pt x="1130.36" y="813.708"/>
 					</pts>
 				</flow>
-				<flow color="black" background="white" font_color="black" label_side="bottom" x="1280.66" y="844.94" name="decrease in CB public\ninvestment fraction">
+				<flow color="black" background="#00F900" font_color="black" label_side="bottom" x="1280.66" y="844.94" name="decrease in CB public\ninvestment fraction">
 					<pts>
 						<pt x="1193.73" y="844.94"/>
 						<pt x="1391.6" y="844.94"/>
 					</pts>
 				</flow>
 				<stock color="black" background="white" font_color="black" label_side="center" x="1059.86" y="813.708" width="133.868" height="60.2869" name="Central Bank Public\nInvestments fraction"/>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="right" x="1306.89" y="702.747" name="real GDP growth rate\nprevious years"/>
-				<aux color="black" background="white" font_color="black" label_side="top" x="1244.4" y="633.293" name="CB investments policy stance"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="right" x="1306.89" y="702.747" name="real GDP growth rate\nprevious years"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1244.4" y="633.293" name="CB investments policy stance"/>
 				<aux color="black" background="black" font_color="black" label_side="bottom" x="1133.89" y="898.544" name="initial Central Bank\nInvestments Policy"/>
-				<connector uid="37" angle="265.511">
+				<connector uid="37" angle="265.512">
 					<from>CB_investments_policy_stance</from>
 					<to>decrease_in_CB_public_investment_fraction</to>
 				</connector>
@@ -2004,7 +1957,7 @@ ELSE 0)</eqn>
 					<from>Central_Bank_Public_Investments_fraction</from>
 					<to>decrease_in_CB_public_investment_fraction</to>
 				</connector>
-				<flow color="black" background="white" font_color="black" x="1092.41" y="431.277" name="investment related\ndeposit earning">
+				<flow color="black" background="#00F900" font_color="black" x="1092.41" y="431.277" name="investment related\ndeposit earning">
 					<pts>
 						<pt x="1092.41" y="512.974"/>
 						<pt x="1092.41" y="349.579"/>
@@ -2020,13 +1973,13 @@ ELSE 0)</eqn>
 					<from>Investment_related_Central_Bank_Deposits</from>
 					<to>investment_related_deposit_earning</to>
 				</connector>
-				<aux color="black" background="white" font_color="black" x="1413.61" y="629.179" name="smoothed real GDP rate"/>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="1418.11" y="561.832" name="real GDP growth rate"/>
+				<aux color="black" background="#00F900" font_color="black" x="1413.61" y="629.179" name="smoothed real GDP rate"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="1418.11" y="561.832" name="real GDP growth rate"/>
 				<connector uid="50" angle="251.354">
 					<from>real_GDP_growth_rate</from>
 					<to>smoothed_real_GDP_rate</to>
 				</connector>
-				<aux color="black" background="#FFD479" font_color="black" x="1546.75" y="629.179" name="GDP rate smooth time"/>
+				<aux color="black" background="#00F900" font_color="black" x="1546.75" y="629.179" name="GDP rate smooth time"/>
 				<connector uid="51" angle="180">
 					<from>GDP_rate_smooth_time</from>
 					<to>smoothed_real_GDP_rate</to>
@@ -2039,24 +1992,24 @@ ELSE 0)</eqn>
 					<from>real_GDP_growth_rate_previous_years</from>
 					<to>CB_investments_policy_stance</to>
 				</connector>
-				<aux color="black" background="#FFD479" font_color="black" label_side="top" x="1012.94" y="684.747" name="increase denominator\nCB investment policy"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1012.94" y="684.747" name="increase denominator\nCB investment policy"/>
 				<connector uid="54" angle="335.023">
 					<from>increase_denominator_CB_investment_policy</from>
 					<to>increase_in_CB_public_investment_fraction</to>
 				</connector>
-				<aux color="black" background="#FFD479" font_color="black" label_side="right" x="1346.27" y="772.731" name="decrease denominator\nCB investment policy"/>
-				<connector uid="55" angle="205.467">
+				<aux color="black" background="#00F900" font_color="black" label_side="right" x="1346.27" y="772.731" name="decrease denominator\nCB investment policy"/>
+				<connector uid="55" angle="205.469">
 					<from>decrease_denominator_CB_investment_policy</from>
 					<to>decrease_in_CB_public_investment_fraction</to>
 				</connector>
 				<group locked="true" color="black" font_color="black" font_size="13pt" x="99.9121" y="101.535" width="576.66" height="436.598" name="Central Bank Insurance"/>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="865.635" y="764.607" name="central bank investment\npolicy start year"/>
-				<aux color="black" background="white" font_color="black" x="948.168" y="773.607" width="22.1016" height="22.1016" name="central bank\npublic investment payout"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="865.635" y="764.607" name="central bank investment\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" x="948.168" y="773.607" width="22.1016" height="22.1016" name="central bank\npublic investment payout"/>
 				<connector uid="56" angle="11.7416">
 					<from>central_bank_investment_policy_start_year</from>
 					<to>central_bank_public_investment_payout</to>
 				</connector>
-				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="left" label_angle="135" x="847.635" y="823.439" name="Nominal GDP"/>
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="left" label_angle="135" x="847.635" y="823.439" name="Nominal GDP"/>
 				<connector uid="59" angle="47.3702">
 					<from>Nominal_GDP</from>
 					<to>central_bank_public_investment_payout</to>
@@ -2065,7 +2018,7 @@ ELSE 0)</eqn>
 					<from>Central_Bank_Public_Investments_fraction</from>
 					<to>central_bank_public_investment_payout</to>
 				</connector>
-				<alias color="black" background="white" font_style="italic" font_weight="bold" font_color="black" uid="47" x="1192.87" y="422.276" width="18" height="18">
+				<alias color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" uid="47" x="1192.87" y="422.276" width="18" height="18">
 					<of>safe_interest</of>
 				</alias>
 			</view>
@@ -3281,10 +3234,6 @@ ELSE 0</eqn>
 				<non_negative/>
 				<units>b$/year</units>
 			</flow>
-			<aux name="government insurance\npolicy start year" access="input">
-				<eqn>2175</eqn>
-				<units>year</units>
-			</aux>
 			<stock name="government\ninsurance taxation rate 1" access="input">
 				<dimensions>
 					<dim name="Run"/>
@@ -3545,6 +3494,12 @@ ELSE 0</eqn>
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>dmnl</units>
 			</aux>
+			<group name="Government Insurance Taxation to Owner Saving" run="false">
+				<format scale_by="auto"/>
+				<entity name="fraction_of_default_covered_by_government_insurance"/>
+				<entity name="government_insurance_taxation_rate_1"/>
+				<entity name="insurance_taxation"/>
+			</group>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -3594,7 +3549,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="6" isee:page_rows="8" isee:scroll_x="1824" isee:scroll_y="1738" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="6" isee:page_rows="8" isee:scroll_x="205" isee:scroll_y="258.333" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -4792,26 +4747,25 @@ ELSE 0</eqn>
 					<from>wealth_tax_policy_start_year</from>
 					<to>actual_wealth_tax_policy</to>
 				</connector>
-				<flow color="black" background="#00F900" font_color="black" x="1289.05" y="1599.29" name="insurance taxation">
+				<flow color="black" background="#00F900" font_color="black" x="1269.03" y="1599.3" name="insurance taxation">
 					<pts>
-						<pt x="1289.05" y="1477.83"/>
-						<pt x="1289.05" y="1741.76"/>
+						<pt x="1269.03" y="1477.83"/>
+						<pt x="1269.03" y="1741.76"/>
 					</pts>
 				</flow>
-				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="1277.99" y="1958.91" name="government insurance\npolicy start year"/>
-				<connector uid="411" angle="287.947">
+				<connector uid="411" angle="283.543">
 					<from>owner_savings</from>
 					<to>insurance_taxation</to>
 				</connector>
-				<stock color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1397.2" y="1602.08" name="government\ninsurance taxation rate 1"/>
-				<connector uid="416" angle="193.214">
+				<stock color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1404.41" y="1701.05" name="government\ninsurance taxation rate 1"/>
+				<connector uid="416" angle="181.47">
 					<from>government_insurance_taxation_rate_1</from>
 					<to>insurance_taxation</to>
 				</connector>
-				<flow color="black" background="#00F900" font_color="black" label_side="top" x="2001.8" y="1552.31" name="Central Bank public\ninvestment">
+				<flow color="black" background="#00F900" font_color="black" label_side="top" x="2025.43" y="1552.31" name="Central Bank public\ninvestment">
 					<pts>
-						<pt x="2001.8" y="1741.9"/>
-						<pt x="2001.8" y="1362.72"/>
+						<pt x="2025.43" y="1741.9"/>
+						<pt x="2025.43" y="1362.72"/>
 					</pts>
 				</flow>
 				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1790.28" y="1806.45" name="Central Bank\ninterest payment"/>
@@ -4820,7 +4774,7 @@ ELSE 0</eqn>
 					<to>firms_paying_interest</to>
 				</connector>
 				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="2122.87" y="1552.31" name="central bank investment 1"/>
-				<connector uid="438" angle="180">
+				<connector uid="438" angle="180.001">
 					<from>central_bank_investment_1</from>
 					<to>Central_Bank_public_investment</to>
 				</connector>
@@ -4952,7 +4906,7 @@ ELSE 0</eqn>
 					<from>desired_wealth_taxation_revenue_for_public_investments_policy</from>
 					<to>additional_wealth_tax_percentage_target_for_public_investments_policy</to>
 				</connector>
-				<connector uid="484" angle="257.824">
+				<connector uid="484" angle="251.759">
 					<from>owner_savings</from>
 					<to>additional_wealth_tax_percentage_target_for_public_investments_policy</to>
 				</connector>
@@ -5085,8 +5039,8 @@ ELSE 0</eqn>
 					<to>additional_wage_tax_percentage_target_for_public_investments_policy</to>
 				</connector>
 				<group locked="true" color="black" font_color="black" font_size="12pt" x="2916.32" y="1171.36" width="451.354" height="388.818" name="Government Public Investment\nTaxation from Wage"/>
-				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1404.41" y="1675.42" name="fraction of default covered\nby government insurance"/>
-				<connector uid="523" angle="146.578">
+				<aux color="black" background="#00F900" font_style="italic" font_weight="bold" font_color="black" x="1201.22" y="1777.39" name="fraction of default covered\nby government insurance"/>
+				<connector uid="523" angle="69.155">
 					<from>fraction_of_default_covered_by_government_insurance</from>
 					<to>insurance_taxation</to>
 				</connector>
@@ -5097,6 +5051,7 @@ ELSE 0</eqn>
 						</plot>
 					</graph>
 				</stacked_container>
+				<group locked="true" color="black" font_color="black" x="1095.68" y="1562.69" width="377.357" height="282.685" name="Government Insurance Taxation to Owner Saving"/>
 				<alias label_side="bottom" uid="8" x="3390.96" y="1872.37" width="18" height="18">
 					<of>time_to_reach_savings_goal</of>
 				</alias>
@@ -10875,7 +10830,7 @@ average_private_debt_safe_interest</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="2946" isee:scroll_y="3975" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="3740" isee:scroll_y="789" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13684,7 +13639,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="799" isee:scroll_y="1292" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="267" isee:scroll_y="26" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14088,8 +14043,6 @@ The final value of this stock at 2100 represents the overall objective performan
 				<group locked="true" color="black" font_color="black" x="1856.24" y="960.813" width="491.27" height="1119.42" name="Objective 2:\nMaximize NPV of Real GDP">
 					<item uid="106"/>
 					<item uid="108"/>
-					<item uid="184"/>
-					<item uid="185"/>
 					<item uid="186"/>
 				</group>
 				<stock color="black" font_color="black" label_side="center" x="2609.73" y="1052.93" width="176.865" height="37.7474" name="Cumulative Welfare\nDiscount Exponent"/>
@@ -14147,8 +14100,6 @@ The final value of this stock at 2100 represents the overall objective performan
 					<item uid="116"/>
 					<item uid="120"/>
 					<item uid="123"/>
-					<item uid="187"/>
-					<item uid="188"/>
 					<item uid="203"/>
 					<item uid="214"/>
 				</group>
@@ -14283,8 +14234,6 @@ The final value of this stock at 2100 represents the overall objective performan
 					<item uid="150"/>
 					<item uid="158"/>
 					<item uid="190"/>
-					<item uid="191"/>
-					<item uid="192"/>
 				</group>
 				<aux color="black" background="white" font_color="black" label_side="right" x="4305.75" y="1176.33" name="w of recession penalty"/>
 				<aux color="black" font_color="black" x="4133.7" y="1176.33" name="composite objective function\nadded by recession penalty"/>
@@ -14336,12 +14285,10 @@ The final value of this stock at 2100 represents the overall objective performan
 					<item uid="169"/>
 					<item uid="174"/>
 					<item uid="178"/>
-					<item uid="193"/>
-					<item uid="194"/>
 					<item uid="195"/>
 				</group>
-				<stacked_container uid="179" x="4684.04" y="1814.37" width="479.368" height="276.493">
-					<graph axis_label_font_size="10pt" width="479.368" height="276.493" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="future time in recession in 2100" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+				<stacked_container uid="179" x="4684.04" y="1814.37" width="576.606" height="300.825">
+					<graph axis_label_font_size="10pt" width="576.606" height="300.825" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="future time in recession in 2100" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="future_time_in_recession[1]"/>
 						</plot>
@@ -14368,80 +14315,17 @@ The final value of this stock at 2100 represents the overall objective performan
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="184" x="1881.94" y="1356.07" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="NPV of Real GDP in 2035" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2035" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="NPV_of_Real_GDP[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="185" x="1878.78" y="1597.33" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="NPV of Real GDP in 2050" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2050" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="NPV_of_Real_GDP[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="186" x="1881.94" y="1840.02" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="NPV of Real GDP in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+				<stacked_container uid="186" x="1881.94" y="1428.42" width="462.698" height="639.227">
+					<graph axis_label_font_size="10pt" width="462.698" height="639.227" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="NPV of Real GDP in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="NPV_of_Real_GDP[1]"/>
 						</plot>
 					</graph>
 				</stacked_container>
-				<stacked_container uid="187" x="2393.78" y="1366.44" width="518.784" height="227.627">
-					<graph axis_label_font_size="10pt" width="518.784" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Discounted Welfare of Real GDP in 2035" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2035" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Discounted_Welfare_of_Real_GDP[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="188" x="2393.97" y="1605.98" width="518.401" height="227.627">
-					<graph axis_label_font_size="10pt" width="518.401" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Discounted Welfare of Real GDP in 2050" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2050" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Discounted_Welfare_of_Real_GDP[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="191" x="3015.13" y="1819.14" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 4 in 2050" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2050" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Accumulated_Composite_Policy_Objective[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="192" x="3015.13" y="1575.83" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 4 in 2035" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2035" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Accumulated_Composite_Policy_Objective[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="190" x="3453.76" y="1834.21" width="429.311" height="212.561">
-					<graph axis_label_font_size="10pt" width="429.311" height="212.561" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 4 in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+				<stacked_container uid="190" x="3045.82" y="1634.96" width="837.249" height="411.815">
+					<graph axis_label_font_size="10pt" width="837.249" height="411.815" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 4 in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Accumulated_Composite_Policy_Objective[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="193" x="4079.09" y="1356.88" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 5 in 2035" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2035" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Accumulated_Composite_Policy_Objective_with_recession[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="194" x="4079.09" y="1597.45" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 5 in 2050" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2050" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Accumulated_Composite_Policy_Objective_with_recession[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="195" x="4079.09" y="1838.8" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 5 in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Accumulated_Composite_Policy_Objective_with_recession[1]"/>
 						</plot>
 					</graph>
 				</stacked_container>
@@ -14477,20 +14361,6 @@ The final value of this stock at 2100 represents the overall objective performan
 						</item>
 					</table>
 				</stacked_container>
-				<stacked_container uid="200" x="4684.04" y="1525.73" width="479.368" height="276.493">
-					<graph axis_label_font_size="10pt" width="479.368" height="276.493" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="future time in recession in 2050" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2050" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="future_time_in_recession[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="201" x="4687.64" y="1237.06" width="479.368" height="276.493">
-					<graph axis_label_font_size="10pt" width="479.368" height="276.493" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="future time in recession in 2035" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2035" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="future_time_in_recession[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
 				<stacked_container uid="202" x="1363.29" y="1747.83" width="456.872" height="412.018">
 					<table width="456.872" height="412.018" comparative="true">
 						<item type="time"/>
@@ -14499,8 +14369,8 @@ The final value of this stock at 2100 represents the overall objective performan
 						</item>
 					</table>
 				</stacked_container>
-				<stacked_container uid="203" x="2393.3" y="1843.48" width="511.931" height="227.627">
-					<graph axis_label_font_size="10pt" width="511.931" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Discounted Welfare of Real GDP in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+				<stacked_container uid="203" x="2393.3" y="1424.96" width="511.931" height="646.147">
+					<graph axis_label_font_size="10pt" width="511.931" height="646.147" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Discounted Welfare of Real GDP in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Discounted_Welfare_of_Real_GDP[1]"/>
 						</plot>
@@ -14514,7 +14384,7 @@ The final value of this stock at 2100 represents the overall objective performan
 						</item>
 					</table>
 				</stacked_container>
-				<stacked_container uid="208" x="5195.77" y="1378.16" width="568.001" height="735.697">
+				<stacked_container uid="208" x="4693.61" y="1063.39" width="568.001" height="735.697">
 					<graph axis_label_font_size="10pt" width="568.001" height="735.697" comparative="true" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="7" num_x_labels="11" num_y_labels="7" title="future time in recession in 2100" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
 							<entity name="future_time_in_recession[1]"/>
@@ -14547,6 +14417,13 @@ The final value of this stock at 2100 represents the overall objective performan
 					<to>welfare_discount_rate_accumulation</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="2273.05" y="858.105" name="safe\ninterest"/>
+				<stacked_container uid="195" x="3948.9" y="1530.15" width="661.428" height="536.279">
+					<graph axis_label_font_size="10pt" width="661.428" height="536.279" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 5 in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Accumulated_Composite_Policy_Objective_with_recession[1]"/>
+						</plot>
+					</graph>
+				</stacked_container>
 				<alias font_style="italic" label_side="top" uid="9" x="659.453" y="202.596" width="18" height="18">
 					<of>Nominal_GDP</of>
 				</alias>
@@ -16442,7 +16319,7 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="1902" isee:scroll_y="1445" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="7" isee:scroll_x="105" isee:scroll_y="1441.67" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -17583,10 +17460,10 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 						<pt x="2692.91" y="1133.99"/>
 					</pts>
 				</flow>
-				<aux color="black" background="#FFD479" font_color="black" label_side="right" x="3308.52" y="1471.5" name="MAX insurance\ntaxation rate"/>
-				<aux color="black" background="#FFD479" font_color="black" label_side="right" x="3308.52" y="1513.44" name="MIN insurance\ntaxation rate"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="right" x="3308.52" y="1471.5" name="MAX insurance\ntaxation rate"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="right" x="3308.52" y="1513.44" name="MIN insurance\ntaxation rate"/>
 				<stock color="black" background="white" font_color="black" label_side="center" x="2778.48" y="1442.03" width="138.762" height="58.9414" name="government\ninsurance taxation rate"/>
-				<aux color="black" background="#FFD479" font_color="black" label_side="top" x="2996.74" y="1415.03" name="taxation rate\nadjustment time"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="2996.74" y="1415.03" name="taxation rate\nadjustment time"/>
 				<connector uid="434" angle="304.165">
 					<from>insurance_tax_redemption</from>
 					<to>revenue_from_tax_redemption</to>
@@ -17615,13 +17492,13 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 					<from>Diagnostic_Government_Insurance_Reserve</from>
 					<to>government_insurance_reserve_gap</to>
 				</connector>
-				<aux color="black" background="#FFD479" font_color="black" label_side="top" x="2907.7" y="1153.61" name="target reserve gap"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="2907.7" y="1153.61" name="target reserve gap"/>
 				<connector uid="454" angle="267.328">
 					<from>target_reserve_gap</from>
 					<to>government_insurance_reserve_gap</to>
 				</connector>
 				<aux color="black" background="#00F900" font_color="black" x="3044.23" y="1282.91" name="reserve correction flow"/>
-				<aux color="black" background="#FFD479" font_color="black" label_side="top" x="3044.23" y="1202.23" name="reserve correction time"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="top" x="3044.23" y="1202.23" name="reserve correction time"/>
 				<connector uid="455" angle="359.264">
 					<from>government_insurance_reserve_gap</from>
 					<to>reserve_correction_flow</to>
@@ -17749,13 +17626,13 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 					<from>Nominal_GDP</from>
 					<to>public_investments_policy_target</to>
 				</connector>
-				<aux color="black" background="#FFD479" font_color="black" label_side="bottom" x="662.237" y="1792.18" name="target setting time"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="662.237" y="1792.18" name="target setting time"/>
 				<connector uid="525" angle="44.9552">
 					<from>target_setting_time</from>
 					<to>public_investments_policy_target</to>
 				</connector>
 				<stock color="black" background="white" font_color="black" label_side="center" x="839.564" y="1852.87" width="165.596" height="59.4092" name="Government Run Public\nInvestment Policy"/>
-				<aux color="black" background="#FFD479" font_color="black" x="739.402" y="1946.03" name="time to implement public\ninvestment policy"/>
+				<aux color="black" background="#00F900" font_color="black" x="739.402" y="1946.03" name="time to implement public\ninvestment policy"/>
 				<flow color="black" background="#00F900" font_color="black" x="746.146" y="1889.23" name="change in government public investment policy">
 					<pts>
 						<pt x="640.727" y="1889.23"/>
@@ -17794,7 +17671,7 @@ This is effectively a controller gain. It tunes aggressiveness rather than repre
 					<to>public_investments_policy_target</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" label_side="top" x="139.329" y="1857.72" name="nominal GDP growth rate\nprevious year"/>
-				<aux color="black" background="#FFD479" font_color="black" x="549.568" y="1800.54" name="public investment\npolicy p factor"/>
+				<aux color="black" background="#00F900" font_color="black" x="549.568" y="1800.54" name="public investment\npolicy p factor"/>
 				<connector uid="538" angle="42.9501">
 					<from>public_investment_policy_p_factor</from>
 					<to>public_investments_policy_target</to>
@@ -19714,7 +19591,7 @@ Its value is 0.001, meaning the model imposes a minimum premium of 0.1% of the r
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="34.1667" isee:scroll_y="35" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="2" isee:scroll_y="20" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -19752,16 +19629,16 @@ Its value is 0.001, meaning the model imposes a minimum premium of 0.1% of the r
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
-				<stock color="black" font_color="black" label_side="center" x="454.925" y="316.833" width="82.7409" height="41.377" name="Insurance\nDeposits"/>
-				<flow color="black" font_color="black" x="378.86" y="337.521" name="insurance premiums">
+				<stock color="black" background="white" font_color="black" label_side="center" x="454.925" y="316.833" width="82.7409" height="41.377" name="Insurance\nDeposits"/>
+				<flow color="black" background="white" font_color="black" x="378.86" y="337.521" name="insurance premiums">
 					<pts>
 						<pt x="302.795" y="337.521"/>
 						<pt x="454.925" y="337.521"/>
 					</pts>
 				</flow>
-				<aux color="black" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="297.235" y="215.666" name="normal\ninvestment"/>
-				<aux color="black" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="403.108" y="156.94" name="average private debt interest"/>
-				<flow color="black" font_color="black" label_side="left" x="500.717" y="226.492" name="insurance earnings">
+				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="297.235" y="215.666" name="normal\ninvestment"/>
+				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="403.108" y="156.94" name="average private debt interest"/>
+				<flow color="black" background="white" font_color="black" label_side="left" x="500.717" y="226.492" name="insurance earnings">
 					<pts>
 						<pt x="500.717" y="136.15"/>
 						<pt x="500.717" y="316.833"/>
@@ -19775,25 +19652,25 @@ Its value is 0.001, meaning the model imposes a minimum premium of 0.1% of the r
 					<from>average_private_debt_interest</from>
 					<to>insurance_earnings</to>
 				</connector>
-				<flow color="black" font_color="black" x="624.295" y="339.865" name="private\ninsurance payouts">
+				<flow color="black" background="white" font_color="black" x="624.295" y="339.865" name="private\ninsurance payouts">
 					<pts>
 						<pt x="537.666" y="339.865"/>
 						<pt x="734.924" y="339.865"/>
 					</pts>
 				</flow>
-				<aux color="black" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="628.471" y="262.598" name="total climate caused\nrisky defaults"/>
+				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="top" x="628.471" y="262.598" name="total climate caused\nrisky defaults"/>
 				<connector uid="7" angle="266.906">
 					<from>total_climate_caused_risky_defaults</from>
 					<to>private_insurance_payouts</to>
 				</connector>
 				<aux color="black" background="#FFD479" font_color="black" x="494.561" y="712.987" name="desired years of coverage"/>
-				<aux color="black" font_color="black" x="291.752" y="425.877" name="insurance premium rate"/>
+				<aux color="black" background="white" font_color="black" x="291.752" y="425.877" name="insurance premium rate"/>
 				<aux color="black" background="#FFD479" font_color="black" x="184.268" y="478.818" name="normal insurance premium"/>
 				<connector uid="28" angle="26.2224">
 					<from>normal_insurance_premium</from>
 					<to>insurance_premium_rate</to>
 				</connector>
-				<aux color="black" font_color="black" x="637.061" y="522.665" name="actual years of coverage"/>
+				<aux color="black" background="white" font_color="black" x="637.061" y="522.665" name="actual years of coverage"/>
 				<connector uid="29" angle="321.974">
 					<from>Insurance_Deposits</from>
 					<to>actual_years_of_coverage</to>
@@ -19802,7 +19679,7 @@ Its value is 0.001, meaning the model imposes a minimum premium of 0.1% of the r
 					<from>private_insurance_payouts</from>
 					<to>actual_years_of_coverage</to>
 				</connector>
-				<aux color="black" font_color="black" x="323.975" y="540.665" name="effect of years of coverage\non premiums"/>
+				<aux color="black" background="white" font_color="black" x="323.975" y="540.665" name="effect of years of coverage\non premiums"/>
 				<connector uid="31" angle="88.9053">
 					<from>desired_years_of_coverage</from>
 					<to>relative_years_of_coverage</to>
@@ -19828,7 +19705,7 @@ Its value is 0.001, meaning the model imposes a minimum premium of 0.1% of the r
 					<from>sensitivity_of_premiums_to_years_of_coverage</from>
 					<to>effect_of_years_of_coverage_on_premiums</to>
 				</connector>
-				<aux color="black" font_color="black" label_side="bottom" x="496.295" y="622.24" name="relative years\nof coverage"/>
+				<aux color="black" background="white" font_color="black" label_side="bottom" x="496.295" y="622.24" name="relative years\nof coverage"/>
 				<connector uid="37" angle="179.561">
 					<from>relative_years_of_coverage</from>
 					<to>effect_of_years_of_coverage_on_premiums</to>
@@ -19838,8 +19715,8 @@ Its value is 0.001, meaning the model imposes a minimum premium of 0.1% of the r
 					<from>minimum_insurance_premium</from>
 					<to>insurance_premium_rate</to>
 				</connector>
-				<aux color="black" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="467.031" y="433.363" name="fraction of default covered private insurance"/>
-				<connector uid="39" angle="30.7326">
+				<aux color="black" background="white" font_style="italic" font_weight="bold" font_color="black" label_side="bottom" x="467.031" y="433.363" name="fraction of default covered private insurance"/>
+				<connector uid="39" angle="30.7327">
 					<from>fraction_of_default_covered_private_insurance</from>
 					<to>private_insurance_payouts</to>
 				</connector>

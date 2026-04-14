@@ -957,6 +957,7 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 			<group name="Climate-driven default\ninsurance policy" run="false">
 				<format scale_by="auto"/>
 				<entity name='"2_level_fraction"'/>
+				<entity name="central_bank_insurance_policy_start_year"/>
 				<entity name="decision_fraction_of_default_covered_by_central_bank_insurance"/>
 				<entity name="decision_fraction_of_default_covered_by_government_insurance"/>
 				<entity name="decision_fraction_of_default_covered_by_private_insurance"/>
@@ -964,6 +965,7 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 				<entity name="fraction_of_default_covered_by_government_insurance"/>
 				<entity name="fraction_of_default_covered_by_private_insurance"/>
 				<entity name="fraction_of_loan_insured"/>
+				<entity name="government_insurance_policy_start_year"/>
 				<entity name="insurance_coverage_first_level"/>
 				<entity name="insurance_coverage_second_level"/>
 				<entity name="insurance_coverage_start_year_first_level"/>
@@ -971,6 +973,7 @@ A policy parameter sets how much of climate-caused risky defaults private insura
 				<entity name="insurance_coverage_time_to_implement_second_level"/>
 				<entity name="insurance_coverage_time_to_start_second_level"/>
 				<entity name="one_level_fraction"/>
+				<entity name="private_insurance_policy_start_year"/>
 				<entity name="total_insurance_coverage"/>
 			</group>
 			<group name="Climate-driven default\npublic investment policy" run="false">
@@ -1135,27 +1138,6 @@ A policy parameter sets how long it takes to move from first level to second lev
 				<eqn>one_level_fraction</eqn>
 				<units>dmnl</units>
 			</aux>
-			<aux name="Real GDP in 2021c$" access="input">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>bc$/year</units>
-			</aux>
-			<stock name="lending standards" access="input">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>1</eqn>
-				<units>dmnl</units>
-			</stock>
-			<aux name="Bank Investment" access="input">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>b$/year</units>
-			</aux>
 			<aux name="2 level fraction" access="output" isee:autocreated="true">
 				<eqn>SIXPARM(insurance_coverage_first_level, 
 insurance_coverage_start_year_first_level, 
@@ -1171,6 +1153,13 @@ insurance_coverage_start_year_first_level,
 insurance_coverage_start_year_first_level + insurance_coverage_time_to_implement_first_level)
 / 100</eqn>
 				<units>dmnl</units>
+			</aux>
+			<aux name="Real GDP in 2021c$" access="input">
+				<dimensions>
+					<dim name="Run"/>
+				</dimensions>
+				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
+				<units>bc$/year</units>
 			</aux>
 		</variables>
 		<views>
@@ -1456,7 +1445,7 @@ insurance_coverage_start_year_first_level + insurance_coverage_time_to_implement
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="4" isee:scroll_x="1241" isee:scroll_y="65" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="4" isee:scroll_x="1595" isee:scroll_y="18.3333" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1633,23 +1622,25 @@ Negative taxes are subsidies</text_box>
 				<aux x="278.444" y="1047.92" name="profit tax policy start year"/>
 				<aux x="175.5" y="1171.14" name="time to implement\nwealth tax policy"/>
 				<aux x="78.1107" y="1219.75" name="wealth tax policy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="1519.56" y="889.317" name="private insurance\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="1641.98" y="889.317" name="central bank insurance\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="1775.4" y="889.317" name="government insurance\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="2000.33" y="470.114" name="fraction of default covered\nby government insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1830.68" y="470.114" name="fraction of default covered\nby central bank insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1643.69" y="470.114" name="fraction of default\ncovered by private insurance"/>
-				<aux color="black" background="#00F900" font_color="black" x="2307.03" y="367.431" name="constant central\nbank led public investment"/>
-				<aux color="black" background="#00F900" font_color="black" x="2310.33" y="441.525" name="central bank led investment\npolicy start year"/>
-				<group locked="true" color="black" font_color="black" x="1455.92" y="270.453" width="751.311" height="491.607" name="Climate-driven default\ninsurance policy"/>
-				<group locked="true" color="black" font_color="black" x="2229.12" y="274.953" width="799.873" height="489.086" name="Climate-driven default\npublic investment policy"/>
-				<aux color="black" background="#00F900" font_color="black" x="2478.09" y="371.287" name="government run investment\npolicy start year"/>
-				<aux color="black" background="#00F900" font_color="black" x="2481.18" y="431.519" name="fraction of public investments\nfinanced by taxation"/>
-				<aux color="black" background="#00F900" font_color="black" x="2481.18" y="593.662" name="share of public investments\nfinanced by wage taxation"/>
-				<aux color="black" background="#00F900" font_color="black" x="2631.56" y="593.662" name="share of public investments\nfinanced by profit taxation"/>
-				<aux color="black" background="#00F900" font_color="black" x="2778.14" y="593.662" name="share of public investments\nfinanced by rent taxation"/>
-				<aux color="black" background="#00F900" font_color="black" x="2937.15" y="597.427" name="share of public investments\nfinanced by wealth taxation"/>
-				<aux color="black" background="#00F900" font_color="black" x="2707.01" y="689.1" name="sum of public\ninvestment tax share"/>
+				<aux color="black" background="#00F900" font_color="black" x="1733.01" y="853.601" name="private insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" x="1855.43" y="853.601" name="central bank insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" x="1988.85" y="853.601" name="government insurance\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="2196.45" y="457.237" name="fraction of default covered\nby government insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="2026.8" y="457.237" name="fraction of default covered\nby central bank insurance"/>
+				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1839.81" y="457.237" name="fraction of default\ncovered by private insurance"/>
+				<aux color="black" background="#00F900" font_color="black" x="2503.15" y="354.553" name="constant central\nbank led public investment"/>
+				<aux color="black" background="#00F900" font_color="black" x="2506.45" y="428.647" name="central bank led investment\npolicy start year"/>
+				<group locked="true" color="black" font_color="black" x="1652.05" y="257.576" width="751.311" height="659.022" name="Climate-driven default\ninsurance policy">
+					<item uid="91"/>
+				</group>
+				<group locked="true" color="black" font_color="black" x="2425.24" y="262.075" width="799.873" height="489.086" name="Climate-driven default\npublic investment policy"/>
+				<aux color="black" background="#00F900" font_color="black" x="2674.21" y="358.409" name="government run investment\npolicy start year"/>
+				<aux color="black" background="#00F900" font_color="black" x="2677.3" y="418.641" name="fraction of public investments\nfinanced by taxation"/>
+				<aux color="black" background="#D4FB79" font_color="black" x="2677.3" y="580.784" name="share of public investments\nfinanced by wage taxation"/>
+				<aux color="black" background="#D4FB79" font_color="black" x="2827.68" y="580.784" name="share of public investments\nfinanced by profit taxation"/>
+				<aux color="black" background="#D4FB79" font_color="black" x="2974.26" y="580.784" name="share of public investments\nfinanced by rent taxation"/>
+				<aux color="black" background="#D4FB79" font_color="black" x="3133.27" y="584.549" name="share of public investments\nfinanced by wealth taxation"/>
+				<aux color="black" background="#00F900" font_color="black" x="2903.13" y="676.222" name="sum of public\ninvestment tax share"/>
 				<connector uid="47" angle="337.091">
 					<from>share_of_public_investments_financed_by_wage_taxation</from>
 					<to>sum_of_public_investment_tax_share</to>
@@ -1666,11 +1657,11 @@ Negative taxes are subsidies</text_box>
 					<from>share_of_public_investments_financed_by_rent_taxation</from>
 					<to>sum_of_public_investment_tax_share</to>
 				</connector>
-				<aux color="black" background="#00F900" font_color="black" x="2481.18" y="509.765" name="growth rate target for\ngovernment public investments"/>
-				<aux color="black" background="#00F900" font_color="black" x="1828.41" y="404.753" name="total insurance coverage"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1643.69" y="345.517" name="decision fraction of default\ncovered by private insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="1828.82" y="338.472" name="decision fraction of default\ncovered by central\nbank insurance"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="top" x="2008.28" y="338.472" name="decision fraction of default\ncovered by government insurance"/>
+				<aux color="black" background="#00F900" font_color="black" x="2677.3" y="496.887" name="growth rate target for\ngovernment public investments"/>
+				<aux color="black" background="#00F900" font_color="black" x="2024.53" y="391.876" name="total insurance coverage"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="top" x="1839.81" y="332.64" name="decision fraction of default\ncovered by private insurance"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="top" x="2024.94" y="325.595" name="decision fraction of default\ncovered by central\nbank insurance"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="top" x="2201.11" y="325.595" name="decision fraction of default\ncovered by government insurance"/>
 				<connector uid="61" angle="342.22">
 					<from>decision_fraction_of_default_covered_by_private_insurance</from>
 					<to>total_insurance_coverage</to>
@@ -1679,7 +1670,7 @@ Negative taxes are subsidies</text_box>
 					<from>decision_fraction_of_default_covered_by_central_bank_insurance</from>
 					<to>total_insurance_coverage</to>
 				</connector>
-				<connector uid="63" angle="200.228">
+				<connector uid="63" angle="200.575">
 					<from>decision_fraction_of_default_covered_by_government_insurance</from>
 					<to>total_insurance_coverage</to>
 				</connector>
@@ -1687,7 +1678,7 @@ Negative taxes are subsidies</text_box>
 					<from>decision_fraction_of_default_covered_by_private_insurance</from>
 					<to>fraction_of_default_covered_by_private_insurance</to>
 				</connector>
-				<connector uid="68" angle="266.542">
+				<connector uid="68" angle="267.975">
 					<from>decision_fraction_of_default_covered_by_government_insurance</from>
 					<to>fraction_of_default_covered_by_government_insurance</to>
 				</connector>
@@ -1707,13 +1698,13 @@ Negative taxes are subsidies</text_box>
 					<from>total_insurance_coverage</from>
 					<to>fraction_of_default_covered_by_government_insurance</to>
 				</connector>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1821.49" y="604.998" name="insurance coverage\nfirst level"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1817.59" y="656.952" name="insurance coverage\nstart year first level"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="bottom" x="1817.59" y="716.053" name="insurance coverage time\nto implement first level"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="right" x="2012.36" y="604.998" name="insurance coverage\nsecond level"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="right" x="2012.36" y="640.998" name="insurance coverage\ntime to start second level"/>
-				<aux color="black" background="#00F900" font_color="black" label_side="right" x="2012.36" y="674.952" name="insurance coverage time\nto implement second level"/>
-				<aux color="black" background="#00F900" font_color="black" x="1828.41" y="555.22" name="fraction of loan insured"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2017.62" y="592.121" name="insurance coverage\nfirst level"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2013.72" y="644.074" name="insurance coverage\nstart year first level"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2013.72" y="703.175" name="insurance coverage time\nto implement first level"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="right" x="2208.49" y="592.121" name="insurance coverage\nsecond level"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="right" x="2208.49" y="628.121" name="insurance coverage\ntime to start second level"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="right" x="2208.49" y="662.074" name="insurance coverage time\nto implement second level"/>
+				<aux color="black" background="#00F900" font_color="black" x="2024.53" y="542.342" name="fraction of loan insured"/>
 				<connector uid="88" angle="155.263">
 					<from>fraction_of_loan_insured</from>
 					<to>fraction_of_default_covered_by_private_insurance</to>
@@ -1726,31 +1717,7 @@ Negative taxes are subsidies</text_box>
 					<from>fraction_of_loan_insured</from>
 					<to>fraction_of_default_covered_by_government_insurance</to>
 				</connector>
-				<text_box uid="91" x="1478.97" y="807.044" width="334.874" height="58">note: for not these parameters are kept as legacy variables but no longer used in optimization policy structure and they are disconnected from active equation</text_box>
-				<stacked_container uid="93" x="1461.62" y="1019.66" width="482.746" height="504.907">
-					<graph width="482.746" height="504.907" comparative="true" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="8" num_y_grid_lines="8" num_x_labels="8" num_y_labels="8" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name='GDP."Real_GDP_in_2021c$"[1]'/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<aux font_style="italic" font_weight="bold" x="1967.25" y="850.012" name="Real GDP in 2021c$"/>
-				<stock font_style="italic" font_weight="bold" x="2149.63" y="862.817" name="lending standards"/>
-				<aux font_style="italic" font_weight="bold" x="2339.16" y="845.441" name="Bank Investment"/>
-				<stacked_container uid="94" x="1955.6" y="1019.66" width="482.746" height="504.907">
-					<graph width="482.746" height="504.907" comparative="true" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="8" num_y_grid_lines="8" num_x_labels="8" num_y_labels="8" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Finance.lending_standards[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="95" x="2444.57" y="1019.66" width="482.746" height="504.907">
-					<graph width="482.746" height="504.907" comparative="true" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="8" num_y_grid_lines="8" num_x_labels="8" num_y_labels="8" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name="Finance.Bank_Investment[1]"/>
-						</plot>
-					</graph>
-				</stacked_container>
+				<text_box uid="91" x="1686.11" y="800.547" width="429.854" height="36.5352">note: for not these parameters are kept as legacy variables but no longer used in optimization policy structure and they are disconnected from active equation</text_box>
 				<stacked_container uid="96" x="1458.22" y="1550.46" width="667.144" height="504.907">
 					<graph width="667.144" height="504.907" comparative="true" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="8" num_y_grid_lines="8" num_x_labels="8" num_y_labels="8" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -1758,32 +1725,32 @@ Negative taxes are subsidies</text_box>
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux color="black" background="#00F900" font_color="black" x="1921.27" y="613.932" name="2 level fraction"/>
-				<connector uid="97" angle="354.884">
+				<aux color="black" background="#00F900" font_color="black" x="2117.15" y="595.523" name="2 level fraction"/>
+				<connector uid="97" angle="358.042">
 					<from>insurance_coverage_first_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
-				<connector uid="98" angle="22.535">
+				<connector uid="98" angle="25.145">
 					<from>insurance_coverage_start_year_first_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
-				<connector uid="99" angle="44.5661">
+				<connector uid="99" angle="46.145">
 					<from>insurance_coverage_time_to_implement_first_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
-				<connector uid="100" angle="185.601">
+				<connector uid="100" angle="182.133">
 					<from>insurance_coverage_second_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
-				<connector uid="101" angle="163.452">
+				<connector uid="101" angle="160.359">
 					<from>insurance_coverage_time_to_start_second_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
-				<connector uid="102" angle="146.184">
+				<connector uid="102" angle="143.923">
 					<from>insurance_coverage_time_to_implement_second_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
-				<aux color="black" background="#00F900" font_color="black" x="1689.73" y="613.932" name="one level fraction"/>
+				<aux color="black" background="#00F900" font_color="black" x="1885.86" y="601.055" name="one level fraction"/>
 				<connector uid="103" angle="183.879">
 					<from>insurance_coverage_first_level</from>
 					<to>one_level_fraction</to>
@@ -1800,6 +1767,7 @@ Negative taxes are subsidies</text_box>
 					<from>one_level_fraction</from>
 					<to>fraction_of_loan_insured</to>
 				</connector>
+				<aux font_style="italic" font_weight="bold" x="1051.45" y="771.06" name="Real GDP in 2021c$"/>
 			</view>
 		</views>
 	</model>
