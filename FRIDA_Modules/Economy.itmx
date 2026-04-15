@@ -13823,7 +13823,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="5" isee:scroll_y="1208.75" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="5" isee:scroll_y="1272.5" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14613,7 +14613,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<aux x="360.455" y="1679.33" name="Bank Liabilities in 2021c$"/>
 				<aux x="509.568" y="1679.33" name="bailout in 2021c$"/>
 				<aux x="654.247" y="1676.32" name="total climate caused\nrisky defaults in 2021c$"/>
-				<aux x="774.829" y="1676.32" name="total risky assets\ndefaults in 2021c$"/>
+				<aux x="777.368" y="1676.32" name="total risky assets\ndefaults in 2021c$"/>
 				<aux x="915.043" y="1683.08" name="private insurance\npayouts in 2021c$"/>
 				<aux x="1053.62" y="1683.08" name="Central Bank insurance\npayouts in 2021c$"/>
 				<aux label_side="bottom" x="1199.22" y="1683.08" name="government insurance\npayouts in 2021c$"/>
@@ -14647,7 +14647,7 @@ The final value of this stock at 2100 represents the overall objective performan
 					</from>
 					<to>&quot;total_climate_caused_risky_defaults_in_2021c$&quot;</to>
 				</connector>
-				<connector uid="222" angle="339.568">
+				<connector uid="222" angle="339.752">
 					<from>
 						<alias uid="52"/>
 					</from>
@@ -14697,7 +14697,7 @@ The final value of this stock at 2100 represents the overall objective performan
 					<to>&quot;total_climate_caused_risky_defaults_in_2021c$&quot;</to>
 				</connector>
 				<aux font_style="italic" font_weight="bold" x="785.347" y="1771.52" name="total risky asset defaults"/>
-				<connector uid="231" angle="96.3046">
+				<connector uid="231" angle="94.7909">
 					<from>total_risky_asset_defaults</from>
 					<to>&quot;total_risky_assets_defaults_in_2021c$&quot;</to>
 				</connector>
