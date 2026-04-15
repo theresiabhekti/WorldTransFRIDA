@@ -13823,7 +13823,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="5" isee:scroll_y="1272.5" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="8" isee:page_rows="5" isee:scroll_y="1086.67" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14608,15 +14608,15 @@ The final value of this stock at 2100 represents the overall objective performan
 						</plot>
 					</graph>
 				</stacked_container>
-				<aux x="84.9297" y="1679.33" name="Government Debt in 2021c$"/>
-				<aux x="225.237" y="1679.33" name="Bank Assets in 2021c$"/>
-				<aux x="360.455" y="1679.33" name="Bank Liabilities in 2021c$"/>
-				<aux x="509.568" y="1679.33" name="bailout in 2021c$"/>
-				<aux x="654.247" y="1676.32" name="total climate caused\nrisky defaults in 2021c$"/>
-				<aux x="777.368" y="1676.32" name="total risky assets\ndefaults in 2021c$"/>
-				<aux x="915.043" y="1683.08" name="private insurance\npayouts in 2021c$"/>
-				<aux x="1053.62" y="1683.08" name="Central Bank insurance\npayouts in 2021c$"/>
-				<aux label_side="bottom" x="1199.22" y="1683.08" name="government insurance\npayouts in 2021c$"/>
+				<aux background="#00F900" x="84.9297" y="1679.33" name="Government Debt in 2021c$"/>
+				<aux background="#00F900" x="225.237" y="1679.33" name="Bank Assets in 2021c$"/>
+				<aux background="#00F900" x="360.455" y="1679.33" name="Bank Liabilities in 2021c$"/>
+				<aux background="#00F900" x="509.568" y="1679.33" name="bailout in 2021c$"/>
+				<aux background="#00F900" x="654.247" y="1676.32" name="total climate caused\nrisky defaults in 2021c$"/>
+				<aux background="#00F900" x="777.368" y="1676.32" name="total risky assets\ndefaults in 2021c$"/>
+				<aux background="#00F900" x="915.043" y="1683.08" name="private insurance\npayouts in 2021c$"/>
+				<aux background="#00F900" x="1053.62" y="1683.08" name="Central Bank insurance\npayouts in 2021c$"/>
+				<aux background="#00F900" label_side="bottom" x="1199.22" y="1683.08" name="government insurance\npayouts in 2021c$"/>
 				<connector uid="217" angle="192.913">
 					<from>
 						<alias uid="52"/>
@@ -14671,38 +14671,38 @@ The final value of this stock at 2100 represents the overall objective performan
 					</from>
 					<to>&quot;government_insurance_payouts_in_2021c$&quot;</to>
 				</connector>
-				<stock font_style="italic" font_weight="bold" label_side="bottom" x="84.9297" y="1775.93" name="Government\nDebt"/>
+				<stock background="#00F900" font_style="italic" font_weight="bold" label_side="bottom" x="84.9297" y="1775.93" name="Government\nDebt"/>
 				<connector uid="226" angle="90">
 					<from>Government_Debt</from>
 					<to>&quot;Government_Debt_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="221.631" y="1775.93" name="Bank\nAssets"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="221.631" y="1775.93" name="Bank\nAssets"/>
 				<connector uid="227" angle="87.8622">
 					<from>Bank_Assets</from>
 					<to>&quot;Bank_Assets_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="359.609" y="1774.39" name="Bank\nLiabilities"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="359.609" y="1774.39" name="Bank\nLiabilities"/>
 				<connector uid="228" angle="89.0475">
 					<from>Bank_Liabilities</from>
 					<to>&quot;Bank_Liabilities_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="509.568" y="1774.39" name="bailouts"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="509.568" y="1774.39" name="bailouts"/>
 				<connector uid="229" angle="92.5272">
 					<from>bailouts</from>
 					<to>&quot;bailout_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="654.487" y="1771.52" name="total climate caused\nrisky defaults"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="654.487" y="1771.52" name="total climate caused\nrisky defaults"/>
 				<connector uid="230" angle="92.988">
 					<from>total_climate_caused_risky_defaults</from>
 					<to>&quot;total_climate_caused_risky_defaults_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="785.347" y="1771.52" name="total risky asset defaults"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="785.347" y="1771.52" name="total risky asset defaults"/>
 				<connector uid="231" angle="94.7909">
 					<from>total_risky_asset_defaults</from>
 					<to>&quot;total_risky_assets_defaults_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="915.043" y="1767.22" name="private\ninsurance payouts"/>
-				<aux font_style="italic" font_weight="bold" x="1057.07" y="1763.55" name="Central Bank\ninsurance payout"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="915.043" y="1767.22" name="private\ninsurance payouts"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="1057.07" y="1763.55" name="Central Bank\ninsurance payout"/>
 				<connector uid="232" angle="92.454">
 					<from>Central_Bank_insurance_payout</from>
 					<to>&quot;Central_Bank_insurance_payouts_in_2021c$&quot;</to>
@@ -14711,13 +14711,13 @@ The final value of this stock at 2100 represents the overall objective performan
 					<from>private_insurance_payouts</from>
 					<to>&quot;private_insurance_payouts_in_2021c$&quot;</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="1199.22" y="1771.52" name="government insurance payout"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="1199.22" y="1771.52" name="government insurance payout"/>
 				<connector uid="234" angle="90">
 					<from>government_insurance_payout</from>
 					<to>&quot;government_insurance_payouts_in_2021c$&quot;</to>
 				</connector>
-				<aux x="421.455" y="1823.33" name="net bank assets in 2021c$"/>
-				<aux font_style="italic" font_weight="bold" x="420.127" y="1927.49" name="net bank\nassets"/>
+				<aux background="#00F900" x="421.455" y="1823.33" name="net bank assets in 2021c$"/>
+				<aux background="#00F900" font_style="italic" font_weight="bold" x="420.127" y="1927.49" name="net bank\nassets"/>
 				<connector uid="235" angle="92.6646">
 					<from>net_bank_assets</from>
 					<to>&quot;net_bank_assets_in_2021c$&quot;</to>
