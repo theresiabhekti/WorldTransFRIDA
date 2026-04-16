@@ -1068,7 +1068,7 @@ A policy parameter sets how much of climate-caused risky defaults  absorbed or f
 				<range min="0" max="1"/>
 				<units>dmnl</units>
 			</aux>
-			<aux name="insurance coverage\nstart year" access="output" isee:autocreated="true">
+			<aux name="insurance coverage\nlevel" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets how much the first target coverage level, in percent</doc>
 				<eqn>70</eqn>
@@ -1076,7 +1076,7 @@ A policy parameter sets how much the first target coverage level, in percent</do
 				<range min="0" max="100"/>
 				<units>dmnl</units>
 			</aux>
-			<aux name="insurance coverage level" access="output" isee:autocreated="true">
+			<aux name="insurance coverage start year" access="output" isee:autocreated="true">
 				<doc>${Policy}
 A policy parameter sets the year the insurance policy starts.</doc>
 				<eqn>2035.26</eqn>
@@ -1117,8 +1117,8 @@ A policy parameter sets how long it takes to move from first level to second lev
 				<units>dmnl</units>
 			</aux>
 			<aux name="2 level fraction" access="output" isee:autocreated="true">
-				<eqn>SIXPARM(insurance_coverage_start_year, 
-insurance_coverage_level, 
+				<eqn>SIXPARM(insurance_coverage_level, 
+insurance_coverage_start_year, 
 insurance_coverage_time_to_implement, 
 insurance_coverage_second_level,
 insurance_coverage_time_to_start_second_level,
@@ -1126,9 +1126,9 @@ insurance_coverage_time_to_implement_second_level)/100</eqn>
 				<units>dmnl</units>
 			</aux>
 			<aux name="one level fraction" access="output" isee:autocreated="true">
-				<eqn>RAMP(insurance_coverage_start_year / insurance_coverage_time_to_implement,
-insurance_coverage_level,
-insurance_coverage_level + insurance_coverage_time_to_implement)
+				<eqn>RAMP(insurance_coverage_level / insurance_coverage_time_to_implement,
+insurance_coverage_start_year,
+insurance_coverage_start_year + insurance_coverage_time_to_implement)
 / 100</eqn>
 				<units>dmnl</units>
 			</aux>
@@ -1188,7 +1188,7 @@ insurance_coverage_level + insurance_coverage_time_to_implement)
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="768" page_height="588" isee:page_cols="5" isee:page_rows="4" isee:scroll_x="1184" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="5" isee:page_rows="4" isee:scroll_x="1631" isee:scroll_y="192" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1436,8 +1436,8 @@ Negative taxes are subsidies</text_box>
 					<from>total_insurance_coverage</from>
 					<to>fraction_of_default_covered_by_government_insurance</to>
 				</connector>
-				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2017.62" y="592.121" name="insurance coverage\nstart year"/>
-				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2013.72" y="644.074" name="insurance coverage level"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2017.62" y="592.121" name="insurance coverage\nlevel"/>
+				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2013.72" y="644.074" name="insurance coverage start year"/>
 				<aux color="black" background="#D4FB79" font_color="black" label_side="bottom" x="2013.72" y="703.175" name="insurance coverage time\nto implement"/>
 				<aux color="black" background="#D4FB79" font_color="black" label_side="right" x="2229.2" y="595.871" name="insurance coverage\nsecond level"/>
 				<aux color="black" background="#D4FB79" font_color="black" label_side="right" x="2229.2" y="631.871" name="insurance coverage\ntime to start second level"/>
@@ -1464,11 +1464,11 @@ Negative taxes are subsidies</text_box>
 				</stacked_container>
 				<aux color="black" background="#00F900" font_color="black" x="2137.86" y="599.273" name="2 level fraction"/>
 				<connector uid="97" angle="356.596">
-					<from>insurance_coverage_start_year</from>
+					<from>insurance_coverage_level</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
 				<connector uid="98" angle="19.8433">
-					<from>insurance_coverage_level</from>
+					<from>insurance_coverage_start_year</from>
 					<to>&quot;2_level_fraction&quot;</to>
 				</connector>
 				<connector uid="99" angle="39.9274">
@@ -1489,11 +1489,11 @@ Negative taxes are subsidies</text_box>
 				</connector>
 				<aux color="black" background="#00F900" font_color="black" x="1885.86" y="601.055" name="one level fraction"/>
 				<connector uid="103" angle="183.879">
-					<from>insurance_coverage_start_year</from>
+					<from>insurance_coverage_level</from>
 					<to>one_level_fraction</to>
 				</connector>
 				<connector uid="104" angle="161.404">
-					<from>insurance_coverage_level</from>
+					<from>insurance_coverage_start_year</from>
 					<to>one_level_fraction</to>
 				</connector>
 				<connector uid="105" angle="141.385">
