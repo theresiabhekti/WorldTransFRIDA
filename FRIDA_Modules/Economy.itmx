@@ -1276,7 +1276,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="440" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -1432,8 +1432,8 @@
 					<to>GDP</to>
 				</connector>
 				<isee:placeholder x="993.641" y="807.414" name="Economy 2 Outputs"/>
-				<stacked_container uid="37" x="151.9" y="741.719" width="682.164" height="779.52">
-					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="682.164" height="779.52" comparative="true" isee:comparative_override_thickness="2" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="7" num_x_labels="11" num_y_labels="7" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="false" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+				<stacked_container uid="37" x="151.9" y="741.719" width="664.855" height="929.786">
+					<graph font_size="14pt" axis_title_font_size="14pt" axis_label_font_size="12pt" width="664.855" height="929.786" comparative="true" isee:comparative_override_thickness="2" type="time_series" show_grid="true" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="11" num_y_grid_lines="7" num_x_labels="11" num_y_labels="7" isee:fill_intensity="0.1" to="2100" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="false" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
 							<entity name="Economy_2_Outputs"/>
 						</plot>
@@ -3591,7 +3591,7 @@ ELSE 0</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="6" isee:page_rows="8" isee:scroll_x="465" isee:scroll_y="1456.67" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="826" page_height="579" isee:page_cols="6" isee:page_rows="8" isee:scroll_x="315" isee:scroll_y="1456.67" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -6903,7 +6903,7 @@ Interface explosion stopper</doc>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="6" isee:scroll_x="3288.75" isee:scroll_y="1073.75" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="6" isee:scroll_x="2087.5" isee:scroll_y="725" zoom="80" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -10872,7 +10872,7 @@ average_private_debt_safe_interest</eqn>
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="1259" isee:scroll_y="1534" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="7" isee:page_rows="9" isee:scroll_x="4269" isee:scroll_y="1855" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13610,9 +13610,6 @@ The final value of this stock at 2100 represents the overall objective performan
 				<entity name="recession_time_penalty_indicator"/>
 				<entity name="w_of_recession_penalty"/>
 			</group>
-			<group name="Objective Function 1:\nMaximize Real GDP value" run="false">
-				<format scale_by="auto"/>
-			</group>
 			<aux name="ramp discount rate">
 				<eqn>fixed_discount_rate - RAMP(ramp_converter,  objective_evaluation_start_year)</eqn>
 				<units>dmnl/year</units>
@@ -13821,7 +13818,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="2065.71" isee:scroll_y="837.143" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="2298.33" isee:scroll_y="815" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14174,14 +14171,6 @@ The final value of this stock at 2100 represents the overall objective performan
 					</from>
 					<to>nominal_GDP_growth_rate_previous_year</to>
 				</connector>
-				<stacked_container uid="97" x="1394.15" y="976.637" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Real GDP in 2035" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2035" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name='"Real_GDP_in_2021c$"[1]'/>
-							<scale max="1600000"/>
-						</plot>
-					</graph>
-				</stacked_container>
 				<aux color="black" font_color="black" label_side="top" x="1927.8" y="1036.13" name="objective evaluation\nstart year"/>
 				<stock color="black" font_color="black" label_side="center" x="2091.9" y="1080.97" width="176.865" height="37.7474" name="Cumulative Discount Exponent"/>
 				<flow color="black" font_color="black" x="2012.58" y="1099.07" name="discount\nrate accumulation">
@@ -14476,27 +14465,6 @@ The final value of this stock at 2100 represents the overall objective performan
 						</plot>
 					</graph>
 				</stacked_container>
-				<group locked="true" color="black" font_color="black" x="1374.48" y="956.836" width="456.621" height="758.767" name="Objective Function 1:\nMaximize Real GDP value">
-					<item uid="182"/>
-					<item uid="183"/>
-					<item uid="97"/>
-				</group>
-				<stacked_container uid="182" x="1390.99" y="1217.89" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Real GDP in 2050" isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2050" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name='"Real_GDP_in_2021c$"[1]'/>
-							<scale max="1600000"/>
-						</plot>
-					</graph>
-				</stacked_container>
-				<stacked_container uid="183" x="1394.15" y="1461.27" width="424.436" height="227.627">
-					<graph axis_label_font_size="10pt" width="424.436" height="227.627" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Real GDP in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
-						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
-							<entity name='"Real_GDP_in_2021c$"[1]'/>
-							<scale max="1600000"/>
-						</plot>
-					</graph>
-				</stacked_container>
 				<stacked_container uid="186" x="1881.94" y="1428.42" width="462.698" height="639.227">
 					<graph axis_label_font_size="10pt" width="462.698" height="639.227" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="NPV of Real GDP in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -14543,7 +14511,7 @@ The final value of this stock at 2100 represents the overall objective performan
 						</item>
 					</table>
 				</stacked_container>
-				<stacked_container uid="202" x="1363.29" y="1747.83" width="456.872" height="412.018">
+				<stacked_container uid="202" x="1379.44" y="2155.84" width="456.872" height="412.018">
 					<table width="456.872" height="412.018" comparative="true">
 						<item type="time"/>
 						<item>

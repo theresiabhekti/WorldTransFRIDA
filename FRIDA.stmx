@@ -5041,6 +5041,11 @@ Lorem ipsum dolor sit amet</text_box>
 			<isee:stories/>
 		</views>
 	</model>
+	<isee:controls>
+		<isee:control priority="interactive" name="Government_Regulations.decision_fraction_of_default_covered_by_central_bank_insurance" value="0"/>
+		<isee:control priority="interactive" name="Government_Regulations.decision_fraction_of_default_covered_by_government_insurance" value="0.7"/>
+		<isee:control priority="interactive" name="Government_Regulations.decision_fraction_of_default_covered_by_private_insurance" value="0"/>
+	</isee:controls>
 	<isee:user_controlled>
 		<ent name="Simulation End" preserve="true" lock="false"/>
 		<ent name="Government Regulations.tax on CO2e emissions" preserve="true" lock="false"/>
