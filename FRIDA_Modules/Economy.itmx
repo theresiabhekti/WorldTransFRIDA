@@ -326,8 +326,6 @@
 				<connect2 to="GDP.real_GDP_growth_rate_1" from="Central_Bank_Policies.real_GDP_growth_rate"/>
 				<connect to="GDP.realised_productivity_growth" from="Circular_Flow.realised_productivity_growth"/>
 				<connect2 to="GDP.realised_productivity_growth" from="Circular_Flow.realised_productivity_growth"/>
-				<connect to="GDP.safe_interest" from="Central_Bank_Policies.safe_interest"/>
-				<connect2 to="GDP.safe_interest" from="Central_Bank_Policies.safe_interest"/>
 				<connect to="GDP.start_year" from="Government_Regulations.start_year"/>
 				<connect2 to="GDP.start_year" from="Government_Regulations.start_year"/>
 				<connect to="GDP.total_climate_caused_risky_defaults" from="Finance.total_climate_caused_risky_defaults"/>
@@ -1204,8 +1202,6 @@
 				<connect2 to="GDP.real_GDP_growth_rate_1" from="Central_Bank_Policies.real_GDP_growth_rate"/>
 				<connect to="Government.real_GDP_growth_rate_previous_years" from="Central_Bank_Policies.real_GDP_growth_rate_previous_years"/>
 				<connect2 to="Government.real_GDP_growth_rate_previous_years" from="Central_Bank_Policies.real_GDP_growth_rate_previous_years"/>
-				<connect to="GDP.safe_interest" from="Central_Bank_Policies.safe_interest"/>
-				<connect2 to="GDP.safe_interest" from="Central_Bank_Policies.safe_interest"/>
 				<connect to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Policies.total_climate_caused_risky_defaults"/>
 				<connect2 to="Government.total_climate_caused_risky_defaults" from="Central_Bank_Policies.total_climate_caused_risky_defaults"/>
 				<connect to="Central_Bank_Policies.CB_firm_interest_payment" from="Finance.firms_interest_payment_to_CB_investment_loans"/>
@@ -1276,7 +1272,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:scroll_y="440" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="2" isee:page_rows="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="12.51pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -13336,6 +13332,7 @@ ELSE 0</eqn>
 			</flow>
 			<group name="Objective 2:\nMaximize NPV of Real GDP" run="false">
 				<format scale_by="auto"/>
+				<entity name="average_NPV_of_real_GDP"/>
 				<entity name="Cumulative_Discount_Exponent"/>
 				<entity name="discount_rate_accumulation"/>
 				<entity name="discounted_real_GDP"/>
@@ -13408,6 +13405,7 @@ ELSE 0</eqn>
 			</aux>
 			<group name="Objective 3:\nMaximize Welfare of Real GDP" run="false">
 				<format scale_by="auto"/>
+				<entity name="average_Discounted_Welfare_of_Real_GDP"/>
 				<entity name="Cumulative_Welfare_Discount_Exponent"/>
 				<entity name="discounted_welfare"/>
 				<entity name="Discounted_Welfare_of_Real_GDP"/>
@@ -13622,13 +13620,6 @@ The final value of this stock at 2100 represents the overall objective performan
 				<eqn>0.025</eqn>
 				<units>dmnl/year</units>
 			</aux>
-			<aux name="safe\ninterest" access="input">
-				<dimensions>
-					<dim name="Run"/>
-				</dimensions>
-				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
-				<units>1/year</units>
-			</aux>
 			<aux name="Government Debt in 2021c$">
 				<dimensions>
 					<dim name="Run"/>
@@ -13769,6 +13760,14 @@ The final value of this stock at 2100 represents the overall objective performan
 				<eqn>{Enter equation for use when not hooked up to other models}</eqn>
 				<units>b$</units>
 			</aux>
+			<aux name="average NPV of real GDP">
+				<eqn>MEAN(NPV_of_Real_GDP[*])</eqn>
+				<units>bc$</units>
+			</aux>
+			<aux name="average Discounted Welfare\nof Real GDP">
+				<eqn>MEAN(Discounted_Welfare_of_Real_GDP[*])</eqn>
+				<units>dmnl</units>
+			</aux>
 		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
@@ -13818,7 +13817,7 @@ The final value of this stock at 2100 represents the overall objective performan
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="2298.33" isee:scroll_y="815" zoom="120" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" page_width="776" page_height="596" isee:page_cols="8" isee:page_rows="5" isee:scroll_x="1113.33" isee:scroll_y="336.667" zoom="60" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="11pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -14242,23 +14241,23 @@ The final value of this stock at 2100 represents the overall objective performan
 					<to>welfare_discount_factor</to>
 				</connector>
 				<stock color="black" font_color="black" label_side="center" x="2505.48" y="1237.75" width="99.3357" height="41.5527" name="Discounted Welfare\nof Real GDP"/>
-				<flow color="black" font_color="black" x="2704.89" y="1258.08" name="discounted welfare">
+				<flow color="black" font_color="black" x="2704.88" y="1258.08" name="discounted welfare">
 					<pts>
 						<pt x="2816.95" y="1258.08"/>
 						<pt x="2604.82" y="1258.08"/>
 					</pts>
 				</flow>
-				<connector uid="122" angle="155.135">
+				<connector uid="122" angle="155.132">
 					<from>
 						<alias uid="123"/>
 					</from>
 					<to>discounted_welfare</to>
 				</connector>
-				<connector uid="124" angle="12.4095">
+				<connector uid="124" angle="12.4072">
 					<from>instantaneous_welfare_from_real_GDP</from>
 					<to>discounted_welfare</to>
 				</connector>
-				<connector uid="125" angle="283.86">
+				<connector uid="125" angle="283.857">
 					<from>welfare_discount_factor</from>
 					<to>discounted_welfare</to>
 				</connector>
@@ -14566,7 +14565,6 @@ The final value of this stock at 2100 represents the overall objective performan
 					</from>
 					<to>welfare_discount_rate_accumulation</to>
 				</connector>
-				<aux font_style="italic" font_weight="bold" x="2273.05" y="858.105" name="safe\ninterest"/>
 				<stacked_container uid="195" x="3948.9" y="1530.15" width="661.428" height="536.279">
 					<graph axis_label_font_size="10pt" width="661.428" height="536.279" comparative="true" type="hbar" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Accumulated Objective Function 5 in 2100 " isee:fill_intensity="0.1" isee:allow_zero_axis="true" isee:bars_always_show_value="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
 						<plot color="blue" isee:at_time="2100" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
@@ -14693,6 +14691,16 @@ The final value of this stock at 2100 represents the overall objective performan
 						<alias uid="52"/>
 					</from>
 					<to>&quot;net_bank_assets_in_2021c$&quot;</to>
+				</connector>
+				<aux color="black" font_color="black" x="2036.51" y="1370.83" name="average NPV of real GDP"/>
+				<aux color="black" font_color="black" x="2547.13" y="1364.96" name="average Discounted Welfare\nof Real GDP"/>
+				<connector uid="237" angle="267.95">
+					<from>NPV_of_Real_GDP</from>
+					<to>average_NPV_of_real_GDP</to>
+				</connector>
+				<connector uid="238" angle="270.709">
+					<from>Discounted_Welfare_of_Real_GDP</from>
+					<to>average_Discounted_Welfare_of_Real_GDP</to>
 				</connector>
 				<alias font_style="italic" label_side="top" uid="9" x="659.453" y="202.596" width="18" height="18">
 					<of>Nominal_GDP</of>
